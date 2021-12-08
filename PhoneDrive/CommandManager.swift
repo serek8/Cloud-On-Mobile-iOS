@@ -15,7 +15,7 @@ protocol CommandManagerDelegate: AnyObject {
     func serverOnReconnected()
 }
 
-class CommandManager {
+final class CommandManager {
     static let shared = CommandManager()
     var delegate: CommandManagerDelegate?
     var ip: String = ""
