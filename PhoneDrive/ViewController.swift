@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, CommandManagerDelegate {
+final class ViewController: UIViewController, CommandManagerDelegate {
     func serverOnReconnecting() {
         print("reconnecting")
     }
