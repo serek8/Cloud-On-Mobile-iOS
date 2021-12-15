@@ -9,6 +9,15 @@ import UIKit
 
 final class ViewController: UIViewController, CommandManagerDelegate, UITableViewDelegate, UITableViewDataSource {
   
+  func serverOnFileDownlaoded(filepath: String) {
+    print("serverOnFileDownlaoded: " + filepath)
+    DispatchQueue.main.async {
+      self.fetchAllFiles()
+      self.tableView.reloadData()
+    }
+  }
+  
+  
   @IBOutlet weak var imageLock: UIImageView!
   var files = [CommandManager.File]()
 
@@ -101,9 +110,7 @@ final class ViewController: UIViewController, CommandManagerDelegate, UITableVie
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    files = (CommandManager.shared.listFiles() ?? []).filter({ file in
-      file.filename != "." && file.filename != ".."
-    })
+    fetchAllFiles()
   }
   
     @IBAction func buttonConnectClicked(_ sender: UIButton) {
@@ -111,4 +118,10 @@ final class ViewController: UIViewController, CommandManagerDelegate, UITableVie
         switchServerTarget.isEnabled = false
         CommandManager.shared.connect()
     }
+  func fetchAllFiles() {
+    files = (CommandManager.shared.listFiles() ?? []).filter({ file in
+      file.filename != "." && file.filename != ".."
+    })
+  }
+  
 }

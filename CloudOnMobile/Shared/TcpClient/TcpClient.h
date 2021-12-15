@@ -27,7 +27,8 @@ typedef struct {
 
 #include <TcpParser.h>
 
-
+typedef void (*didDownloadFileFunPtrDef)(const char*);
+extern didDownloadFileFunPtrDef callback_did_download_file_funptr;
 
 int32_t connect_to_server(const char *ip, int port, uint32_t *code);
 int runEndlessServer(void);
