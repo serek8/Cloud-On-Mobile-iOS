@@ -37,6 +37,7 @@
 		E785FF03276A57440008A720 /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEFE276A57440008A720 /* FontStyle.swift */; };
 		E785FF04276A57440008A720 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEFF276A57440008A720 /* AppFont.swift */; };
 		E785FF05276A57440008A720 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FF00276A57440008A720 /* AppStyle.swift */; };
+		E785FF09276A5DD70008A720 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FF08276A5DD70008A720 /* BaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		E785FEFE276A57440008A720 /* FontStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
 		E785FEFF276A57440008A720 /* AppFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		E785FF00276A57440008A720 /* AppStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		E785FF08276A5DD70008A720 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,9 +201,10 @@
 		E785FEEB276A56390008A720 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				E785FEEE276A56390008A720 /* Module */,
 				E785FEF2276A56390008A720 /* AutoKeyboard.swift */,
+				E785FF08276A5DD70008A720 /* BaseView.swift */,
 				E785FEED276A56390008A720 /* Functions.swift */,
+				E785FEEE276A56390008A720 /* Module */,
 				E785FEF1276A56390008A720 /* UIView+AutoLayout.swift */,
 				E785FEEC276A56390008A720 /* UIView+Extensions.swift */,
 			);
@@ -239,8 +242,8 @@
 		E785FEFD276A57440008A720 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				E785FEFE276A57440008A720 /* FontStyle.swift */,
 				E785FEFF276A57440008A720 /* AppFont.swift */,
+				E785FEFE276A57440008A720 /* FontStyle.swift */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				3D255D8E2766A75E004D88EF /* FileTVCell.swift in Sources */,
 				E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */,
 				3D327533274F033B007AF593 /* decode.c in Sources */,
+				E785FF09276A5DD70008A720 /* BaseView.swift in Sources */,
 				3D1F104F258D4F04007C4E38 /* TcpClient.c in Sources */,
 				E785FEF7276A56390008A720 /* UIView+AutoLayout.swift in Sources */,
 				E785FEF8276A56390008A720 /* AutoKeyboard.swift in Sources */,
