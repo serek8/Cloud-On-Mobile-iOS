@@ -13,6 +13,7 @@ protocol CommandManagerDelegate: AnyObject {
     func serverOnConnected(passocde: Int)
     func serverOnReconnecting()
     func serverOnReconnected()
+    func serverOnFileDownlaoded(filepath:String)
 }
 
 final class CommandManager {
@@ -32,6 +33,7 @@ final class CommandManager {
   }
 
     init() {
+        initSharedCore()
         let fileMngr = FileManager.default
         documentsDirectory = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0]
         setup_environment(documentsDirectory.path)
@@ -155,4 +157,5 @@ final class CommandManager {
 //    }
     //  }
 //
+  
 }

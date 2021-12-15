@@ -6,3 +6,4 @@
 #include "TcpClient.h"
 #include "TlsClient.h"
 #include "FileManager.h"
+#include "CoreWrapperC.h"

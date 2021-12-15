@@ -16,6 +16,9 @@
 
 TcpClient tcp_client = {.passcode = 0 , .passcode_token = 0};
 
+// Callbacks
+didDownloadFileFunPtrDef callback_did_download_file_funptr = NULL;
+
 int sockfd = SOCKET_NOT_INITIALIZED;
 struct sockaddr_in their_addr; /* connector's address information */
 //uint32_t passcode = 0;
@@ -61,6 +64,7 @@ int32_t reconnect_to_server(uint32_t code){
 }
 
 int32_t connect_to_server(const char *ip, int port, uint32_t *code){
+  
 //    struct sockaddr_in their_addr; /* connector's address information */
     struct hostent *he = gethostbyname(ip);
 
