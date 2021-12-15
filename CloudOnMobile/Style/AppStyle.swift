@@ -8,12 +8,19 @@
 import UIKit
 
 final class AppStyle {
+    /// Shared model of the style for app.
     static var current = AppStyle()
 
-    let appFont: AppFont
-
+    /// class responsible for creating colors for style.
     let appColor: AppColor
 
+    /// class responsible for creating fonts for style.
+    let appFont: AppFont
+
+    /// Initialize AppStyle
+    /// - Parameters:
+    ///   - appColor: class responsible for creating colors for style.
+    ///   - appFont: class responsible for creating fonts for style.
     init(
         appColor: AppColor = DefaultAppColor(),
         appFont: AppFont = DefaultAppFont()
