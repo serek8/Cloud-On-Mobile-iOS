@@ -14,7 +14,7 @@ protocol AppColor {
     func color(for type: ColorStyle) -> UIColor
 }
 
-final class DefaultAppColor: AppColor {
+struct DefaultAppColor: AppColor {
     func color(for type: ColorStyle) -> UIColor {
         switch type {
         case .white:
@@ -23,17 +23,4 @@ final class DefaultAppColor: AppColor {
             return .black
         }
     }
-}
-
-protocol Styleable {
-    /// Sets style for element.
-    /// - Parameters:
-    ///   - style: Style to be applied.
-    func set(style: AppStyle)
-}
-
-// MARK: - UIView + Styleable
-
-extension UIView: Styleable {
-    func set(style: AppStyle) {}
 }

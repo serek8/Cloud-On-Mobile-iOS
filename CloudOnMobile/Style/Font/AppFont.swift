@@ -14,7 +14,7 @@ protocol AppFont {
     func font(for type: FontStyle) -> UIFont
 }
 
-final class DefaultAppFont: AppFont {
+struct DefaultAppFont: AppFont {
     func font(for type: FontStyle) -> UIFont {
         switch type {
         case .body16Regular:
