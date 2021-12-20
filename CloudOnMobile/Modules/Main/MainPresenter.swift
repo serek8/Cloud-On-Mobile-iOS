@@ -9,10 +9,14 @@ import Foundation
 
 protocol MainPresenterProtocol: PresenterProtocol {
     /// Gets access code.
-    func getAccessCode() async -> String
+    func getAccessCode() async -> Result<String, Error>
 }
 
 final class MainPresenter {
+    enum MainPresenterError: LocalizedError {
+        case fetchingAccessCode
+    }
+
     weak var viewController: MainViewController?
 
     private let commandManager: CommandManager
@@ -22,7 +26,6 @@ final class MainPresenter {
     ///   - commandManager: responsible for communicatio with server.
     init(commandManager: CommandManager) {
         self.commandManager = commandManager
-        commandManager.reconnectIfNeeded()
     }
 }
 
@@ -31,7 +34,21 @@ final class MainPresenter {
 extension MainPresenter: MainPresenterProtocol {
     func refreshData() {}
 
-    func getAccessCode() async -> String {
-        "XD"
+    func getAccessCode() async -> Result<String, Error> {
+        do {
+            let code = try await commandManager.connect()
+            return .success("\(code)")
+        } catch {
+            return .failure(MainPresenterError.fetchingAccessCode)
+        }
+    }
+}
+
+extension MainPresenter.MainPresenterError {
+    var localizedDescription: String {
+        switch self {
+        case .fetchingAccessCode:
+            return "Fetching access code failed"
+        }
     }
 }
