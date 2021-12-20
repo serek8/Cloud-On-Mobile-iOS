@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3D1F1035258D4D7C007C4E38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */; };
 		3D1F1037258D4D7C007C4E38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */; };
-		3D1F1039258D4D7C007C4E38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1038258D4D7C007C4E38 /* ViewController.swift */; };
 		3D1F103E258D4D7D007C4E38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F103D258D4D7D007C4E38 /* Assets.xcassets */; };
 		3D1F1041258D4D7D007C4E38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F103F258D4D7D007C4E38 /* LaunchScreen.storyboard */; };
 		3D1F104F258D4F04007C4E38 /* TcpClient.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F104E258D4F04007C4E38 /* TcpClient.c */; };
@@ -51,7 +50,6 @@
 		3D1F1031258D4D7C007C4E38 /* CloudOnMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudOnMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3D1F1038258D4D7C007C4E38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D1F103D258D4D7D007C4E38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D1F1040258D4D7D007C4E38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D1F1042258D4D7D007C4E38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				3D1F1042258D4D7D007C4E38 /* Info.plist */,
 				3D1F103F258D4D7D007C4E38 /* LaunchScreen.storyboard */,
 				3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */,
-				3D1F1038258D4D7C007C4E38 /* ViewController.swift */,
 			);
 			path = CloudOnMobile;
 			sourceTree = "<group>";
@@ -401,7 +398,6 @@
 				3D327538274F0F0D007AF593 /* TcpParser.c in Sources */,
 				3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */,
 				E785FF02276A57440008A720 /* ColorStyle.swift in Sources */,
-				3D1F1039258D4D7C007C4E38 /* ViewController.swift in Sources */,
 				E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */,
 				E747BECB277117C20046D036 /* UIStackView+Extensions.swift in Sources */,
 				3D1F1035258D4D7C007C4E38 /* AppDelegate.swift in Sources */,
