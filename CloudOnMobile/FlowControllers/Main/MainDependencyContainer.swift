@@ -15,7 +15,8 @@ protocol MainDependencyContainer {
 
 final class DefaultMainDependencyContainer: MainDependencyContainer {
     lazy var commandManager: CommandManager = {
-        CommandManager()
+        /// "192.168.50.10"
+        CommandManager(url: "cloudon.cc")
     }()
 
     // MARK: - Private
