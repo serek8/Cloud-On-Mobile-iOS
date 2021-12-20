@@ -18,7 +18,7 @@ struct DefaultAppColor: AppColor {
     func color(for type: ColorStyle) -> UIColor {
         switch type {
         case .white:
-            return .white
+            return UIColor(red: 255, green: 255, blue: 255, alpha: 1)
         case .background:
             return UIColor(red: 3 / 255, green: 14 / 255, blue: 29 / 255, alpha: 1)
         case .blue:
