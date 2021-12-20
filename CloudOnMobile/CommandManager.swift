@@ -5,19 +5,28 @@
 //  Created by Cloud On Mobile Team on 21/11/2021.
 //
 
-import Foundation
 import UIKit
 
 protocol CommandManagerDelegate: AnyObject {
     func serverOnClose()
-    func serverOnConnected(passocde: Int)
+    func serverOnConnected(passcode: Int)
     func serverOnReconnecting()
     func serverOnReconnected()
-    func serverOnFileDownlaoded(filepath:String)
+    func serverOnFileDownloaded(filepath: String)
 }
 
 final class CommandManager {
-    static let shared = CommandManager()
+    struct File: Codable {
+        /// Name of the file.
+        let fileName: String?
+    }
+
+    struct Request<T: Codable>: Codable {
+        var type: String?
+        var command: String?
+        var payload: T?
+    }
+
     var delegate: CommandManagerDelegate?
     var ip: String = ""
     //  var ip:String = "seredynski.com"
@@ -26,23 +35,12 @@ final class CommandManager {
     var code: UInt32 = 0
     let documentsDirectory: URL
     var isConnected = false
-  
-  
-  struct File : Codable {
-    let filename : String?
-  }
 
     init() {
         initSharedCore()
         let fileMngr = FileManager.default
         documentsDirectory = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0]
         setup_environment(documentsDirectory.path)
-    }
-
-    struct Request<T: Codable>: Codable {
-        var type: String?
-        var command: String?
-        var payload: T?
     }
 
     func connect() {
@@ -56,14 +54,15 @@ final class CommandManager {
                     return
                 }
                 self.isConnected = true
-                self.delegate?.serverOnConnected(passocde: Int(code.pointee))
+                self.delegate?.serverOnConnected(passcode: Int(code.pointee))
                 code.deallocate()
-              _ = self.endlessListen()
+                _ = self.endlessListen()
             }
         }
     }
 
     func reconnectIfNeeded() {
+        UIApplication.shared.isIdleTimerDisabled = true
         if should_reconnect() == 0 {
             return
         }
@@ -80,7 +79,7 @@ final class CommandManager {
                     self.delegate?.serverOnReconnected()
                 }
                 code.deallocate()
-              _ = self.endlessListen()
+                _ = self.endlessListen()
             }
         }
     }
@@ -91,7 +90,7 @@ final class CommandManager {
             isConnected = false
             return -1
         }
-      return Int(retval)
+        return Int(retval)
     }
 
     func copyDemoFiles() {
@@ -99,23 +98,23 @@ final class CommandManager {
         let mexicoImgPath = documentsDirectory.appendingPathComponent("Sample Image.png")
         try? sampleImage?.pngData()?.write(to: mexicoImgPath)
 
-    let samplePdfData = NSDataAsset.init(name: "sample-pdf")!.data
-    let samplePdfPath = documentsDirectory.appendingPathComponent("Sample Document.pdf")
-    try? samplePdfData.write(to: samplePdfPath)
+        let samplePdfData = NSDataAsset(name: "sample-pdf")!.data
+        let samplePdfPath = documentsDirectory.appendingPathComponent("Sample Document.pdf")
+        try? samplePdfData.write(to: samplePdfPath)
     }
 
     func listFiles() -> [File]? {
 //      let data_ptr = UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>.allocate(capacity: 1)
-      let data_out_ptr = UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>.allocate(capacity: 1)
-      let len = list_dir_locally(UnsafePointer<CChar>?.none, data_out_ptr);
-      if(len <= 0){
-        return nil
-      }
-      let decoder = JSONDecoder()
-      let data = Data(bytesNoCopy: data_out_ptr.pointee!, count: Int(len), deallocator: Data.Deallocator.free)
-      data_out_ptr.deallocate()
-      let request = try! decoder.decode([File].self, from: data)
-      return request;
+        let data_out_ptr = UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>.allocate(capacity: 1)
+        let len = list_dir_locally(UnsafePointer<CChar>?.none, data_out_ptr)
+        if len <= 0 {
+            return nil
+        }
+        let decoder = JSONDecoder()
+        let data = Data(bytesNoCopy: data_out_ptr.pointee!, count: Int(len), deallocator: Data.Deallocator.free)
+        data_out_ptr.deallocate()
+        let request = try! decoder.decode([File].self, from: data)
+        return request
         ////    access("sd", F_OK)
 //    setup_environment(documentsPath)
 //    let mexico_path = documentsPath + "/mexico.png"
@@ -157,5 +156,4 @@ final class CommandManager {
 //    }
     //  }
 //
-  
 }
