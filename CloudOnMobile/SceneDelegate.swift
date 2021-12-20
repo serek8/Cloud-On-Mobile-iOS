@@ -21,8 +21,5 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             dependencyContainer: DefaultMainDependencyContainer()
         )
         mainFlowController?.present()
-
-        UIApplication.shared.isIdleTimerDisabled = true
-        CommandManager.shared.reconnectIfNeeded()
     }
 }
