@@ -33,7 +33,7 @@ final class MainViewController: BaseViewController<MainPresenter> {
         $0.addCharactersSpacing(value: 26)
     }
 
-    private let getCodeButton = with(UIButton()) {
+    private let getCodeButton = with(UIButton(type: .system)) {
         $0.setTitle("Get access code", for: .normal)
         $0.titleLabel?.font = AppStyle.current.font(for: .regular, size: 16)
         $0.backgroundColor = AppStyle.current.color(for: .blue)
