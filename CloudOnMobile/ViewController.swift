@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController, CommandManagerDelegate, UITableViewDelegate, UITableViewDataSource {
+final class ViewController: UIViewController, CommandManagerDelegate {
     @IBOutlet var viewSettings: UIView!
     @IBOutlet var labelCodeValue: UILabel!
     @IBOutlet var imageLock: UIImageView!
@@ -30,14 +30,14 @@ final class ViewController: UIViewController, CommandManagerDelegate, UITableVie
         files.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemcell", for: indexPath) as? FileTVCell else {
-            fatalError("Unable to dequeue ReminderCell")
-        }
-        let index = indexPath.row
-        cell.labelTitle.text = files[index].filename
-        return cell
-    }
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemcell", for: indexPath) as? FileTVCell else {
+//            fatalError("Unable to dequeue ReminderCell")
+//        }
+//        let index = indexPath.row
+//        cell.labelTitle.text = files[index].filename
+//        return cell
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

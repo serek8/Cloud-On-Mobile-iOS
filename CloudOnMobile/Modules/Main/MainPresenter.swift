@@ -7,6 +7,21 @@
 
 import Foundation
 
-final class MainPresenter: PresenterProtocol {
+final class MainPresenter {
+    weak var viewController: MainViewController?
+
+    private let commandManager: CommandManager
+
+    /// Initialize Presenter
+    /// - Parameters:
+    ///   - commandManager: responsible for communicatio with server.
+    init(commandManager: CommandManager) {
+        self.commandManager = commandManager
+    }
+}
+
+// MARK: PresenterProtocol
+
+extension MainPresenter: PresenterProtocol {
     func refreshData() {}
 }
