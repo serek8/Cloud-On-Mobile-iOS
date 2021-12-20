@@ -21,6 +21,8 @@ struct DefaultAppColor: AppColor {
             return .white
         case .background:
             return .black
+        case .blue:
+            return UIColor(red: 0.055, green: 0.439, blue: 0.945, alpha: 1)
         }
     }
 }

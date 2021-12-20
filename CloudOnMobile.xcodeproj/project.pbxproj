@@ -30,6 +30,9 @@
 		E747BEBE27710C9F0046D036 /* FlowControllerPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEBD27710C9F0046D036 /* FlowControllerPresentation.swift */; };
 		E747BEC127710CC20046D036 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEC027710CC20046D036 /* MainFlowController.swift */; };
 		E747BEC427710D0D0046D036 /* MainDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEC327710D0D0046D036 /* MainDependencyContainer.swift */; };
+		E747BEC8277111520046D036 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E747BEC6277110100046D036 /* Poppins-Regular.ttf */; };
+		E747BECB277117C20046D036 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BECA277117C20046D036 /* UIStackView+Extensions.swift */; };
+		E747BECD277117F70046D036 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BECC277117F70046D036 /* UILabel+Extensions.swift */; };
 		E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEEC276A56390008A720 /* UIView+Extensions.swift */; };
 		E785FEF4276A56390008A720 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEED276A56390008A720 /* Functions.swift */; };
 		E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEEF276A56390008A720 /* BaseViewController.swift */; };
@@ -79,6 +82,9 @@
 		E747BEBD27710C9F0046D036 /* FlowControllerPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowControllerPresentation.swift; sourceTree = "<group>"; };
 		E747BEC027710CC20046D036 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		E747BEC327710D0D0046D036 /* MainDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDependencyContainer.swift; sourceTree = "<group>"; };
+		E747BEC6277110100046D036 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		E747BECA277117C20046D036 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		E747BECC277117F70046D036 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		E785FEEC276A56390008A720 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		E785FEED276A56390008A720 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		E785FEEF276A56390008A720 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -250,15 +256,33 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		E747BEC527710FCC0046D036 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E747BEC6277110100046D036 /* Poppins-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E747BEC9277117AB0046D036 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E785FEEC276A56390008A720 /* UIView+Extensions.swift */,
+				E747BECA277117C20046D036 /* UIStackView+Extensions.swift */,
+				E747BECC277117F70046D036 /* UILabel+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E785FEEB276A56390008A720 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				E747BEC9277117AB0046D036 /* Extensions */,
+				E785FEEE276A56390008A720 /* Module */,
 				E785FEF2276A56390008A720 /* AutoKeyboard.swift */,
 				E785FF08276A5DD70008A720 /* BaseView.swift */,
 				E785FEED276A56390008A720 /* Functions.swift */,
-				E785FEEE276A56390008A720 /* Module */,
 				E785FEF1276A56390008A720 /* UIView+AutoLayout.swift */,
-				E785FEEC276A56390008A720 /* UIView+Extensions.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -294,6 +318,7 @@
 		E785FEFD276A57440008A720 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				E747BEC527710FCC0046D036 /* Fonts */,
 				E785FEFF276A57440008A720 /* AppFont.swift */,
 				E785FEFE276A57440008A720 /* FontStyle.swift */,
 			);
@@ -358,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E747BEC8277111520046D036 /* Poppins-Regular.ttf in Resources */,
 				3D1F1041258D4D7D007C4E38 /* LaunchScreen.storyboard in Resources */,
 				3D1F103E258D4D7D007C4E38 /* Assets.xcassets in Resources */,
 			);
@@ -377,6 +403,7 @@
 				E785FF02276A57440008A720 /* ColorStyle.swift in Sources */,
 				3D1F1039258D4D7C007C4E38 /* ViewController.swift in Sources */,
 				E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */,
+				E747BECB277117C20046D036 /* UIStackView+Extensions.swift in Sources */,
 				3D1F1035258D4D7C007C4E38 /* AppDelegate.swift in Sources */,
 				E785FF01276A57440008A720 /* AppColor.swift in Sources */,
 				E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */,
@@ -399,6 +426,7 @@
 				3D1F1037258D4D7C007C4E38 /* SceneDelegate.swift in Sources */,
 				E747BEB92770FAC80046D036 /* MainPresenter.swift in Sources */,
 				3D327529274EFE75007AF593 /* cJSON.c in Sources */,
+				E747BECD277117F70046D036 /* UILabel+Extensions.swift in Sources */,
 				E747BEBE27710C9F0046D036 /* FlowControllerPresentation.swift in Sources */,
 				3D327528274EFE75007AF593 /* cJSON_Utils.c in Sources */,
 				3D327523274EF10F007AF593 /* FileManager.c in Sources */,
