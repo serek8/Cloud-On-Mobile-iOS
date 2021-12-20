@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainViewController: BaseViewController<MainPresenter> {
+final class MainViewController: BaseViewController {
     private let rootStackView = with(UIStackView()) {
         $0.axis = .vertical
         $0.distribution = .fill
@@ -34,8 +34,9 @@ final class MainViewController: BaseViewController<MainPresenter> {
     }
 
     private let getCodeButton = with(UIButton(type: .system)) {
-        $0.setTitle("Get access code", for: .normal)
         $0.titleLabel?.font = AppStyle.current.font(for: .regular, size: 16)
+        $0.setTitle("Get access code", for: .normal)
+        $0.setTitleColor(AppStyle.current.color(for: .white), for: .normal)
         $0.backgroundColor = AppStyle.current.color(for: .blue)
         $0.layer.cornerRadius = 12
         $0.contentEdgeInsets = UIEdgeInsets(
@@ -44,6 +45,14 @@ final class MainViewController: BaseViewController<MainPresenter> {
             bottom: 16,
             right: 24
         )
+        $0.addTarget(self, action: #selector(getCodeButtonTapped), for: .touchUpInside)
+    }
+
+    private let presenter: MainPresenterProtocol
+
+    init(presenter: MainPresenterProtocol) {
+        self.presenter = presenter
+        super.init(presenter: presenter)
     }
 
     override func viewDidLoad() {
@@ -83,5 +92,11 @@ private extension MainViewController {
         getCodeButton.addConstraints { [
             $0.equalConstant(.height, 56)
         ] }
+    }
+
+    @objc func getCodeButtonTapped() {
+        Task {
+            codeValueLabel.text = await presenter.getAccessCode()
+        }
     }
 }

@@ -7,6 +7,11 @@
 
 import Foundation
 
+protocol MainPresenterProtocol: PresenterProtocol {
+    /// Gets access code.
+    func getAccessCode() async -> String
+}
+
 final class MainPresenter {
     weak var viewController: MainViewController?
 
@@ -17,11 +22,16 @@ final class MainPresenter {
     ///   - commandManager: responsible for communicatio with server.
     init(commandManager: CommandManager) {
         self.commandManager = commandManager
+        commandManager.reconnectIfNeeded()
     }
 }
 
-// MARK: PresenterProtocol
+// MARK: MainPresenterProtocol
 
-extension MainPresenter: PresenterProtocol {
+extension MainPresenter: MainPresenterProtocol {
     func refreshData() {}
+
+    func getAccessCode() async -> String {
+        "XD"
+    }
 }
