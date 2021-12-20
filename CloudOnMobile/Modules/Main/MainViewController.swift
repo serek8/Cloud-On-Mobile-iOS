@@ -38,7 +38,7 @@ final class MainViewController: BaseViewController<MainPresenter> {
         $0.titleLabel?.font = AppStyle.current.font(for: .regular, size: 16)
         $0.backgroundColor = AppStyle.current.color(for: .blue)
         $0.layer.cornerRadius = 12
-        $0.titleEdgeInsets = UIEdgeInsets(
+        $0.contentEdgeInsets = UIEdgeInsets(
             top: 16,
             left: 24,
             bottom: 16,
