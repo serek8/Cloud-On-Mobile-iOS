@@ -96,7 +96,13 @@ private extension MainViewController {
 
     @objc func getCodeButtonTapped() {
         Task {
-            codeValueLabel.text = await presenter.getAccessCode()
+            let result = await presenter.getAccessCode()
+            switch result {
+            case let .success(code):
+                codeValueLabel.text = code
+            case let .failure(error):
+                codeValueLabel.text = error.localizedDescription
+            }
         }
     }
 }

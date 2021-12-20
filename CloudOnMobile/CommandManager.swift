@@ -7,15 +7,11 @@
 
 import UIKit
 
-protocol CommandManagerDelegate: AnyObject {
-    func serverOnClose()
-    func serverOnConnected(passcode: Int)
-    func serverOnReconnecting()
-    func serverOnReconnected()
-    func serverOnFileDownloaded(filepath: String)
-}
-
 final class CommandManager {
+    enum CommandManagerError: Error {
+        case connectionFailure
+    }
+
     struct File: Codable {
         /// Name of the file.
         let fileName: String?
@@ -27,34 +23,36 @@ final class CommandManager {
         var payload: T?
     }
 
-    var delegate: CommandManagerDelegate?
-    var ip: String = ""
-    //  var ip:String = "seredynski.com"
-    var port: Int = 9293
-    //  var port:Int = 443
-    var code: UInt32 = 0
-    let documentsDirectory: URL
-    var isConnected = false
+    private var code: UInt32 = 0
 
-    init() {
+    private var isConnected = false
+
+    private let ip: String
+
+    private let port: Int = 9293
+
+    private let documentsDirectory: URL
+
+    init(url: String) {
+        ip = url
         initSharedCore()
         let fileMngr = FileManager.default
         documentsDirectory = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0]
         setup_environment(documentsDirectory.path)
     }
 
-    func connect() {
-        Thread.detachNewThread {
+    func connect() async throws -> Int {
+        try await withUnsafeThrowingContinuation { continuation in
             self.ip.withCString { (ip_cstr: UnsafePointer<Int8>) in
-                print("Start tcp-client thread")
                 let code = UnsafeMutablePointer<UInt32>.allocate(capacity: 1)
-                if connect_to_server(ip_cstr, Int32(self.port), code) != 0 {
+                guard connect_to_server(ip_cstr, Int32(self.port), code) == 0 else {
                     self.isConnected = false
-                    self.delegate?.serverOnClose() // TODO: connection failure
+                    continuation.resume(throwing: CommandManagerError.connectionFailure)
                     return
                 }
                 self.isConnected = true
-                self.delegate?.serverOnConnected(passcode: Int(code.pointee))
+                let value = Int(code.pointee)
+                continuation.resume(returning: value)
                 code.deallocate()
                 _ = self.endlessListen()
             }
@@ -72,11 +70,11 @@ final class CommandManager {
                 let code = UnsafeMutablePointer<UInt32>.allocate(capacity: 1)
                 if reconnect_to_server(self.code) != 0 {
                     self.isConnected = false
-                    self.delegate?.serverOnClose()
+//                    self.delegate?.serverOnClose()
                     return
                 } else {
                     self.isConnected = true
-                    self.delegate?.serverOnReconnected()
+//                    self.delegate?.serverOnReconnected()
                 }
                 code.deallocate()
                 _ = self.endlessListen()
