@@ -106,17 +106,18 @@
 			children = (
 				E785FEEB276A56390008A720 /* Base */,
 				3D2400952769542500DF8F87 /* CoreWrapper */,
+				E747BEB42770FA110046D036 /* Modules */,
 				3D1F104A258D4EE8007C4E38 /* Shared */,
 				3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */,
-				3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */,
-				3D93B67D274AAF9A007364E8 /* CommandManager.swift */,
-				3D1F1038258D4D7C007C4E38 /* ViewController.swift */,
-				3D1F103A258D4D7C007C4E38 /* Main.storyboard */,
 				3D1F103D258D4D7D007C4E38 /* Assets.xcassets */,
-				3D1F103F258D4D7D007C4E38 /* LaunchScreen.storyboard */,
 				3D1F104C258D4F04007C4E38 /* CloudOnMobile-Bridging-Header.h */,
-				3D1F1042258D4D7D007C4E38 /* Info.plist */,
+				3D93B67D274AAF9A007364E8 /* CommandManager.swift */,
 				3D255D8D2766A75E004D88EF /* FileTVCell.swift */,
+				3D1F1042258D4D7D007C4E38 /* Info.plist */,
+				3D1F103F258D4D7D007C4E38 /* LaunchScreen.storyboard */,
+				3D1F103A258D4D7C007C4E38 /* Main.storyboard */,
+				3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */,
+				3D1F1038258D4D7C007C4E38 /* ViewController.swift */,
 			);
 			path = CloudOnMobile;
 			sourceTree = "<group>";
@@ -183,6 +184,13 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E747BEB42770FA110046D036 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		E785FEEB276A56390008A720 /* Base */ = {
