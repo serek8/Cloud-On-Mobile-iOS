@@ -7,7 +7,7 @@
 
 import UIKit
 
-public extension UIView {
+extension UIView {
     /// Add all subviews to a view in order defined in array.
     func addSubviews(_ subviews: [UIView]) {
         subviews.forEach(addSubview)
@@ -24,7 +24,7 @@ public extension UIView {
     ///   - color: background color of the view.
     static func spacingView(
         height: CGFloat,
-        color: UIColor? = AppStyle.current.appColor.color(for: .background)
+        color: UIColor? = AppStyle.current.color(for: .background)
     ) -> UIView {
         with(UIView()) {
             $0.backgroundColor = color
