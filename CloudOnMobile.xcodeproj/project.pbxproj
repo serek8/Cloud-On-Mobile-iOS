@@ -26,6 +26,8 @@
 		3D327538274F0F0D007AF593 /* TcpParser.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D327537274F0F0D007AF593 /* TcpParser.c */; };
 		3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D93B67D274AAF9A007364E8 /* CommandManager.swift */; };
 		3DD4F59B2757F242004FE0C2 /* TlsClient.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4F59A2757F242004FE0C2 /* TlsClient.c */; };
+		E747BEB72770FABE0046D036 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEB62770FABE0046D036 /* MainViewController.swift */; };
+		E747BEB92770FAC80046D036 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEB82770FAC80046D036 /* MainPresenter.swift */; };
 		E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEEC276A56390008A720 /* UIView+Extensions.swift */; };
 		E785FEF4276A56390008A720 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEED276A56390008A720 /* Functions.swift */; };
 		E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEEF276A56390008A720 /* BaseViewController.swift */; };
@@ -65,6 +67,8 @@
 		3D93B67D274AAF9A007364E8 /* CommandManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandManager.swift; sourceTree = "<group>"; };
 		3DD4F5992757F242004FE0C2 /* TlsClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TlsClient.h; sourceTree = "<group>"; };
 		3DD4F59A2757F242004FE0C2 /* TlsClient.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TlsClient.c; sourceTree = "<group>"; };
+		E747BEB62770FABE0046D036 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E747BEB82770FAC80046D036 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		E785FEEC276A56390008A720 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		E785FEED276A56390008A720 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		E785FEEF276A56390008A720 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -189,8 +193,18 @@
 		E747BEB42770FA110046D036 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E747BEB52770FAAC0046D036 /* Main */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		E747BEB52770FAAC0046D036 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E747BEB62770FABE0046D036 /* MainViewController.swift */,
+				E747BEB82770FAC80046D036 /* MainPresenter.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		E785FEEB276A56390008A720 /* Base */ = {
@@ -286,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DD4F59B2757F242004FE0C2 /* TlsClient.c in Sources */,
+				E747BEB72770FABE0046D036 /* MainViewController.swift in Sources */,
 				3D327538274F0F0D007AF593 /* TcpParser.c in Sources */,
 				3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */,
 				3D1F1039258D4D7C007C4E38 /* ViewController.swift in Sources */,
@@ -303,6 +318,7 @@
 				3D2400982769550F00DF8F87 /* CoreWrapperC.c in Sources */,
 				E785FEF6276A56390008A720 /* Presenter.swift in Sources */,
 				3D1F1037258D4D7C007C4E38 /* SceneDelegate.swift in Sources */,
+				E747BEB92770FAC80046D036 /* MainPresenter.swift in Sources */,
 				3D327529274EFE75007AF593 /* cJSON.c in Sources */,
 				3D327528274EFE75007AF593 /* cJSON_Utils.c in Sources */,
 				3D327523274EF10F007AF593 /* FileManager.c in Sources */,
