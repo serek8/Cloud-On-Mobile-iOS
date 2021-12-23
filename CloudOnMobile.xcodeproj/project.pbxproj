@@ -13,19 +13,21 @@
 		3D1F103C258D4D7C007C4E38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F103A258D4D7C007C4E38 /* Main.storyboard */; };
 		3D1F103E258D4D7D007C4E38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F103D258D4D7D007C4E38 /* Assets.xcassets */; };
 		3D1F1041258D4D7D007C4E38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F103F258D4D7D007C4E38 /* LaunchScreen.storyboard */; };
-		3D1F104F258D4F04007C4E38 /* TcpClient.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F104E258D4F04007C4E38 /* TcpClient.c */; };
 		3D2400982769550F00DF8F87 /* CoreWrapperC.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D2400972769550F00DF8F87 /* CoreWrapperC.c */; };
 		3D24009A2769586A00DF8F87 /* CoreWrapperSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2400992769586A00DF8F87 /* CoreWrapperSwift.swift */; };
 		3D255D8E2766A75E004D88EF /* FileTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D255D8D2766A75E004D88EF /* FileTVCell.swift */; };
-		3D327523274EF10F007AF593 /* FileManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D327522274EF10F007AF593 /* FileManager.c */; };
-		3D327528274EFE75007AF593 /* cJSON_Utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D327525274EFE75007AF593 /* cJSON_Utils.c */; };
-		3D327529274EFE75007AF593 /* cJSON.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D327526274EFE75007AF593 /* cJSON.c */; };
-		3D327532274F033B007AF593 /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D32752E274F033B007AF593 /* buffer.c */; };
-		3D327533274F033B007AF593 /* decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D32752F274F033B007AF593 /* decode.c */; };
-		3D327534274F033B007AF593 /* encode.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D327530274F033B007AF593 /* encode.c */; };
-		3D327538274F0F0D007AF593 /* TcpParser.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D327537274F0F0D007AF593 /* TcpParser.c */; };
 		3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D93B67D274AAF9A007364E8 /* CommandManager.swift */; };
-		3DD4F59B2757F242004FE0C2 /* TlsClient.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4F59A2757F242004FE0C2 /* TlsClient.c */; };
+		3DF3729627752452001C1400 /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3728427752452001C1400 /* buffer.c */; };
+		3DF3729727752452001C1400 /* decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3728627752452001C1400 /* decode.c */; };
+		3DF3729827752452001C1400 /* encode.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3728727752452001C1400 /* encode.c */; };
+		3DF3729927752452001C1400 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3DF3728827752452001C1400 /* README.md */; };
+		3DF3729A27752452001C1400 /* TcpParser.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3728A27752452001C1400 /* TcpParser.c */; };
+		3DF3729B27752452001C1400 /* TcpClient.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3728B27752452001C1400 /* TcpClient.c */; };
+		3DF3729C27752452001C1400 /* TlsClient.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3728E27752452001C1400 /* TlsClient.c */; };
+		3DF3729D27752452001C1400 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3DF3729027752452001C1400 /* .gitignore */; };
+		3DF3729E27752452001C1400 /* cJSON.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3729127752452001C1400 /* cJSON.c */; };
+		3DF3729F27752452001C1400 /* FileManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3729427752452001C1400 /* FileManager.c */; };
+		3DF372A027752452001C1400 /* cJSON_Utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DF3729527752452001C1400 /* cJSON_Utils.c */; };
 		E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEEC276A56390008A720 /* UIView+Extensions.swift */; };
 		E785FEF4276A56390008A720 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEED276A56390008A720 /* Functions.swift */; };
 		E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEEF276A56390008A720 /* BaseViewController.swift */; };
@@ -44,27 +46,29 @@
 		3D1F1040258D4D7D007C4E38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D1F1042258D4D7D007C4E38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D1F104C258D4F04007C4E38 /* CloudOnMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CloudOnMobile-Bridging-Header.h"; sourceTree = "<group>"; };
-		3D1F104D258D4F04007C4E38 /* TcpClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TcpClient.h; sourceTree = "<group>"; };
-		3D1F104E258D4F04007C4E38 /* TcpClient.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TcpClient.c; sourceTree = "<group>"; };
 		3D2400962769550F00DF8F87 /* CoreWrapperC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreWrapperC.h; sourceTree = "<group>"; };
 		3D2400972769550F00DF8F87 /* CoreWrapperC.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CoreWrapperC.c; sourceTree = "<group>"; };
 		3D2400992769586A00DF8F87 /* CoreWrapperSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreWrapperSwift.swift; sourceTree = "<group>"; };
 		3D255D8D2766A75E004D88EF /* FileTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTVCell.swift; sourceTree = "<group>"; };
-		3D327521274EF10F007AF593 /* FileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
-		3D327522274EF10F007AF593 /* FileManager.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = FileManager.c; sourceTree = "<group>"; };
-		3D327524274EFE75007AF593 /* cJSON_Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cJSON_Utils.h; sourceTree = "<group>"; };
-		3D327525274EFE75007AF593 /* cJSON_Utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cJSON_Utils.c; sourceTree = "<group>"; };
-		3D327526274EFE75007AF593 /* cJSON.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cJSON.c; sourceTree = "<group>"; };
-		3D327527274EFE75007AF593 /* cJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cJSON.h; sourceTree = "<group>"; };
-		3D32752E274F033B007AF593 /* buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = buffer.c; sourceTree = "<group>"; };
-		3D32752F274F033B007AF593 /* decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = decode.c; sourceTree = "<group>"; };
-		3D327530274F033B007AF593 /* encode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = encode.c; sourceTree = "<group>"; };
-		3D327531274F033B007AF593 /* b64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b64.h; sourceTree = "<group>"; };
-		3D327536274F0F0D007AF593 /* TcpParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TcpParser.h; sourceTree = "<group>"; };
-		3D327537274F0F0D007AF593 /* TcpParser.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TcpParser.c; sourceTree = "<group>"; };
 		3D93B67D274AAF9A007364E8 /* CommandManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandManager.swift; sourceTree = "<group>"; };
-		3DD4F5992757F242004FE0C2 /* TlsClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TlsClient.h; sourceTree = "<group>"; };
-		3DD4F59A2757F242004FE0C2 /* TlsClient.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TlsClient.c; sourceTree = "<group>"; };
+		3DF3728127752452001C1400 /* cJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cJSON.h; sourceTree = "<group>"; };
+		3DF3728227752452001C1400 /* cJSON_Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cJSON_Utils.h; sourceTree = "<group>"; };
+		3DF3728427752452001C1400 /* buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = buffer.c; sourceTree = "<group>"; };
+		3DF3728527752452001C1400 /* b64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b64.h; sourceTree = "<group>"; };
+		3DF3728627752452001C1400 /* decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = decode.c; sourceTree = "<group>"; };
+		3DF3728727752452001C1400 /* encode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = encode.c; sourceTree = "<group>"; };
+		3DF3728827752452001C1400 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3DF3728A27752452001C1400 /* TcpParser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TcpParser.c; sourceTree = "<group>"; };
+		3DF3728B27752452001C1400 /* TcpClient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TcpClient.c; sourceTree = "<group>"; };
+		3DF3728C27752452001C1400 /* TlsClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TlsClient.h; sourceTree = "<group>"; };
+		3DF3728D27752452001C1400 /* TcpParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TcpParser.h; sourceTree = "<group>"; };
+		3DF3728E27752452001C1400 /* TlsClient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TlsClient.c; sourceTree = "<group>"; };
+		3DF3728F27752452001C1400 /* TcpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TcpClient.h; sourceTree = "<group>"; };
+		3DF3729027752452001C1400 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3DF3729127752452001C1400 /* cJSON.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cJSON.c; sourceTree = "<group>"; };
+		3DF3729327752452001C1400 /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		3DF3729427752452001C1400 /* FileManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = FileManager.c; sourceTree = "<group>"; };
+		3DF3729527752452001C1400 /* cJSON_Utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cJSON_Utils.c; sourceTree = "<group>"; };
 		E785FEEC276A56390008A720 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		E785FEED276A56390008A720 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		E785FEEF276A56390008A720 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				3D1F1033258D4D7C007C4E38 /* CloudOnMobile */,
+				3DF3728027752452001C1400 /* Core */,
 				3D1F1032258D4D7C007C4E38 /* Products */,
 				3DD4F5922757EDFC004FE0C2 /* Frameworks */,
 			);
@@ -106,7 +111,6 @@
 			children = (
 				E785FEEB276A56390008A720 /* Base */,
 				3D2400952769542500DF8F87 /* CoreWrapper */,
-				3D1F104A258D4EE8007C4E38 /* Shared */,
 				3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */,
 				3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */,
 				3D93B67D274AAF9A007364E8 /* CommandManager.swift */,
@@ -121,33 +125,6 @@
 			path = CloudOnMobile;
 			sourceTree = "<group>";
 		};
-		3D1F104A258D4EE8007C4E38 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				3D327535274F0DF5007AF593 /* FileManager */,
-				3D32752D274F0329007AF593 /* base64 */,
-				3D327525274EFE75007AF593 /* cJSON_Utils.c */,
-				3D327524274EFE75007AF593 /* cJSON_Utils.h */,
-				3D327526274EFE75007AF593 /* cJSON.c */,
-				3D327527274EFE75007AF593 /* cJSON.h */,
-				3D1F104B258D4EF0007C4E38 /* TcpClient */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		3D1F104B258D4EF0007C4E38 /* TcpClient */ = {
-			isa = PBXGroup;
-			children = (
-				3D1F104D258D4F04007C4E38 /* TcpClient.h */,
-				3D1F104E258D4F04007C4E38 /* TcpClient.c */,
-				3D327536274F0F0D007AF593 /* TcpParser.h */,
-				3D327537274F0F0D007AF593 /* TcpParser.c */,
-				3DD4F5992757F242004FE0C2 /* TlsClient.h */,
-				3DD4F59A2757F242004FE0C2 /* TlsClient.c */,
-			);
-			path = TcpClient;
-			sourceTree = "<group>";
-		};
 		3D2400952769542500DF8F87 /* CoreWrapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,31 +135,60 @@
 			path = CoreWrapper;
 			sourceTree = "<group>";
 		};
-		3D32752D274F0329007AF593 /* base64 */ = {
-			isa = PBXGroup;
-			children = (
-				3D327531274F033B007AF593 /* b64.h */,
-				3D32752E274F033B007AF593 /* buffer.c */,
-				3D32752F274F033B007AF593 /* decode.c */,
-				3D327530274F033B007AF593 /* encode.c */,
-			);
-			path = base64;
-			sourceTree = "<group>";
-		};
-		3D327535274F0DF5007AF593 /* FileManager */ = {
-			isa = PBXGroup;
-			children = (
-				3D327521274EF10F007AF593 /* FileManager.h */,
-				3D327522274EF10F007AF593 /* FileManager.c */,
-			);
-			path = FileManager;
-			sourceTree = "<group>";
-		};
 		3DD4F5922757EDFC004FE0C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DF3728027752452001C1400 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3DF3728127752452001C1400 /* cJSON.h */,
+				3DF3728227752452001C1400 /* cJSON_Utils.h */,
+				3DF3728327752452001C1400 /* base64 */,
+				3DF3728827752452001C1400 /* README.md */,
+				3DF3728927752452001C1400 /* TcpClient */,
+				3DF3729027752452001C1400 /* .gitignore */,
+				3DF3729127752452001C1400 /* cJSON.c */,
+				3DF3729227752452001C1400 /* FileManager */,
+				3DF3729527752452001C1400 /* cJSON_Utils.c */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3DF3728327752452001C1400 /* base64 */ = {
+			isa = PBXGroup;
+			children = (
+				3DF3728427752452001C1400 /* buffer.c */,
+				3DF3728527752452001C1400 /* b64.h */,
+				3DF3728627752452001C1400 /* decode.c */,
+				3DF3728727752452001C1400 /* encode.c */,
+			);
+			path = base64;
+			sourceTree = "<group>";
+		};
+		3DF3728927752452001C1400 /* TcpClient */ = {
+			isa = PBXGroup;
+			children = (
+				3DF3728A27752452001C1400 /* TcpParser.c */,
+				3DF3728B27752452001C1400 /* TcpClient.c */,
+				3DF3728C27752452001C1400 /* TlsClient.h */,
+				3DF3728D27752452001C1400 /* TcpParser.h */,
+				3DF3728E27752452001C1400 /* TlsClient.c */,
+				3DF3728F27752452001C1400 /* TcpClient.h */,
+			);
+			path = TcpClient;
+			sourceTree = "<group>";
+		};
+		3DF3729227752452001C1400 /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				3DF3729327752452001C1400 /* FileManager.h */,
+				3DF3729427752452001C1400 /* FileManager.c */,
+			);
+			path = FileManager;
 			sourceTree = "<group>";
 		};
 		E785FEEB276A56390008A720 /* Base */ = {
@@ -264,8 +270,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DF3729D27752452001C1400 /* .gitignore in Resources */,
 				3D1F1041258D4D7D007C4E38 /* LaunchScreen.storyboard in Resources */,
 				3D1F103E258D4D7D007C4E38 /* Assets.xcassets in Resources */,
+				3DF3729927752452001C1400 /* README.md in Resources */,
 				3D1F103C258D4D7C007C4E38 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,28 +285,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DD4F59B2757F242004FE0C2 /* TlsClient.c in Sources */,
-				3D327538274F0F0D007AF593 /* TcpParser.c in Sources */,
 				3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */,
 				3D1F1039258D4D7C007C4E38 /* ViewController.swift in Sources */,
 				E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */,
+				3DF3729A27752452001C1400 /* TcpParser.c in Sources */,
 				3D1F1035258D4D7C007C4E38 /* AppDelegate.swift in Sources */,
 				3D255D8E2766A75E004D88EF /* FileTVCell.swift in Sources */,
 				E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */,
-				3D327533274F033B007AF593 /* decode.c in Sources */,
-				3D1F104F258D4F04007C4E38 /* TcpClient.c in Sources */,
 				E785FEF7276A56390008A720 /* UIView+AutoLayout.swift in Sources */,
+				3DF3729827752452001C1400 /* encode.c in Sources */,
+				3DF3729C27752452001C1400 /* TlsClient.c in Sources */,
+				3DF3729627752452001C1400 /* buffer.c in Sources */,
 				E785FEF8276A56390008A720 /* AutoKeyboard.swift in Sources */,
 				3D24009A2769586A00DF8F87 /* CoreWrapperSwift.swift in Sources */,
-				3D327532274F033B007AF593 /* buffer.c in Sources */,
+				3DF3729E27752452001C1400 /* cJSON.c in Sources */,
 				E785FEF4276A56390008A720 /* Functions.swift in Sources */,
 				3D2400982769550F00DF8F87 /* CoreWrapperC.c in Sources */,
+				3DF3729B27752452001C1400 /* TcpClient.c in Sources */,
+				3DF372A027752452001C1400 /* cJSON_Utils.c in Sources */,
+				3DF3729F27752452001C1400 /* FileManager.c in Sources */,
 				E785FEF6276A56390008A720 /* Presenter.swift in Sources */,
+				3DF3729727752452001C1400 /* decode.c in Sources */,
 				3D1F1037258D4D7C007C4E38 /* SceneDelegate.swift in Sources */,
-				3D327529274EFE75007AF593 /* cJSON.c in Sources */,
-				3D327528274EFE75007AF593 /* cJSON_Utils.c in Sources */,
-				3D327523274EF10F007AF593 /* FileManager.c in Sources */,
-				3D327534274F033B007AF593 /* encode.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,8 +457,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/CloudOnMobile/Shared\"/**",
 					"\"$(SRCROOT)/include\"",
+					"\"$(SRCROOT)/Core\"/**",
 				);
 				INFOPLIST_FILE = CloudOnMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -494,8 +502,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/CloudOnMobile/Shared\"/**",
 					"\"$(SRCROOT)/include\"",
+					"\"$(SRCROOT)/Core\"/**",
 				);
 				INFOPLIST_FILE = CloudOnMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
