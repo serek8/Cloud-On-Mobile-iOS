@@ -81,6 +81,7 @@ final class ViewController: UIViewController, CommandManagerDelegate, UITableVie
         }
         let index = indexPath.row
         cell.labelTitle.text = files[index].filename
+        cell.setSize(size: files[index].size)
         return cell
     }
 

@@ -132,6 +132,7 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="labelSize" destination="8F5-M7-HRH" id="r2b-G3-jkO"/>
                                                     <outlet property="labelTitle" destination="4RN-fG-pig" id="G0T-ng-FqI"/>
                                                 </connections>
                                             </tableViewCell>

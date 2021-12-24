@@ -29,6 +29,7 @@ final class CommandManager {
   
   struct File : Codable {
     let filename : String?
+    let size : Int
   }
 
     init() {
@@ -115,46 +116,5 @@ final class CommandManager {
       data_out_ptr.deallocate()
       let request = try! decoder.decode([File].self, from: data)
       return request;
-        ////    access("sd", F_OK)
-//    setup_environment(documentsPath)
-//    let mexico_path = documentsPath + "/mexico.png"
-//
-//    send_file(mexico_path)
-
-//    documentsDirectory.appendingPathComponent("sample-image.png").path.utf8CString.withUnsafeBufferPointer { s in
-//      send_file(s.baseAddress)
-//      list_dir(s.baseAddress);
-//    }
-
-//    let fileNames = try? fileMngr.contentsOfDirectory(atPath:documentsPath)
-//    var request = Request(type: "forward", command: "list-files", payload: fileNames);
-//
-//    let encoder = JSONEncoder()
-//    encoder.outputFormatting = .withoutEscapingSlashes
-//    let data = try! encoder.encode(request)
-//
-//    let response = try! encoder.encode(request)
-//    response.withUnsafeBytes {(bytes: UnsafePointer<CChar>)->Void in
-//      send_string_to_server(bytes)
-//    }
     }
-
-    //  func sendFile(path: String){
-//    let fileMngr = FileManager.default;
-//    let docs = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0].path
-//    let fileNames = try? fileMngr.contentsOfDirectory(atPath:docs)
-//    let fileNames = try? fileMngr.
-//    var request = Request(type: "forward", command: "list-files", payload: fileNames);
-//
-//    let encoder = JSONEncoder()
-//    encoder.outputFormatting = .withoutEscapingSlashes
-//    let data = try! encoder.encode(request)
-//
-//    let response = try! encoder.encode(request)
-//    response.withUnsafeBytes {(bytes: UnsafePointer<CChar>)->Void in
-//      send_string_to_server(bytes)
-//    }
-    //  }
-//
-  
 }

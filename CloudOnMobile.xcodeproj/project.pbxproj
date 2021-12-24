@@ -455,7 +455,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 795PZ6Q4ZU;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/include\"",
 					"\"$(SRCROOT)/Core\"/**",
@@ -484,7 +484,7 @@
 					"-lssl_$(CURRENT_ARCH)",
 					"-lcrypto_$(CURRENT_ARCH)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seredynski.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -500,7 +500,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 795PZ6Q4ZU;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/include\"",
 					"\"$(SRCROOT)/Core\"/**",
@@ -529,7 +529,7 @@
 					"-lssl_$(CURRENT_ARCH)",
 					"-lcrypto_$(CURRENT_ARCH)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seredynski.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
