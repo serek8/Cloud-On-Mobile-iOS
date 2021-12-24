@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -47,12 +47,45 @@
                                     <action selector="buttonSettingsClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aTX-WN-Jwq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="251" text="x x x x" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRr-a6-a4w">
-                                <rect key="frame" x="162.5" y="352" width="89.5" height="39.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="251" text="x x x   x x x" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRr-a6-a4w">
+                                <rect key="frame" x="131.5" y="352" width="151.5" height="39.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="33"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="accessCodeLocked" translatesAutoresizingMaskIntoConstraints="NO" id="VgQ-6d-i5D">
+                                <rect key="frame" x="152.5" y="174" width="109" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VgQ-6d-i5D" secondAttribute="height" multiplier="109/82" id="Gec-Hv-PV8"/>
+                                    <constraint firstAttribute="width" constant="109" id="Vfu-n0-srn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zg-D8-9i0">
+                                <rect key="frame" x="161" y="296" width="92" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W61-w0-v0R">
+                                <rect key="frame" x="116" y="467.5" width="182" height="55.5"/>
+                                <color key="backgroundColor" red="0.054901960780000002" green="0.43921568630000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="W61-w0-v0R" secondAttribute="height" multiplier="183:56" id="4r1-Sa-udM"/>
+                                    <constraint firstAttribute="width" priority="700" constant="182" id="TdR-kV-bny"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Get access code"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonConnectClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E0S-ZK-xqU"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etB-EM-hhe">
                                 <rect key="frame" x="0.0" y="613" width="414" height="249"/>
                                 <subviews>
@@ -151,8 +184,10 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="wNp-eO-7Zq" firstAttribute="top" secondItem="etB-EM-hhe" secondAttribute="top" constant="8" id="4Su-JM-Fyj"/>
+                                    <constraint firstAttribute="height" priority="150" constant="249" id="AHE-L9-vZa"/>
                                     <constraint firstAttribute="bottom" secondItem="qeg-xm-7x0" secondAttribute="bottom" id="BED-E4-KFO"/>
                                     <constraint firstItem="qeg-xm-7x0" firstAttribute="leading" secondItem="etB-EM-hhe" secondAttribute="leading" id="SrE-oh-gFw"/>
                                     <constraint firstItem="wNp-eO-7Zq" firstAttribute="centerX" secondItem="etB-EM-hhe" secondAttribute="centerX" id="aVR-Bk-z5V"/>
@@ -167,40 +202,10 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                            </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="accessCodeLocked" translatesAutoresizingMaskIntoConstraints="NO" id="VgQ-6d-i5D">
-                                <rect key="frame" x="152.5" y="174" width="109" height="82"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="VgQ-6d-i5D" secondAttribute="height" multiplier="109/82" id="Gec-Hv-PV8"/>
-                                    <constraint firstAttribute="width" constant="109" id="Vfu-n0-srn"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zg-D8-9i0">
-                                <rect key="frame" x="161" y="296" width="92" height="20"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W61-w0-v0R">
-                                <rect key="frame" x="116" y="467.5" width="182" height="55.5"/>
-                                <color key="backgroundColor" red="0.054901960780000002" green="0.43921568630000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="W61-w0-v0R" secondAttribute="height" multiplier="183:56" id="4r1-Sa-udM"/>
-                                    <constraint firstAttribute="width" priority="700" constant="182" id="TdR-kV-bny"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Get access code"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonConnectClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E0S-ZK-xqU"/>
+                                    <outletCollection property="gestureRecognizers" destination="1ma-I9-yMq" appends="YES" id="8h7-97-R3y"/>
                                 </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -213,7 +218,7 @@
                             <constraint firstItem="rRr-a6-a4w" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LWU-Yt-SzC"/>
                             <constraint firstItem="etB-EM-hhe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U3E-K8-UMs"/>
                             <constraint firstItem="W61-w0-v0R" firstAttribute="top" secondItem="rRr-a6-a4w" secondAttribute="bottom" constant="76" id="Vb4-R1-9EP"/>
-                            <constraint firstItem="etB-EM-hhe" firstAttribute="top" secondItem="W61-w0-v0R" secondAttribute="bottom" priority="500" constant="90" id="YZf-Td-jyj"/>
+                            <constraint firstItem="etB-EM-hhe" firstAttribute="top" secondItem="W61-w0-v0R" secondAttribute="bottom" priority="200" constant="90" id="YZf-Td-jyj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="etB-EM-hhe" secondAttribute="bottom" id="YzU-G7-NED"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="etB-EM-hhe" secondAttribute="trailing" id="bvI-s2-QiY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eJZ-mM-IQl" secondAttribute="trailing" id="eLN-g9-37b"/>
@@ -227,6 +232,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="constraintPasscodeBottom" destination="YZf-Td-jyj" id="O0M-n8-06F"/>
+                        <outlet property="constraintfileListHeight" destination="AHE-L9-vZa" id="dZ2-6y-3R9"/>
+                        <outlet property="fileListView" destination="etB-EM-hhe" id="ZWJ-qd-M2M"/>
                         <outlet property="imageLock" destination="VgQ-6d-i5D" id="25N-N2-vef"/>
                         <outlet property="labelCodeValue" destination="rRr-a6-a4w" id="9uS-dE-mso"/>
                         <outlet property="switchServerTarget" destination="ucg-Wp-IZf" id="Tlk-Ag-o4t"/>
@@ -235,6 +243,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="1ma-I9-yMq">
+                    <connections>
+                        <action selector="panGesture:" destination="BYZ-38-t0r" id="9cH-fR-GOT"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="49.553571428571423"/>
         </scene>

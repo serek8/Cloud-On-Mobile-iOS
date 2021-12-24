@@ -11,11 +11,56 @@ final class ViewController: UIViewController, CommandManagerDelegate, UITableVie
     @IBOutlet var viewSettings: UIView!
     @IBOutlet var labelCodeValue: UILabel!
     @IBOutlet var imageLock: UIImageView!
+    @IBOutlet weak var fileListView: UIView!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var switchServerTarget: UISwitch!
 
-    var files = [CommandManager.File]()
+  @IBOutlet weak var constraintfileListHeight: NSLayoutConstraint!
+  @IBOutlet weak var constraintPasscodeBottom: NSLayoutConstraint!
+  var files = [CommandManager.File]()
 
+    @IBAction func panGesture(_ gesture: UIPanGestureRecognizer) {
+      let location = gesture.location(in: self.view)
+      let vol = gesture.velocity(in: self.view)
+      
+      self.constraintPasscodeBottom.priority = UILayoutPriority(rawValue: 200)
+      self.constraintfileListHeight.priority = UILayoutPriority(rawValue: 230)
+      if(gesture.state != .ended){
+        constraintfileListHeight.constant = self.view.frame.height - location.y
+        gesture.setTranslation(.zero, in: view)
+      }
+      else
+      {
+        if(vol.y < -100){
+          expandList()
+        }
+        if(vol.y > 100){
+          collapseList()
+        }
+        if(self.constraintfileListHeight.constant > self.view.frame.height/2){
+          expandList()
+        }
+        else{
+          collapseList()
+        }
+      }
+    }
+  
+  func collapseList(){
+    UIView.animate(withDuration: 0.5) {
+      self.constraintPasscodeBottom.priority = UILayoutPriority(rawValue: 230)
+      self.constraintfileListHeight.priority = UILayoutPriority(rawValue: 200)
+      self.view.layoutIfNeeded()
+    }
+  }
+  
+  func expandList() {
+    UIView.animate(withDuration: 0.5) {
+      self.constraintfileListHeight.constant = self.view.frame.height - 40
+      self.view.layoutIfNeeded()
+    }
+  }
+  
     @IBAction func buttonSettingsClicked(_ sender: UIButton) {
         viewSettings.isHidden = !viewSettings.isHidden
     }
@@ -52,7 +97,9 @@ final class ViewController: UIViewController, CommandManagerDelegate, UITableVie
 
     func serverOnConnected(passocde: Int) {
         DispatchQueue.main.async {
-            self.labelCodeValue.text = "\(passocde)"
+          var passcodeText = "\(passocde)"
+          passcodeText = passcodeText.prefix(3) + "  " + passcodeText.suffix(3)
+            self.labelCodeValue.text = "\(passcodeText)"
             UIApplication.shared.isIdleTimerDisabled = true
             self.imageLock.image = UIImage(named: "accessCodeUnlocked")
         }

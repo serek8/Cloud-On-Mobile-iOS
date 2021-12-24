@@ -20,7 +20,6 @@ final class CommandManager {
     static let shared = CommandManager()
     var delegate: CommandManagerDelegate?
     var ip: String = ""
-    //  var ip:String = "seredynski.com"
     var port: Int = 9293
     //  var port:Int = 443
     var code: UInt32 = 0
