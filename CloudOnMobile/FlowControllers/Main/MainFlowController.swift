@@ -32,6 +32,7 @@ final class MainFlowController: FlowController {
     ) {
         self.dependencyContainer = dependencyContainer
         navigationController = UINavigationController()
+        navigationController.navigationBar.isHidden = true
         presentation = .root
         self.window = window
         presentMainScreen()
@@ -46,9 +47,18 @@ final class MainFlowController: FlowController {
 
 private extension MainFlowController {
     func presentMainScreen() {
-        let presenter = MainPresenter(commandManager: dependencyContainer.commandManager)
-        let viewController = MainViewController(presenter: presenter)
-        presenter.viewController = viewController
-        navigationController.setViewControllers([viewController], animated: false)
+        let mainPresenter = MainPresenter(commandManager: dependencyContainer.commandManager)
+        let mainViewController = MainViewController(presenter: mainPresenter)
+        mainPresenter.viewController = mainViewController
+
+        let filesPresenter = FilesPresenter()
+        let filesViewController = FilesViewController(presenter: filesPresenter)
+
+        let sheetController = SheetPresentationController(
+            backgroundViewController: mainViewController,
+            sheetContentViewController: filesViewController
+        )
+
+        navigationController.setViewControllers([sheetController], animated: false)
     }
 }
