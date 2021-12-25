@@ -32,6 +32,11 @@
 		E747BEC8277111520046D036 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E747BEC6277110100046D036 /* Poppins-Regular.ttf */; };
 		E747BECB277117C20046D036 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BECA277117C20046D036 /* UIStackView+Extensions.swift */; };
 		E747BECD277117F70046D036 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BECC277117F70046D036 /* UILabel+Extensions.swift */; };
+		E747BED02771C5F00046D036 /* SheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BECF2771C5F00046D036 /* SheetPresentationController.swift */; };
+		E747BED22771C6650046D036 /* SheetPresentationBehaviourController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BED12771C6650046D036 /* SheetPresentationBehaviourController.swift */; };
+		E747BED42771C6E10046D036 /* SheetPresentationContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BED32771C6E10046D036 /* SheetPresentationContainerView.swift */; };
+		E75E2F662773059000843855 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F652773059000843855 /* FilesViewController.swift */; };
+		E75E2F682773093000843855 /* FilesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F672773093000843855 /* FilesPresenter.swift */; };
 		E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEEC276A56390008A720 /* UIView+Extensions.swift */; };
 		E785FEF4276A56390008A720 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEED276A56390008A720 /* Functions.swift */; };
 		E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEEF276A56390008A720 /* BaseViewController.swift */; };
@@ -83,6 +88,11 @@
 		E747BEC6277110100046D036 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		E747BECA277117C20046D036 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		E747BECC277117F70046D036 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		E747BECF2771C5F00046D036 /* SheetPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresentationController.swift; sourceTree = "<group>"; };
+		E747BED12771C6650046D036 /* SheetPresentationBehaviourController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresentationBehaviourController.swift; sourceTree = "<group>"; };
+		E747BED32771C6E10046D036 /* SheetPresentationContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresentationContainerView.swift; sourceTree = "<group>"; };
+		E75E2F652773059000843855 /* FilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
+		E75E2F672773093000843855 /* FilesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesPresenter.swift; sourceTree = "<group>"; };
 		E785FEEC276A56390008A720 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		E785FEED276A56390008A720 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		E785FEEF276A56390008A720 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +230,7 @@
 		E747BEB52770FAAC0046D036 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E75E2F642773057A00843855 /* Files */,
 				E747BEB62770FABE0046D036 /* MainViewController.swift */,
 				E747BEB82770FAC80046D036 /* MainPresenter.swift */,
 			);
@@ -271,9 +282,29 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E747BECE2771C5B80046D036 /* SheetPresentationController */ = {
+			isa = PBXGroup;
+			children = (
+				E747BECF2771C5F00046D036 /* SheetPresentationController.swift */,
+				E747BED12771C6650046D036 /* SheetPresentationBehaviourController.swift */,
+				E747BED32771C6E10046D036 /* SheetPresentationContainerView.swift */,
+			);
+			path = SheetPresentationController;
+			sourceTree = "<group>";
+		};
+		E75E2F642773057A00843855 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				E75E2F652773059000843855 /* FilesViewController.swift */,
+				E75E2F672773093000843855 /* FilesPresenter.swift */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
 		E785FEEB276A56390008A720 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				E747BECE2771C5B80046D036 /* SheetPresentationController */,
 				E747BEC9277117AB0046D036 /* Extensions */,
 				E785FEEE276A56390008A720 /* Module */,
 				E785FEF2276A56390008A720 /* AutoKeyboard.swift */,
@@ -396,9 +427,11 @@
 				3DD4F59B2757F242004FE0C2 /* TlsClient.c in Sources */,
 				E747BEB72770FABE0046D036 /* MainViewController.swift in Sources */,
 				3D327538274F0F0D007AF593 /* TcpParser.c in Sources */,
+				E747BED02771C5F00046D036 /* SheetPresentationController.swift in Sources */,
 				3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */,
 				E785FF02276A57440008A720 /* ColorStyle.swift in Sources */,
 				E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */,
+				E747BED22771C6650046D036 /* SheetPresentationBehaviourController.swift in Sources */,
 				E747BECB277117C20046D036 /* UIStackView+Extensions.swift in Sources */,
 				3D1F1035258D4D7C007C4E38 /* AppDelegate.swift in Sources */,
 				E785FF01276A57440008A720 /* AppColor.swift in Sources */,
@@ -414,6 +447,7 @@
 				3D24009A2769586A00DF8F87 /* CoreWrapperSwift.swift in Sources */,
 				3D327532274F033B007AF593 /* buffer.c in Sources */,
 				E785FEF4276A56390008A720 /* Functions.swift in Sources */,
+				E75E2F682773093000843855 /* FilesPresenter.swift in Sources */,
 				E747BEC127710CC20046D036 /* MainFlowController.swift in Sources */,
 				3D2400982769550F00DF8F87 /* CoreWrapperC.c in Sources */,
 				E785FEF6276A56390008A720 /* Presenter.swift in Sources */,
@@ -421,7 +455,9 @@
 				E747BEBC27710C7E0046D036 /* FlowController.swift in Sources */,
 				3D1F1037258D4D7C007C4E38 /* SceneDelegate.swift in Sources */,
 				E747BEB92770FAC80046D036 /* MainPresenter.swift in Sources */,
+				E747BED42771C6E10046D036 /* SheetPresentationContainerView.swift in Sources */,
 				3D327529274EFE75007AF593 /* cJSON.c in Sources */,
+				E75E2F662773059000843855 /* FilesViewController.swift in Sources */,
 				E747BECD277117F70046D036 /* UILabel+Extensions.swift in Sources */,
 				E747BEBE27710C9F0046D036 /* FlowControllerPresentation.swift in Sources */,
 				3D327528274EFE75007AF593 /* cJSON_Utils.c in Sources */,
