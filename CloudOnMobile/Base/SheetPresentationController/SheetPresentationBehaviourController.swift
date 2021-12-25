@@ -15,6 +15,10 @@ final class SheetPresentationBehaviourController {
         case small
     }
 
+    private enum Constants {
+        static let velocityRequiredForDetentChange: CGFloat = 700
+    }
+
     private var maxHeight: CGFloat {
         detents.max(by: { $0.height < $1.height })?.height ?? 0
     }
@@ -34,8 +38,6 @@ final class SheetPresentationBehaviourController {
     private var topConstraint = NSLayoutConstraint()
 
     private let bottomSheet = SheetPresentationContainerView()
-
-    private let velocityRequiredForStateChange: CGFloat = 700
 
     private let detents: [Detent]
 
@@ -135,7 +137,7 @@ private extension SheetPresentationBehaviourController {
         gestureEndYPosition: CGFloat,
         yVelocity: CGFloat
     ) {
-        let shouldChangeState = yVelocity.magnitude > velocityRequiredForStateChange
+        let shouldChangeState = yVelocity.magnitude > Constants.velocityRequiredForDetentChange
         if shouldChangeState {
             if yVelocity < 0 {
                 animate(to: detent.next(detents: detents))
