@@ -65,7 +65,7 @@ final class MainViewController: BaseViewController {
 
 private extension MainViewController {
     func setupViews() {
-        containerView.backgroundColor = AppStyle.current.appColor.color(for: .background)
+        containerView.backgroundColor = AppStyle.current.color(for: .background)
         containerView.addSubview(rootStackView)
 
         rootStackView.addConstraints { [
