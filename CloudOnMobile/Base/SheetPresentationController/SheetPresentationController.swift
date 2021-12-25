@@ -7,10 +7,6 @@
 
 import UIKit
 
-// protocol SheetContentViewController: UIViewController {
-//    var scrollView: UIScrollView { get }
-// }
-
 /// Class for showing view controller with bottom sheet.
 final class SheetPresentationController: UIViewController {
     /// The preferred status bar style for the view controller.
@@ -38,7 +34,7 @@ final class SheetPresentationController: UIViewController {
         setupView()
     }
 
-    @available(*, unavailable)  required init?(coder: NSCoder) {
+    @available(*, unavailable) required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

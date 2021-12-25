@@ -51,11 +51,10 @@ final class SheetPresentationBehaviourController {
         self.detents = detents.sorted(by: { $0.height < $1.height })
     }
 
-    /// Method that setups component for usage. Must be called when view is setup to degree allowing for adding bottom sheet.
-    /// Bottom sheet content is added as subview here, wrapped in another view indicating possibility for swipe for end-user.
+    /// Prepares view for usage.
     /// - Parameters:
-    ///   - rootView: view of BottomSheetContainer component (has both background view and bottom sheet view as children)
-    ///   - bottomSheetContent: view to be displayed inside of bottom sheet
+    ///   - rootView: view of BottomSheetContainer component.
+    ///   - bottomSheetContent: view to be displayed inside of bottom sheet.
     func prepareForUsage(
         rootView: UIView?,
         bottomSheetContent: UIView

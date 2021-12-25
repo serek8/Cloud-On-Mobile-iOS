@@ -10,6 +10,7 @@ import UIKit
 final class SheetPresentationContainerView: UIView {
     private enum Constants {
         static let scrollIndicatorHeight: CGFloat = 5
+        static let cornerRadius: CGFloat = 48
     }
 
     private let topIndicator = with(UIView()) {
@@ -26,7 +27,7 @@ final class SheetPresentationContainerView: UIView {
         setupUI()
     }
 
-    @available(*, unavailable)  required init?(coder: NSCoder) {
+    @available(*, unavailable) required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -60,7 +61,7 @@ private extension SheetPresentationContainerView {
     func setupUI() {
         backgroundColor = AppStyle.current.color(for: .white)
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        layer.cornerRadius = 48
+        layer.cornerRadius = Constants.cornerRadius
         layer.masksToBounds = false
     }
 }
