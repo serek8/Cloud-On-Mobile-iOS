@@ -11,4 +11,5 @@ enum ColorStyle {
     case white
     case background
     case blue
+    case gray
 }
