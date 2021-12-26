@@ -63,5 +63,6 @@ private extension SheetPresentationContainerView {
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         layer.cornerRadius = Constants.cornerRadius
         layer.masksToBounds = false
+        clipsToBounds = true
     }
 }
