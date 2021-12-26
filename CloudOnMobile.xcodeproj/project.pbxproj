@@ -235,6 +235,7 @@
 		E747BEB42770FA110046D036 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E75E2F642773057A00843855 /* Files */,
 				E747BEB52770FAAC0046D036 /* Main */,
 			);
 			path = Modules;
@@ -243,7 +244,6 @@
 		E747BEB52770FAAC0046D036 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E75E2F642773057A00843855 /* Files */,
 				E747BEB62770FABE0046D036 /* MainViewController.swift */,
 				E747BEB82770FAC80046D036 /* MainPresenter.swift */,
 			);
