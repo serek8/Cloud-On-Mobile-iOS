@@ -53,6 +53,7 @@ private extension MainFlowController {
 
         let filesPresenter = FilesPresenter()
         let filesViewController = FilesViewController(presenter: filesPresenter)
+        filesPresenter.viewController = filesViewController
 
         let sheetController = SheetPresentationController(
             backgroundViewController: mainViewController,
