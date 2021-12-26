@@ -8,33 +8,7 @@
 import UIKit
 
 final class FilesViewController: BaseViewController {
-    private var files: [IconTitleSubtitleView.ViewModel] = [
-        IconTitleSubtitleView.ViewModel(
-            icon: UIImage(),
-            title: "Title",
-            subtitle: "Subtitle"
-        ),
-        IconTitleSubtitleView.ViewModel(
-            icon: UIImage(),
-            title: "Title",
-            subtitle: "Subtitle"
-        ),
-        IconTitleSubtitleView.ViewModel(
-            icon: UIImage(),
-            title: "Title",
-            subtitle: "Subtitle"
-        ),
-        IconTitleSubtitleView.ViewModel(
-            icon: UIImage(),
-            title: "Title",
-            subtitle: "Subtitle"
-        ),
-        IconTitleSubtitleView.ViewModel(
-            icon: UIImage(),
-            title: "Title",
-            subtitle: "Subtitle"
-        )
-    ]
+    private var files: [IconTitleSubtitleView.ViewModel] = []
 
     private let tableView = with(UITableView()) {
         $0.rowHeight = UITableView.automaticDimension
@@ -54,6 +28,15 @@ final class FilesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+    }
+}
+
+// MARK: Fillable
+
+extension FilesViewController: Fillable {
+    func fill(with model: [IconTitleSubtitleView.ViewModel]) {
+        files = model
+        tableView.reloadData()
     }
 }
 
