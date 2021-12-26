@@ -7,38 +7,40 @@
 
 import UIKit
 
+protocol FilesDownloader {
+    /// Downloads list files from server.
+    func getFilesList() async -> [File]
+}
+
 final class FilesPresenter: PresenterProtocol {
     weak var viewController: FilesViewControllerProtocol?
 
+    private let filesDownloader: FilesDownloader
+
+    init(filesDownloader: FilesDownloader) {
+        self.filesDownloader = filesDownloader
+    }
+
     func refreshData() {
-        viewController?.fill(
-            with: [
-                IconTitleSubtitleView.ViewModel(
-                    icon: UIImage(imageLiteralResourceName: "illustration"),
-                    title: "Title",
-                    subtitle: "Subtitle"
-                ),
-                IconTitleSubtitleView.ViewModel(
-                    icon: UIImage(imageLiteralResourceName: "illustration"),
-                    title: "Title",
-                    subtitle: "Subtitle"
-                ),
-                IconTitleSubtitleView.ViewModel(
-                    icon: UIImage(imageLiteralResourceName: "illustration"),
-                    title: "Title",
-                    subtitle: "Subtitle"
-                ),
-                IconTitleSubtitleView.ViewModel(
-                    icon: UIImage(imageLiteralResourceName: "illustration"),
-                    title: "Title",
-                    subtitle: "Subtitle"
-                ),
-                IconTitleSubtitleView.ViewModel(
-                    icon: UIImage(imageLiteralResourceName: "illustration"),
-                    title: "Title",
-                    subtitle: "Subtitle"
-                )
-            ]
-        )
+        Task { [weak self] in
+            let files = await filesDownloader.getFilesList()
+            viewController?.fill(
+                with: self?.map(files: files) ?? []
+            )
+        }
+    }
+}
+
+// MARK: - Private
+
+private extension FilesPresenter {
+    func map(files: [File]) -> [IconTitleSubtitleView.ViewModel] {
+        files.map {
+            IconTitleSubtitleView.ViewModel(
+                icon: $0.type.image,
+                title: $0.name,
+                subtitle: $0.size.translation
+            )
+        }
     }
 }

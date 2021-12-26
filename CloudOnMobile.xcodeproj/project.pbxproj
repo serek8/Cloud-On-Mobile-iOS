@@ -43,6 +43,10 @@
 		E75E2F71277865E000843855 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F70277865E000843855 /* ReusableView.swift */; };
 		E75E2F732778684600843855 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F722778684600843855 /* UITableView+Extensions.swift */; };
 		E75E2F752778685E00843855 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F742778685E00843855 /* NSObject+Extensions.swift */; };
+		E75E2F78277875F700843855 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F77277875F700843855 /* File.swift */; };
+		E75E2F7B2778761500843855 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F7A2778761500843855 /* FileType.swift */; };
+		E75E2F7D2778769D00843855 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F7C2778769D00843855 /* Size.swift */; };
+		E75E2F7F2778785C00843855 /* FilesDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F7E2778785C00843855 /* FilesDownloader.swift */; };
 		E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEEC276A56390008A720 /* UIView+Extensions.swift */; };
 		E785FEF4276A56390008A720 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEED276A56390008A720 /* Functions.swift */; };
 		E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEEF276A56390008A720 /* BaseViewController.swift */; };
@@ -105,6 +109,10 @@
 		E75E2F70277865E000843855 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		E75E2F722778684600843855 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		E75E2F742778685E00843855 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
+		E75E2F77277875F700843855 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		E75E2F7A2778761500843855 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
+		E75E2F7C2778769D00843855 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		E75E2F7E2778785C00843855 /* FilesDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesDownloader.swift; sourceTree = "<group>"; };
 		E785FEEC276A56390008A720 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		E785FEED276A56390008A720 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		E785FEEF276A56390008A720 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -310,8 +318,10 @@
 		E75E2F642773057A00843855 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				E75E2F792778760900843855 /* Models */,
 				E75E2F652773059000843855 /* FilesViewController.swift */,
 				E75E2F672773093000843855 /* FilesPresenter.swift */,
+				E75E2F7E2778785C00843855 /* FilesDownloader.swift */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -332,6 +342,16 @@
 				E75E2F70277865E000843855 /* ReusableView.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		E75E2F792778760900843855 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E75E2F77277875F700843855 /* File.swift */,
+				E75E2F7A2778761500843855 /* FileType.swift */,
+				E75E2F7C2778769D00843855 /* Size.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E785FEEB276A56390008A720 /* Base */ = {
@@ -461,10 +481,12 @@
 				E75E2F752778685E00843855 /* NSObject+Extensions.swift in Sources */,
 				3DD4F59B2757F242004FE0C2 /* TlsClient.c in Sources */,
 				E747BEB72770FABE0046D036 /* MainViewController.swift in Sources */,
+				E75E2F7B2778761500843855 /* FileType.swift in Sources */,
 				3D327538274F0F0D007AF593 /* TcpParser.c in Sources */,
 				E747BED02771C5F00046D036 /* SheetPresentationController.swift in Sources */,
 				3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */,
 				E785FF02276A57440008A720 /* ColorStyle.swift in Sources */,
+				E75E2F78277875F700843855 /* File.swift in Sources */,
 				E75E2F6F277865BD00843855 /* Fillable.swift in Sources */,
 				E75E2F732778684600843855 /* UITableView+Extensions.swift in Sources */,
 				E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */,
@@ -472,6 +494,7 @@
 				E747BECB277117C20046D036 /* UIStackView+Extensions.swift in Sources */,
 				3D1F1035258D4D7C007C4E38 /* AppDelegate.swift in Sources */,
 				E785FF01276A57440008A720 /* AppColor.swift in Sources */,
+				E75E2F7D2778769D00843855 /* Size.swift in Sources */,
 				E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */,
 				3D327533274F033B007AF593 /* decode.c in Sources */,
 				E785FF09276A5DD70008A720 /* BaseView.swift in Sources */,
@@ -502,6 +525,7 @@
 				E747BEBE27710C9F0046D036 /* FlowControllerPresentation.swift in Sources */,
 				3D327528274EFE75007AF593 /* cJSON_Utils.c in Sources */,
 				3D327523274EF10F007AF593 /* FileManager.c in Sources */,
+				E75E2F7F2778785C00843855 /* FilesDownloader.swift in Sources */,
 				3D327534274F033B007AF593 /* encode.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
