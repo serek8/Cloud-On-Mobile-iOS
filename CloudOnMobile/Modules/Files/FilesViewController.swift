@@ -39,7 +39,9 @@ final class FilesViewController: BaseViewController, FilesViewControllerProtocol
 extension FilesViewController {
     func fill(with model: [IconTitleSubtitleView.ViewModel]) {
         files = model
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
