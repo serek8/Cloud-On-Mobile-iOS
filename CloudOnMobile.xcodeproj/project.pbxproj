@@ -37,6 +37,12 @@
 		E747BED42771C6E10046D036 /* SheetPresentationContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BED32771C6E10046D036 /* SheetPresentationContainerView.swift */; };
 		E75E2F662773059000843855 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F652773059000843855 /* FilesViewController.swift */; };
 		E75E2F682773093000843855 /* FilesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F672773093000843855 /* FilesPresenter.swift */; };
+		E75E2F6B2778654300843855 /* IconTitleSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F6A2778654300843855 /* IconTitleSubtitleView.swift */; };
+		E75E2F6D2778658900843855 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F6C2778658900843855 /* BaseTableViewCell.swift */; };
+		E75E2F6F277865BD00843855 /* Fillable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F6E277865BD00843855 /* Fillable.swift */; };
+		E75E2F71277865E000843855 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F70277865E000843855 /* ReusableView.swift */; };
+		E75E2F732778684600843855 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F722778684600843855 /* UITableView+Extensions.swift */; };
+		E75E2F752778685E00843855 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E2F742778685E00843855 /* NSObject+Extensions.swift */; };
 		E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEEC276A56390008A720 /* UIView+Extensions.swift */; };
 		E785FEF4276A56390008A720 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEED276A56390008A720 /* Functions.swift */; };
 		E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEEF276A56390008A720 /* BaseViewController.swift */; };
@@ -93,6 +99,12 @@
 		E747BED32771C6E10046D036 /* SheetPresentationContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresentationContainerView.swift; sourceTree = "<group>"; };
 		E75E2F652773059000843855 /* FilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
 		E75E2F672773093000843855 /* FilesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesPresenter.swift; sourceTree = "<group>"; };
+		E75E2F6A2778654300843855 /* IconTitleSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTitleSubtitleView.swift; sourceTree = "<group>"; };
+		E75E2F6C2778658900843855 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		E75E2F6E277865BD00843855 /* Fillable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fillable.swift; sourceTree = "<group>"; };
+		E75E2F70277865E000843855 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		E75E2F722778684600843855 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		E75E2F742778685E00843855 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
 		E785FEEC276A56390008A720 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		E785FEED276A56390008A720 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		E785FEEF276A56390008A720 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -139,11 +151,12 @@
 			isa = PBXGroup;
 			children = (
 				E747BEBA27710C6D0046D036 /* FlowControllers */,
-				E785FEF9276A57440008A720 /* Style */,
 				E785FEEB276A56390008A720 /* Base */,
 				3D2400952769542500DF8F87 /* CoreWrapper */,
 				E747BEB42770FA110046D036 /* Modules */,
 				3D1F104A258D4EE8007C4E38 /* Shared */,
+				E785FEF9276A57440008A720 /* Style */,
+				E75E2F69277864FD00843855 /* Views */,
 				3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */,
 				3D1F103D258D4D7D007C4E38 /* Assets.xcassets */,
 				3D1F104C258D4F04007C4E38 /* CloudOnMobile-Bridging-Header.h */,
@@ -278,6 +291,8 @@
 				E785FEEC276A56390008A720 /* UIView+Extensions.swift */,
 				E747BECA277117C20046D036 /* UIStackView+Extensions.swift */,
 				E747BECC277117F70046D036 /* UILabel+Extensions.swift */,
+				E75E2F722778684600843855 /* UITableView+Extensions.swift */,
+				E75E2F742778685E00843855 /* NSObject+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -301,6 +316,16 @@
 			path = Files;
 			sourceTree = "<group>";
 		};
+		E75E2F69277864FD00843855 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E75E2F6C2778658900843855 /* BaseTableViewCell.swift */,
+				E75E2F6A2778654300843855 /* IconTitleSubtitleView.swift */,
+				E75E2F70277865E000843855 /* ReusableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E785FEEB276A56390008A720 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +336,7 @@
 				E785FF08276A5DD70008A720 /* BaseView.swift */,
 				E785FEED276A56390008A720 /* Functions.swift */,
 				E785FEF1276A56390008A720 /* UIView+AutoLayout.swift */,
+				E75E2F6E277865BD00843855 /* Fillable.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -424,12 +450,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E75E2F752778685E00843855 /* NSObject+Extensions.swift in Sources */,
 				3DD4F59B2757F242004FE0C2 /* TlsClient.c in Sources */,
 				E747BEB72770FABE0046D036 /* MainViewController.swift in Sources */,
 				3D327538274F0F0D007AF593 /* TcpParser.c in Sources */,
 				E747BED02771C5F00046D036 /* SheetPresentationController.swift in Sources */,
 				3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */,
 				E785FF02276A57440008A720 /* ColorStyle.swift in Sources */,
+				E75E2F6F277865BD00843855 /* Fillable.swift in Sources */,
+				E75E2F732778684600843855 /* UITableView+Extensions.swift in Sources */,
 				E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */,
 				E747BED22771C6650046D036 /* SheetPresentationBehaviourController.swift in Sources */,
 				E747BECB277117C20046D036 /* UIStackView+Extensions.swift in Sources */,
@@ -449,6 +478,7 @@
 				E785FEF4276A56390008A720 /* Functions.swift in Sources */,
 				E75E2F682773093000843855 /* FilesPresenter.swift in Sources */,
 				E747BEC127710CC20046D036 /* MainFlowController.swift in Sources */,
+				E75E2F71277865E000843855 /* ReusableView.swift in Sources */,
 				3D2400982769550F00DF8F87 /* CoreWrapperC.c in Sources */,
 				E785FEF6276A56390008A720 /* Presenter.swift in Sources */,
 				E785FF03276A57440008A720 /* FontStyle.swift in Sources */,
@@ -456,6 +486,8 @@
 				3D1F1037258D4D7C007C4E38 /* SceneDelegate.swift in Sources */,
 				E747BEB92770FAC80046D036 /* MainPresenter.swift in Sources */,
 				E747BED42771C6E10046D036 /* SheetPresentationContainerView.swift in Sources */,
+				E75E2F6B2778654300843855 /* IconTitleSubtitleView.swift in Sources */,
+				E75E2F6D2778658900843855 /* BaseTableViewCell.swift in Sources */,
 				3D327529274EFE75007AF593 /* cJSON.c in Sources */,
 				E75E2F662773059000843855 /* FilesViewController.swift in Sources */,
 				E747BECD277117F70046D036 /* UILabel+Extensions.swift in Sources */,
