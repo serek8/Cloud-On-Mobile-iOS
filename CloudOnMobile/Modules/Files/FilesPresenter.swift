@@ -5,8 +5,40 @@
 //  Created by Karol P on 22/12/2021.
 //
 
-import Foundation
+import UIKit
 
 final class FilesPresenter: PresenterProtocol {
-    func refreshData() {}
+    weak var viewController: FilesViewControllerProtocol?
+
+    func refreshData() {
+        viewController?.fill(
+            with: [
+                IconTitleSubtitleView.ViewModel(
+                    icon: UIImage(imageLiteralResourceName: "illustration"),
+                    title: "Title",
+                    subtitle: "Subtitle"
+                ),
+                IconTitleSubtitleView.ViewModel(
+                    icon: UIImage(imageLiteralResourceName: "illustration"),
+                    title: "Title",
+                    subtitle: "Subtitle"
+                ),
+                IconTitleSubtitleView.ViewModel(
+                    icon: UIImage(imageLiteralResourceName: "illustration"),
+                    title: "Title",
+                    subtitle: "Subtitle"
+                ),
+                IconTitleSubtitleView.ViewModel(
+                    icon: UIImage(imageLiteralResourceName: "illustration"),
+                    title: "Title",
+                    subtitle: "Subtitle"
+                ),
+                IconTitleSubtitleView.ViewModel(
+                    icon: UIImage(imageLiteralResourceName: "illustration"),
+                    title: "Title",
+                    subtitle: "Subtitle"
+                )
+            ]
+        )
+    }
 }

@@ -7,7 +7,11 @@
 
 import UIKit
 
-final class FilesViewController: BaseViewController {
+protocol FilesViewControllerProtocol: AnyObject {
+    func fill(with model: [IconTitleSubtitleView.ViewModel])
+}
+
+final class FilesViewController: BaseViewController, FilesViewControllerProtocol {
     private var files: [IconTitleSubtitleView.ViewModel] = []
 
     private let tableView = with(UITableView()) {
@@ -28,12 +32,11 @@ final class FilesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        presenter.refreshData()
     }
 }
 
-// MARK: Fillable
-
-extension FilesViewController: Fillable {
+extension FilesViewController {
     func fill(with model: [IconTitleSubtitleView.ViewModel]) {
         files = model
         tableView.reloadData()
