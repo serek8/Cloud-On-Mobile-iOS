@@ -319,11 +319,19 @@
 		E75E2F69277864FD00843855 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E75E2F6C2778658900843855 /* BaseTableViewCell.swift */,
+				E75E2F762778695C00843855 /* Base */,
 				E75E2F6A2778654300843855 /* IconTitleSubtitleView.swift */,
-				E75E2F70277865E000843855 /* ReusableView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E75E2F762778695C00843855 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E75E2F6C2778658900843855 /* BaseTableViewCell.swift */,
+				E75E2F70277865E000843855 /* ReusableView.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		E785FEEB276A56390008A720 /* Base */ = {
