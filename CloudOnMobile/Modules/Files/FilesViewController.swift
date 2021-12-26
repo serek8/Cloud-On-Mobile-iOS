@@ -60,6 +60,14 @@ extension FilesViewController: UITableViewDataSource {
     }
 }
 
+// MARK: ScrollableViewController
+
+extension FilesViewController: ScrollableViewController {
+    var scrollView: UIScrollView? {
+        tableView
+    }
+}
+
 // MARK: - Private
 
 private extension FilesViewController {

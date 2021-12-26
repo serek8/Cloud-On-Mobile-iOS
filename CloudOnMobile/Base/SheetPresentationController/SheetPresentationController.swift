@@ -7,6 +7,11 @@
 
 import UIKit
 
+/// ViewController with scrollView.
+protocol ScrollableViewController: UIViewController {
+    var scrollView: UIScrollView? { get }
+}
+
 /// Class for showing view controller with bottom sheet.
 final class SheetPresentationController: UIViewController {
     /// The preferred status bar style for the view controller.
@@ -16,13 +21,13 @@ final class SheetPresentationController: UIViewController {
 
     private let backgroundViewController: UIViewController
 
-    private let sheetContentViewController: UIViewController
+    private let sheetContentViewController: ScrollableViewController
 
     private let controller: SheetPresentationBehaviourController
 
     init(
         backgroundViewController: UIViewController,
-        sheetContentViewController: UIViewController
+        sheetContentViewController: ScrollableViewController
     ) {
         self.backgroundViewController = backgroundViewController
         self.sheetContentViewController = sheetContentViewController
@@ -51,7 +56,8 @@ private extension SheetPresentationController {
         }
         controller.prepareForUsage(
             rootView: view,
-            bottomSheetContent: sheetContentViewController.view
+            bottomSheetContent: sheetContentViewController.view,
+            scrollView: sheetContentViewController.scrollView
         )
         backgroundViewController.didMove(toParent: self)
         sheetContentViewController.didMove(toParent: self)
