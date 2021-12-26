@@ -14,6 +14,8 @@ protocol FilesViewControllerProtocol: AnyObject {
 final class FilesViewController: BaseViewController, FilesViewControllerProtocol {
     private var files: [IconTitleSubtitleView.ViewModel] = []
 
+    private let refreshControl = UIRefreshControl()
+
     private let tableView = with(UITableView()) {
         $0.rowHeight = UITableView.automaticDimension
         $0.separatorColor = .clear
@@ -32,7 +34,9 @@ final class FilesViewController: BaseViewController, FilesViewControllerProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        presenter.refreshData()
+        Task {
+            await presenter.refreshData()
+        }
     }
 }
 
@@ -77,5 +81,17 @@ private extension FilesViewController {
 
         tableView.addConstraints { $0.equalEdges() }
         tableView.dataSource = self
+
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+    }
+
+    // MARK: - Private objc
+
+    @objc func refreshData() {
+        Task { [weak self] in
+            await self?.presenter.refreshData()
+            self?.refreshControl.endRefreshing()
+        }
     }
 }

@@ -21,13 +21,11 @@ final class FilesPresenter: PresenterProtocol {
         self.filesDownloader = filesDownloader
     }
 
-    func refreshData() {
-        Task { [weak self] in
-            let files = await filesDownloader.getFilesList()
-            viewController?.fill(
-                with: self?.map(files: files) ?? []
-            )
-        }
+    func refreshData() async {
+        let files = await filesDownloader.getFilesList()
+        viewController?.fill(
+            with: map(files: files)
+        )
     }
 }
 
