@@ -43,6 +43,7 @@ final class IconTitleSubtitleView: UIView {
 
     init() {
         super.init(frame: .zero)
+        backgroundColor = AppStyle.current.color(for: .white)
         setupView()
     }
 
