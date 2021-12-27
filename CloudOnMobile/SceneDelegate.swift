@@ -22,4 +22,8 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         )
         mainFlowController?.present()
     }
+
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        mainFlowController?.onSceneDidBecomeActive()
+    }
 }

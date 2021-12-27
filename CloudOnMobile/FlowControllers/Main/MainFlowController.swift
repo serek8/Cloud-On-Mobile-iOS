@@ -42,6 +42,12 @@ final class MainFlowController: FlowController {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
+
+    /// Tells the delegate that the scene became active and is now responding to user events.
+    func onSceneDidBecomeActive() {
+        UIApplication.shared.isIdleTimerDisabled = true
+        dependencyContainer.commandManager.reconnectIfNeeded()
+    }
 }
 
 private extension MainFlowController {
