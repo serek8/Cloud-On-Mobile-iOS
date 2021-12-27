@@ -10,7 +10,7 @@ import Foundation
 /// Protocol describes presenter structure.
 protocol PresenterProtocol {
     /// Requests refresh of the data.
-    func refreshData()
+    func refreshData() async
 
     /// Function called on viewDidLoad.
     func onViewDidLoad()
@@ -29,7 +29,9 @@ extension PresenterProtocol {
     func onViewDidLoad() {}
 
     func onViewWillAppear() {
-        refreshData()
+        Task {
+            await refreshData()
+        }
     }
 
     func onViewDidAppear() {}
