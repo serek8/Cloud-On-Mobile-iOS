@@ -18,10 +18,10 @@ final class FilesViewController: BaseViewController, FilesViewControllerProtocol
 
     private let tableView = with(UITableView()) {
         $0.rowHeight = UITableView.automaticDimension
-        $0.separatorColor = .clear
         $0.allowsSelection = true
         $0.backgroundColor = AppStyle.current.color(for: .white)
         $0.backgroundView?.backgroundColor = AppStyle.current.color(for: .white)
+        $0.separatorStyle = .none
     }
 
     private let presenter: FilesPresenter
