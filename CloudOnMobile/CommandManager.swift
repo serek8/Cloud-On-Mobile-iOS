@@ -5,7 +5,6 @@
 //  Created by Cloud On Mobile Team on 21/11/2021.
 //
 
-import Foundation
 import UIKit
 
 protocol CommandManagerDelegate: AnyObject {
@@ -13,30 +12,17 @@ protocol CommandManagerDelegate: AnyObject {
     func serverOnConnected(passocde: Int)
     func serverOnReconnecting()
     func serverOnReconnected()
-    func serverOnFileDownlaoded(filepath:String)
+    func serverOnFileDownlaoded(filepath: String)
 }
 
 final class CommandManager {
-    static let shared = CommandManager()
-    var delegate: CommandManagerDelegate?
-    var ip: String = ""
-    //  var ip:String = "seredynski.com"
-    var port: Int = 9293
-    //  var port:Int = 443
-    var code: UInt32 = 0
-    let documentsDirectory: URL
-    var isConnected = false
-  
-  
-  struct File : Codable {
-    let filename : String?
-  }
+    enum CommandManagerError: Error {
+        case connectionFailure
+    }
 
-    init() {
-        initSharedCore()
-        let fileMngr = FileManager.default
-        documentsDirectory = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        setup_environment(documentsDirectory.path)
+    struct File: Codable {
+        /// Name of the file.
+        let fileName: String?
     }
 
     struct Request<T: Codable>: Codable {
@@ -45,31 +31,51 @@ final class CommandManager {
         var payload: T?
     }
 
-    func connect() {
-        Thread.detachNewThread {
+    weak var delegate: CommandManagerDelegate?
+
+    private var code: UInt32 = 0
+
+    private var isConnected = false
+
+    private let ip: String
+
+    private let port: Int = 9293
+
+    private let documentsDirectory: URL
+
+    init(url: String) {
+        ip = url
+        initSharedCore()
+        let fileMngr = FileManager.default
+        documentsDirectory = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        setup_environment(documentsDirectory.path)
+    }
+
+    func connect() async throws -> Int {
+        try await withUnsafeThrowingContinuation { continuation in
             self.ip.withCString { (ip_cstr: UnsafePointer<Int8>) in
-                print("Start tcp-client thread")
                 let code = UnsafeMutablePointer<UInt32>.allocate(capacity: 1)
-                if connect_to_server(ip_cstr, Int32(self.port), code) != 0 {
+                guard connect_to_server(ip_cstr, Int32(self.port), code) == 0 else {
                     self.isConnected = false
-                    self.delegate?.serverOnClose() // TODO: connection failure
+                    continuation.resume(throwing: CommandManagerError.connectionFailure)
                     return
                 }
                 self.isConnected = true
-                self.delegate?.serverOnConnected(passocde: Int(code.pointee))
+                let value = Int(code.pointee)
+                continuation.resume(returning: value)
                 code.deallocate()
-              _ = self.endlessListen()
+                _ = self.endlessListen()
             }
         }
     }
 
     func reconnectIfNeeded() {
+        UIApplication.shared.isIdleTimerDisabled = true
         if should_reconnect() == 0 {
             return
         }
         Thread.detachNewThread {
             self.ip.withCString { (_: UnsafePointer<Int8>) in
-                print("Reconnect tcp-client thread")
                 let code = UnsafeMutablePointer<UInt32>.allocate(capacity: 1)
                 if reconnect_to_server(self.code) != 0 {
                     self.isConnected = false
@@ -80,7 +86,7 @@ final class CommandManager {
                     self.delegate?.serverOnReconnected()
                 }
                 code.deallocate()
-              _ = self.endlessListen()
+                _ = self.endlessListen()
             }
         }
     }
@@ -91,7 +97,7 @@ final class CommandManager {
             isConnected = false
             return -1
         }
-      return Int(retval)
+        return Int(retval)
     }
 
     func copyDemoFiles() {
@@ -99,23 +105,23 @@ final class CommandManager {
         let mexicoImgPath = documentsDirectory.appendingPathComponent("Sample Image.png")
         try? sampleImage?.pngData()?.write(to: mexicoImgPath)
 
-    let samplePdfData = NSDataAsset.init(name: "sample-pdf")!.data
-    let samplePdfPath = documentsDirectory.appendingPathComponent("Sample Document.pdf")
-    try? samplePdfData.write(to: samplePdfPath)
+        let samplePdfData = NSDataAsset(name: "sample-pdf")!.data
+        let samplePdfPath = documentsDirectory.appendingPathComponent("Sample Document.pdf")
+        try? samplePdfData.write(to: samplePdfPath)
     }
 
     func listFiles() -> [File]? {
 //      let data_ptr = UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>.allocate(capacity: 1)
-      let data_out_ptr = UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>.allocate(capacity: 1)
-      let len = list_dir_locally(UnsafePointer<CChar>?.none, data_out_ptr);
-      if(len <= 0){
-        return nil
-      }
-      let decoder = JSONDecoder()
-      let data = Data(bytesNoCopy: data_out_ptr.pointee!, count: Int(len), deallocator: Data.Deallocator.free)
-      data_out_ptr.deallocate()
-      let request = try! decoder.decode([File].self, from: data)
-      return request;
+        let data_out_ptr = UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>.allocate(capacity: 1)
+        let len = list_dir_locally(UnsafePointer<CChar>?.none, data_out_ptr)
+        if len <= 0 {
+            return nil
+        }
+        let decoder = JSONDecoder()
+        let data = Data(bytesNoCopy: data_out_ptr.pointee!, count: Int(len), deallocator: Data.Deallocator.free)
+        data_out_ptr.deallocate()
+        let request = try! decoder.decode([File].self, from: data)
+        return request
         ////    access("sd", F_OK)
 //    setup_environment(documentsPath)
 //    let mexico_path = documentsPath + "/mexico.png"
@@ -157,5 +163,4 @@ final class CommandManager {
 //    }
     //  }
 //
-  
 }

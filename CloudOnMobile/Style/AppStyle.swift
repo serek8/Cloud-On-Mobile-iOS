@@ -28,4 +28,12 @@ final class AppStyle {
         self.appColor = appColor
         self.appFont = appFont
     }
+
+    func color(for type: ColorStyle) -> UIColor {
+        appColor.color(for: type)
+    }
+
+    func font(for type: FontStyle, size: CGFloat) -> UIFont {
+        appFont.font(for: type, size: size)
+    }
 }

@@ -11,14 +11,14 @@ protocol AppFont {
     /// Returns font for given type.
     /// - Parameters:
     ///   - type: Type of the font.
-    func font(for type: FontStyle) -> UIFont
+    func font(for type: FontStyle, size: CGFloat) -> UIFont
 }
 
 struct DefaultAppFont: AppFont {
-    func font(for type: FontStyle) -> UIFont {
+    func font(for type: FontStyle, size: CGFloat) -> UIFont {
         switch type {
-        case .body16Regular:
-            return UIFont(name: "Poppins-Regular", size: 16)!
+        case .regular:
+            return UIFont(name: "Poppins-Regular", size: size)!
         }
     }
 }

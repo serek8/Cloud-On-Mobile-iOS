@@ -9,14 +9,11 @@
 /* Begin PBXBuildFile section */
 		3D1F1035258D4D7C007C4E38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */; };
 		3D1F1037258D4D7C007C4E38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */; };
-		3D1F1039258D4D7C007C4E38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1038258D4D7C007C4E38 /* ViewController.swift */; };
-		3D1F103C258D4D7C007C4E38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F103A258D4D7C007C4E38 /* Main.storyboard */; };
 		3D1F103E258D4D7D007C4E38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F103D258D4D7D007C4E38 /* Assets.xcassets */; };
 		3D1F1041258D4D7D007C4E38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F103F258D4D7D007C4E38 /* LaunchScreen.storyboard */; };
 		3D1F104F258D4F04007C4E38 /* TcpClient.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F104E258D4F04007C4E38 /* TcpClient.c */; };
 		3D2400982769550F00DF8F87 /* CoreWrapperC.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D2400972769550F00DF8F87 /* CoreWrapperC.c */; };
 		3D24009A2769586A00DF8F87 /* CoreWrapperSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2400992769586A00DF8F87 /* CoreWrapperSwift.swift */; };
-		3D255D8E2766A75E004D88EF /* FileTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D255D8D2766A75E004D88EF /* FileTVCell.swift */; };
 		3D327523274EF10F007AF593 /* FileManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D327522274EF10F007AF593 /* FileManager.c */; };
 		3D327528274EFE75007AF593 /* cJSON_Utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D327525274EFE75007AF593 /* cJSON_Utils.c */; };
 		3D327529274EFE75007AF593 /* cJSON.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D327526274EFE75007AF593 /* cJSON.c */; };
@@ -26,6 +23,15 @@
 		3D327538274F0F0D007AF593 /* TcpParser.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D327537274F0F0D007AF593 /* TcpParser.c */; };
 		3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D93B67D274AAF9A007364E8 /* CommandManager.swift */; };
 		3DD4F59B2757F242004FE0C2 /* TlsClient.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4F59A2757F242004FE0C2 /* TlsClient.c */; };
+		E747BEB72770FABE0046D036 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEB62770FABE0046D036 /* MainViewController.swift */; };
+		E747BEB92770FAC80046D036 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEB82770FAC80046D036 /* MainPresenter.swift */; };
+		E747BEBC27710C7E0046D036 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEBB27710C7E0046D036 /* FlowController.swift */; };
+		E747BEBE27710C9F0046D036 /* FlowControllerPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEBD27710C9F0046D036 /* FlowControllerPresentation.swift */; };
+		E747BEC127710CC20046D036 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEC027710CC20046D036 /* MainFlowController.swift */; };
+		E747BEC427710D0D0046D036 /* MainDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEC327710D0D0046D036 /* MainDependencyContainer.swift */; };
+		E747BEC8277111520046D036 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E747BEC6277110100046D036 /* Poppins-Regular.ttf */; };
+		E747BECB277117C20046D036 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BECA277117C20046D036 /* UIStackView+Extensions.swift */; };
+		E747BECD277117F70046D036 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BECC277117F70046D036 /* UILabel+Extensions.swift */; };
 		E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEEC276A56390008A720 /* UIView+Extensions.swift */; };
 		E785FEF4276A56390008A720 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEED276A56390008A720 /* Functions.swift */; };
 		E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEEF276A56390008A720 /* BaseViewController.swift */; };
@@ -44,8 +50,6 @@
 		3D1F1031258D4D7C007C4E38 /* CloudOnMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudOnMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3D1F1038258D4D7C007C4E38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3D1F103B258D4D7C007C4E38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D1F103D258D4D7D007C4E38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D1F1040258D4D7D007C4E38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D1F1042258D4D7D007C4E38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,7 +59,6 @@
 		3D2400962769550F00DF8F87 /* CoreWrapperC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreWrapperC.h; sourceTree = "<group>"; };
 		3D2400972769550F00DF8F87 /* CoreWrapperC.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CoreWrapperC.c; sourceTree = "<group>"; };
 		3D2400992769586A00DF8F87 /* CoreWrapperSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreWrapperSwift.swift; sourceTree = "<group>"; };
-		3D255D8D2766A75E004D88EF /* FileTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTVCell.swift; sourceTree = "<group>"; };
 		3D327521274EF10F007AF593 /* FileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
 		3D327522274EF10F007AF593 /* FileManager.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = FileManager.c; sourceTree = "<group>"; };
 		3D327524274EFE75007AF593 /* cJSON_Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cJSON_Utils.h; sourceTree = "<group>"; };
@@ -71,6 +74,15 @@
 		3D93B67D274AAF9A007364E8 /* CommandManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandManager.swift; sourceTree = "<group>"; };
 		3DD4F5992757F242004FE0C2 /* TlsClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TlsClient.h; sourceTree = "<group>"; };
 		3DD4F59A2757F242004FE0C2 /* TlsClient.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TlsClient.c; sourceTree = "<group>"; };
+		E747BEB62770FABE0046D036 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E747BEB82770FAC80046D036 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		E747BEBB27710C7E0046D036 /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
+		E747BEBD27710C9F0046D036 /* FlowControllerPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowControllerPresentation.swift; sourceTree = "<group>"; };
+		E747BEC027710CC20046D036 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
+		E747BEC327710D0D0046D036 /* MainDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDependencyContainer.swift; sourceTree = "<group>"; };
+		E747BEC6277110100046D036 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		E747BECA277117C20046D036 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		E747BECC277117F70046D036 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		E785FEEC276A56390008A720 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		E785FEED276A56390008A720 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		E785FEEF276A56390008A720 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -116,20 +128,19 @@
 		3D1F1033258D4D7C007C4E38 /* CloudOnMobile */ = {
 			isa = PBXGroup;
 			children = (
+				E747BEBA27710C6D0046D036 /* FlowControllers */,
 				E785FEF9276A57440008A720 /* Style */,
 				E785FEEB276A56390008A720 /* Base */,
 				3D2400952769542500DF8F87 /* CoreWrapper */,
+				E747BEB42770FA110046D036 /* Modules */,
 				3D1F104A258D4EE8007C4E38 /* Shared */,
 				3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */,
-				3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */,
-				3D93B67D274AAF9A007364E8 /* CommandManager.swift */,
-				3D1F1038258D4D7C007C4E38 /* ViewController.swift */,
-				3D1F103A258D4D7C007C4E38 /* Main.storyboard */,
 				3D1F103D258D4D7D007C4E38 /* Assets.xcassets */,
-				3D1F103F258D4D7D007C4E38 /* LaunchScreen.storyboard */,
 				3D1F104C258D4F04007C4E38 /* CloudOnMobile-Bridging-Header.h */,
+				3D93B67D274AAF9A007364E8 /* CommandManager.swift */,
 				3D1F1042258D4D7D007C4E38 /* Info.plist */,
-				3D255D8D2766A75E004D88EF /* FileTVCell.swift */,
+				3D1F103F258D4D7D007C4E38 /* LaunchScreen.storyboard */,
+				3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */,
 			);
 			path = CloudOnMobile;
 			sourceTree = "<group>";
@@ -198,15 +209,77 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E747BEB42770FA110046D036 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E747BEB52770FAAC0046D036 /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E747BEB52770FAAC0046D036 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E747BEB62770FABE0046D036 /* MainViewController.swift */,
+				E747BEB82770FAC80046D036 /* MainPresenter.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E747BEBA27710C6D0046D036 /* FlowControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E747BEBF27710CB60046D036 /* Base */,
+				E747BEC227710D050046D036 /* Main */,
+			);
+			path = FlowControllers;
+			sourceTree = "<group>";
+		};
+		E747BEBF27710CB60046D036 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E747BEBB27710C7E0046D036 /* FlowController.swift */,
+				E747BEBD27710C9F0046D036 /* FlowControllerPresentation.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E747BEC227710D050046D036 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E747BEC027710CC20046D036 /* MainFlowController.swift */,
+				E747BEC327710D0D0046D036 /* MainDependencyContainer.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E747BEC527710FCC0046D036 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E747BEC6277110100046D036 /* Poppins-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E747BEC9277117AB0046D036 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E785FEEC276A56390008A720 /* UIView+Extensions.swift */,
+				E747BECA277117C20046D036 /* UIStackView+Extensions.swift */,
+				E747BECC277117F70046D036 /* UILabel+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E785FEEB276A56390008A720 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				E747BEC9277117AB0046D036 /* Extensions */,
+				E785FEEE276A56390008A720 /* Module */,
 				E785FEF2276A56390008A720 /* AutoKeyboard.swift */,
 				E785FF08276A5DD70008A720 /* BaseView.swift */,
 				E785FEED276A56390008A720 /* Functions.swift */,
-				E785FEEE276A56390008A720 /* Module */,
 				E785FEF1276A56390008A720 /* UIView+AutoLayout.swift */,
-				E785FEEC276A56390008A720 /* UIView+Extensions.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -242,6 +315,7 @@
 		E785FEFD276A57440008A720 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				E747BEC527710FCC0046D036 /* Fonts */,
 				E785FEFF276A57440008A720 /* AppFont.swift */,
 				E785FEFE276A57440008A720 /* FontStyle.swift */,
 			);
@@ -306,9 +380,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E747BEC8277111520046D036 /* Poppins-Regular.ttf in Resources */,
 				3D1F1041258D4D7D007C4E38 /* LaunchScreen.storyboard in Resources */,
 				3D1F103E258D4D7D007C4E38 /* Assets.xcassets in Resources */,
-				3D1F103C258D4D7C007C4E38 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,30 +394,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DD4F59B2757F242004FE0C2 /* TlsClient.c in Sources */,
+				E747BEB72770FABE0046D036 /* MainViewController.swift in Sources */,
 				3D327538274F0F0D007AF593 /* TcpParser.c in Sources */,
 				3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */,
 				E785FF02276A57440008A720 /* ColorStyle.swift in Sources */,
-				3D1F1039258D4D7C007C4E38 /* ViewController.swift in Sources */,
 				E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */,
+				E747BECB277117C20046D036 /* UIStackView+Extensions.swift in Sources */,
 				3D1F1035258D4D7C007C4E38 /* AppDelegate.swift in Sources */,
 				E785FF01276A57440008A720 /* AppColor.swift in Sources */,
-				3D255D8E2766A75E004D88EF /* FileTVCell.swift in Sources */,
 				E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */,
 				3D327533274F033B007AF593 /* decode.c in Sources */,
 				E785FF09276A5DD70008A720 /* BaseView.swift in Sources */,
 				3D1F104F258D4F04007C4E38 /* TcpClient.c in Sources */,
 				E785FEF7276A56390008A720 /* UIView+AutoLayout.swift in Sources */,
+				E747BEC427710D0D0046D036 /* MainDependencyContainer.swift in Sources */,
 				E785FEF8276A56390008A720 /* AutoKeyboard.swift in Sources */,
 				E785FF04276A57440008A720 /* AppFont.swift in Sources */,
 				E785FF05276A57440008A720 /* AppStyle.swift in Sources */,
 				3D24009A2769586A00DF8F87 /* CoreWrapperSwift.swift in Sources */,
 				3D327532274F033B007AF593 /* buffer.c in Sources */,
 				E785FEF4276A56390008A720 /* Functions.swift in Sources */,
+				E747BEC127710CC20046D036 /* MainFlowController.swift in Sources */,
 				3D2400982769550F00DF8F87 /* CoreWrapperC.c in Sources */,
 				E785FEF6276A56390008A720 /* Presenter.swift in Sources */,
 				E785FF03276A57440008A720 /* FontStyle.swift in Sources */,
+				E747BEBC27710C7E0046D036 /* FlowController.swift in Sources */,
 				3D1F1037258D4D7C007C4E38 /* SceneDelegate.swift in Sources */,
+				E747BEB92770FAC80046D036 /* MainPresenter.swift in Sources */,
 				3D327529274EFE75007AF593 /* cJSON.c in Sources */,
+				E747BECD277117F70046D036 /* UILabel+Extensions.swift in Sources */,
+				E747BEBE27710C9F0046D036 /* FlowControllerPresentation.swift in Sources */,
 				3D327528274EFE75007AF593 /* cJSON_Utils.c in Sources */,
 				3D327523274EF10F007AF593 /* FileManager.c in Sources */,
 				3D327534274F033B007AF593 /* encode.c in Sources */,
@@ -353,14 +433,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3D1F103A258D4D7C007C4E38 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3D1F103B258D4D7C007C4E38 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3D1F103F258D4D7D007C4E38 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
