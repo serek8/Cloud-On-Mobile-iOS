@@ -7,6 +7,14 @@
 
 import UIKit
 
+protocol CommandManagerDelegate: AnyObject {
+    func serverOnClose()
+    func serverOnConnected(passocde: Int)
+    func serverOnReconnecting()
+    func serverOnReconnected()
+    func serverOnFileDownlaoded(filepath: String)
+}
+
 final class CommandManager {
     enum CommandManagerError: Error {
         case connectionFailure
@@ -22,6 +30,8 @@ final class CommandManager {
         var command: String?
         var payload: T?
     }
+
+    weak var delegate: CommandManagerDelegate?
 
     private var code: UInt32 = 0
 
@@ -66,15 +76,14 @@ final class CommandManager {
         }
         Thread.detachNewThread {
             self.ip.withCString { (_: UnsafePointer<Int8>) in
-                print("Reconnect tcp-client thread")
                 let code = UnsafeMutablePointer<UInt32>.allocate(capacity: 1)
                 if reconnect_to_server(self.code) != 0 {
                     self.isConnected = false
-//                    self.delegate?.serverOnClose()
+                    self.delegate?.serverOnClose()
                     return
                 } else {
                     self.isConnected = true
-//                    self.delegate?.serverOnReconnected()
+                    self.delegate?.serverOnReconnected()
                 }
                 code.deallocate()
                 _ = self.endlessListen()
