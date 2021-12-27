@@ -7,8 +7,9 @@
 import Foundation
 
 @_cdecl("coreDidDownlodFile") func coreDidDownlodFile(filepath: UnsafePointer<UInt8>) {
-    let filepathStr = String(cString: filepath)
-    CommandManager.shared.delegate?.serverOnFileDownlaoded(filepath: filepathStr)
+    /// - TODO: Create a structure and inject CommandManager instead of using singleton.
+//    let filepathStr = String(cString: filepath)
+//    CommandManager.delegate?.serverOnFileDownlaoded(filepath: filepathStr)
 }
 
 func initSharedCore() {

@@ -7,11 +7,11 @@
 
 import UIKit
 
-class BaseViewController<Presenter: PresenterProtocol>: UIViewController, AutoKeyboard {
+class BaseViewController: UIViewController, AutoKeyboard {
     let containerView = UIView()
 
     /// Instance of presenter.
-    let presenter: Presenter
+    private let presenter: PresenterProtocol
 
     // MARK: AutoKeyboard
 
@@ -31,7 +31,7 @@ class BaseViewController<Presenter: PresenterProtocol>: UIViewController, AutoKe
     /// - Parameters:
     ///   - presenter: Instance of presenter.
     init(
-        presenter: Presenter,
+        presenter: PresenterProtocol,
         backgroundColor: UIColor = .white
     ) {
         self.presenter = presenter

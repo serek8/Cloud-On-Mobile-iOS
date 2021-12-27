@@ -8,5 +8,5 @@
 import Foundation
 
 enum FontStyle {
-    case body16Regular
+    case regular
 }

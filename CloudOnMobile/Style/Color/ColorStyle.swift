@@ -10,4 +10,5 @@ import Foundation
 enum ColorStyle {
     case white
     case background
+    case blue
 }
