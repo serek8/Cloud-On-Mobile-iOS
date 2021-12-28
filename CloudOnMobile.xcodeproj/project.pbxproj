@@ -26,6 +26,7 @@
 		E740A7AC277AF86100A83025 /* CloudOnMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7AB277AF86100A83025 /* CloudOnMobileTests.swift */; };
 		E740A7BA277AF87500A83025 /* CloudOnMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7B9277AF87500A83025 /* CloudOnMobileUITests.swift */; };
 		E740A7BC277AF87500A83025 /* CloudOnMobileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7BB277AF87500A83025 /* CloudOnMobileUITestsLaunchTests.swift */; };
+		E740A7C4277AF9A600A83025 /* AppSchemeProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7C3277AF9A600A83025 /* AppSchemeProperties.swift */; };
 		E747BEB72770FABE0046D036 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEB62770FABE0046D036 /* MainViewController.swift */; };
 		E747BEB92770FAC80046D036 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEB82770FAC80046D036 /* MainPresenter.swift */; };
 		E747BEBC27710C7E0046D036 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEBB27710C7E0046D036 /* FlowController.swift */; };
@@ -102,6 +103,7 @@
 		E740A7B7277AF87500A83025 /* CloudOnMobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CloudOnMobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E740A7B9277AF87500A83025 /* CloudOnMobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudOnMobileUITests.swift; sourceTree = "<group>"; };
 		E740A7BB277AF87500A83025 /* CloudOnMobileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudOnMobileUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E740A7C3277AF9A600A83025 /* AppSchemeProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSchemeProperties.swift; sourceTree = "<group>"; };
 		E747BEB62770FABE0046D036 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E747BEB82770FAC80046D036 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		E747BEBB27710C7E0046D036 /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				E740A7A0277AF77900A83025 /* Development.xcconfig */,
 				E740A7A1277AF7A100A83025 /* Staging.xcconfig */,
 				E740A7A2277AF7B900A83025 /* Production.xcconfig */,
+				E740A7C3277AF9A600A83025 /* AppSchemeProperties.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				E785FEF7276A56390008A720 /* UIView+AutoLayout.swift in Sources */,
 				E747BEC427710D0D0046D036 /* MainDependencyContainer.swift in Sources */,
 				E785FEF8276A56390008A720 /* AutoKeyboard.swift in Sources */,
+				E740A7C4277AF9A600A83025 /* AppSchemeProperties.swift in Sources */,
 				E785FF04276A57440008A720 /* AppFont.swift in Sources */,
 				E785FF05276A57440008A720 /* AppStyle.swift in Sources */,
 				3D24009A2769586A00DF8F87 /* CoreWrapperSwift.swift in Sources */,
@@ -764,7 +768,6 @@
 					"-lcrypto_$(CURRENT_ARCH)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.test;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -810,7 +813,6 @@
 					"-lcrypto_$(CURRENT_ARCH)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.test;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -911,7 +913,6 @@
 					"-lcrypto_$(CURRENT_ARCH)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.test;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
