@@ -868,7 +868,8 @@
 					"-lssl_$(CURRENT_ARCH)",
 					"-lcrypto_$(CURRENT_ARCH)",
 				);
-				PROVISIONING_PROFILE_SPECIFIER = CloudOnMobileProfile;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.cloudon.ios.dev;
+				PROVISIONING_PROFILE_SPECIFIER = CloudOnMobileWildProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -912,7 +913,8 @@
 					"-lssl_$(CURRENT_ARCH)",
 					"-lcrypto_$(CURRENT_ARCH)",
 				);
-				PROVISIONING_PROFILE_SPECIFIER = CloudOnMobileProfile;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.cloudon.ios.staging;
+				PROVISIONING_PROFILE_SPECIFIER = CloudOnMobileWildProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1011,7 +1013,8 @@
 					"-lssl_$(CURRENT_ARCH)",
 					"-lcrypto_$(CURRENT_ARCH)",
 				);
-				PROVISIONING_PROFILE_SPECIFIER = CloudOnMobileProfile;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.cloudon.ios;
+				PROVISIONING_PROFILE_SPECIFIER = CloudOnMobileWildProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
