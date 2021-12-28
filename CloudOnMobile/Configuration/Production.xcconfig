@@ -1,0 +1,9 @@
+//
+//  Production.xcconfig
+//  CloudOnMobile
+//
+//  Created by Karol P on 28/12/2021.
+//
+
+PRODUCT_NAME = Production
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = PRODUCTION
