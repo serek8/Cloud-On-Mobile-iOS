@@ -836,7 +836,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E740A7A0277AF77900A83025 /* Development.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
@@ -879,7 +878,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E740A7A1277AF7A100A83025 /* Staging.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
@@ -977,7 +975,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E740A7A2277AF7B900A83025 /* Production.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
