@@ -11,18 +11,18 @@
 		3D1F1037258D4D7C007C4E38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */; };
 		3D1F103E258D4D7D007C4E38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F103D258D4D7D007C4E38 /* Assets.xcassets */; };
 		3D1F1041258D4D7D007C4E38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F103F258D4D7D007C4E38 /* LaunchScreen.storyboard */; };
-		3D1F104F258D4F04007C4E38 /* TcpClient.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F104E258D4F04007C4E38 /* TcpClient.c */; };
 		3D2400982769550F00DF8F87 /* CoreWrapperC.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D2400972769550F00DF8F87 /* CoreWrapperC.c */; };
 		3D24009A2769586A00DF8F87 /* CoreWrapperSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2400992769586A00DF8F87 /* CoreWrapperSwift.swift */; };
-		3D327523274EF10F007AF593 /* FileManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D327522274EF10F007AF593 /* FileManager.c */; };
-		3D327528274EFE75007AF593 /* cJSON_Utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D327525274EFE75007AF593 /* cJSON_Utils.c */; };
-		3D327529274EFE75007AF593 /* cJSON.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D327526274EFE75007AF593 /* cJSON.c */; };
-		3D327532274F033B007AF593 /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D32752E274F033B007AF593 /* buffer.c */; };
-		3D327533274F033B007AF593 /* decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D32752F274F033B007AF593 /* decode.c */; };
-		3D327534274F033B007AF593 /* encode.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D327530274F033B007AF593 /* encode.c */; };
-		3D327538274F0F0D007AF593 /* TcpParser.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D327537274F0F0D007AF593 /* TcpParser.c */; };
+		3D423CD4277B15FD00C8E4C1 /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CC2277B15FD00C8E4C1 /* buffer.c */; };
+		3D423CD5277B15FD00C8E4C1 /* decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CC4277B15FD00C8E4C1 /* decode.c */; };
+		3D423CD6277B15FD00C8E4C1 /* encode.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CC5277B15FD00C8E4C1 /* encode.c */; };
+		3D423CD8277B15FD00C8E4C1 /* TcpParser.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CC8277B15FD00C8E4C1 /* TcpParser.c */; };
+		3D423CD9277B15FD00C8E4C1 /* TcpClient.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CC9277B15FD00C8E4C1 /* TcpClient.c */; };
+		3D423CDA277B15FD00C8E4C1 /* TlsClient.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CCC277B15FD00C8E4C1 /* TlsClient.c */; };
+		3D423CDC277B15FD00C8E4C1 /* cJSON.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CCF277B15FD00C8E4C1 /* cJSON.c */; };
+		3D423CDD277B15FD00C8E4C1 /* FileManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CD2277B15FD00C8E4C1 /* FileManager.c */; };
+		3D423CDE277B15FD00C8E4C1 /* cJSON_Utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CD3277B15FD00C8E4C1 /* cJSON_Utils.c */; };
 		3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D93B67D274AAF9A007364E8 /* CommandManager.swift */; };
-		3DD4F59B2757F242004FE0C2 /* TlsClient.c in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4F59A2757F242004FE0C2 /* TlsClient.c */; };
 		E740A7AC277AF86100A83025 /* CloudOnMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7AB277AF86100A83025 /* CloudOnMobileTests.swift */; };
 		E740A7BA277AF87500A83025 /* CloudOnMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7B9277AF87500A83025 /* CloudOnMobileUITests.swift */; };
 		E740A7BC277AF87500A83025 /* CloudOnMobileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7BB277AF87500A83025 /* CloudOnMobileUITestsLaunchTests.swift */; };
@@ -83,33 +83,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D1F1031258D4D7C007C4E38 /* CloudOnMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudOnMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D1F1031258D4D7C007C4E38 /* CloudOnMobile Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CloudOnMobile Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3D1F103D258D4D7D007C4E38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D1F1040258D4D7D007C4E38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D1F1042258D4D7D007C4E38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D1F104C258D4F04007C4E38 /* CloudOnMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CloudOnMobile-Bridging-Header.h"; sourceTree = "<group>"; };
-		3D1F104D258D4F04007C4E38 /* TcpClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TcpClient.h; sourceTree = "<group>"; };
-		3D1F104E258D4F04007C4E38 /* TcpClient.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TcpClient.c; sourceTree = "<group>"; };
 		3D2400962769550F00DF8F87 /* CoreWrapperC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreWrapperC.h; sourceTree = "<group>"; };
 		3D2400972769550F00DF8F87 /* CoreWrapperC.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CoreWrapperC.c; sourceTree = "<group>"; };
 		3D2400992769586A00DF8F87 /* CoreWrapperSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreWrapperSwift.swift; sourceTree = "<group>"; };
-		3D327521274EF10F007AF593 /* FileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
-		3D327522274EF10F007AF593 /* FileManager.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = FileManager.c; sourceTree = "<group>"; };
-		3D327524274EFE75007AF593 /* cJSON_Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cJSON_Utils.h; sourceTree = "<group>"; };
-		3D327525274EFE75007AF593 /* cJSON_Utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cJSON_Utils.c; sourceTree = "<group>"; };
-		3D327526274EFE75007AF593 /* cJSON.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cJSON.c; sourceTree = "<group>"; };
-		3D327527274EFE75007AF593 /* cJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cJSON.h; sourceTree = "<group>"; };
-		3D32752E274F033B007AF593 /* buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = buffer.c; sourceTree = "<group>"; };
-		3D32752F274F033B007AF593 /* decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = decode.c; sourceTree = "<group>"; };
-		3D327530274F033B007AF593 /* encode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = encode.c; sourceTree = "<group>"; };
-		3D327531274F033B007AF593 /* b64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b64.h; sourceTree = "<group>"; };
-		3D327536274F0F0D007AF593 /* TcpParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TcpParser.h; sourceTree = "<group>"; };
-		3D327537274F0F0D007AF593 /* TcpParser.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TcpParser.c; sourceTree = "<group>"; };
+		3D423CBF277B15FD00C8E4C1 /* cJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cJSON.h; sourceTree = "<group>"; };
+		3D423CC0277B15FD00C8E4C1 /* cJSON_Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cJSON_Utils.h; sourceTree = "<group>"; };
+		3D423CC2277B15FD00C8E4C1 /* buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = buffer.c; sourceTree = "<group>"; };
+		3D423CC3277B15FD00C8E4C1 /* b64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b64.h; sourceTree = "<group>"; };
+		3D423CC4277B15FD00C8E4C1 /* decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = decode.c; sourceTree = "<group>"; };
+		3D423CC5277B15FD00C8E4C1 /* encode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = encode.c; sourceTree = "<group>"; };
+		3D423CC8277B15FD00C8E4C1 /* TcpParser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TcpParser.c; sourceTree = "<group>"; };
+		3D423CC9277B15FD00C8E4C1 /* TcpClient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TcpClient.c; sourceTree = "<group>"; };
+		3D423CCA277B15FD00C8E4C1 /* TlsClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TlsClient.h; sourceTree = "<group>"; };
+		3D423CCB277B15FD00C8E4C1 /* TcpParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TcpParser.h; sourceTree = "<group>"; };
+		3D423CCC277B15FD00C8E4C1 /* TlsClient.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TlsClient.c; sourceTree = "<group>"; };
+		3D423CCD277B15FD00C8E4C1 /* TcpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TcpClient.h; sourceTree = "<group>"; };
+		3D423CCF277B15FD00C8E4C1 /* cJSON.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cJSON.c; sourceTree = "<group>"; };
+		3D423CD1277B15FD00C8E4C1 /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		3D423CD2277B15FD00C8E4C1 /* FileManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = FileManager.c; sourceTree = "<group>"; };
+		3D423CD3277B15FD00C8E4C1 /* cJSON_Utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cJSON_Utils.c; sourceTree = "<group>"; };
 		3D93B67D274AAF9A007364E8 /* CommandManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandManager.swift; sourceTree = "<group>"; };
-		3DD4F5992757F242004FE0C2 /* TlsClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TlsClient.h; sourceTree = "<group>"; };
-		3DD4F59A2757F242004FE0C2 /* TlsClient.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TlsClient.c; sourceTree = "<group>"; };
 		E740A7A0277AF77900A83025 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		E740A7A1277AF7A100A83025 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		E740A7A2277AF7B900A83025 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 		3D1F1032258D4D7C007C4E38 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3D1F1031258D4D7C007C4E38 /* CloudOnMobile.app */,
+				3D1F1031258D4D7C007C4E38 /* CloudOnMobile Dev.app */,
 				E740A7A9277AF86100A83025 /* CloudOnMobileTests.xctest */,
 				E740A7B7277AF87500A83025 /* CloudOnMobileUITests.xctest */,
 			);
@@ -211,8 +211,8 @@
 				E747BEBA27710C6D0046D036 /* FlowControllers */,
 				E785FEEB276A56390008A720 /* Base */,
 				3D2400952769542500DF8F87 /* CoreWrapper */,
+				3D423CBE277B15FD00C8E4C1 /* Core */,
 				E747BEB42770FA110046D036 /* Modules */,
-				3D1F104A258D4EE8007C4E38 /* Shared */,
 				E785FEF9276A57440008A720 /* Style */,
 				E75E2F69277864FD00843855 /* Views */,
 				3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */,
@@ -226,33 +226,6 @@
 			path = CloudOnMobile;
 			sourceTree = "<group>";
 		};
-		3D1F104A258D4EE8007C4E38 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				3D327535274F0DF5007AF593 /* FileManager */,
-				3D32752D274F0329007AF593 /* base64 */,
-				3D327525274EFE75007AF593 /* cJSON_Utils.c */,
-				3D327524274EFE75007AF593 /* cJSON_Utils.h */,
-				3D327526274EFE75007AF593 /* cJSON.c */,
-				3D327527274EFE75007AF593 /* cJSON.h */,
-				3D1F104B258D4EF0007C4E38 /* TcpClient */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		3D1F104B258D4EF0007C4E38 /* TcpClient */ = {
-			isa = PBXGroup;
-			children = (
-				3D1F104D258D4F04007C4E38 /* TcpClient.h */,
-				3D1F104E258D4F04007C4E38 /* TcpClient.c */,
-				3D327536274F0F0D007AF593 /* TcpParser.h */,
-				3D327537274F0F0D007AF593 /* TcpParser.c */,
-				3DD4F5992757F242004FE0C2 /* TlsClient.h */,
-				3DD4F59A2757F242004FE0C2 /* TlsClient.c */,
-			);
-			path = TcpClient;
-			sourceTree = "<group>";
-		};
 		3D2400952769542500DF8F87 /* CoreWrapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,22 +236,49 @@
 			path = CoreWrapper;
 			sourceTree = "<group>";
 		};
-		3D32752D274F0329007AF593 /* base64 */ = {
+		3D423CBE277B15FD00C8E4C1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				3D327531274F033B007AF593 /* b64.h */,
-				3D32752E274F033B007AF593 /* buffer.c */,
-				3D32752F274F033B007AF593 /* decode.c */,
-				3D327530274F033B007AF593 /* encode.c */,
+				3D423CC7277B15FD00C8E4C1 /* TcpClient */,
+				3D423CD0277B15FD00C8E4C1 /* FileManager */,
+				3D423CC1277B15FD00C8E4C1 /* base64 */,
+				3D423CBF277B15FD00C8E4C1 /* cJSON.h */,
+				3D423CC0277B15FD00C8E4C1 /* cJSON_Utils.h */,
+				3D423CCF277B15FD00C8E4C1 /* cJSON.c */,
+				3D423CD3277B15FD00C8E4C1 /* cJSON_Utils.c */,
+			);
+			path = Core;
+			sourceTree = SOURCE_ROOT;
+		};
+		3D423CC1277B15FD00C8E4C1 /* base64 */ = {
+			isa = PBXGroup;
+			children = (
+				3D423CC2277B15FD00C8E4C1 /* buffer.c */,
+				3D423CC3277B15FD00C8E4C1 /* b64.h */,
+				3D423CC4277B15FD00C8E4C1 /* decode.c */,
+				3D423CC5277B15FD00C8E4C1 /* encode.c */,
 			);
 			path = base64;
 			sourceTree = "<group>";
 		};
-		3D327535274F0DF5007AF593 /* FileManager */ = {
+		3D423CC7277B15FD00C8E4C1 /* TcpClient */ = {
 			isa = PBXGroup;
 			children = (
-				3D327521274EF10F007AF593 /* FileManager.h */,
-				3D327522274EF10F007AF593 /* FileManager.c */,
+				3D423CC8277B15FD00C8E4C1 /* TcpParser.c */,
+				3D423CC9277B15FD00C8E4C1 /* TcpClient.c */,
+				3D423CCA277B15FD00C8E4C1 /* TlsClient.h */,
+				3D423CCB277B15FD00C8E4C1 /* TcpParser.h */,
+				3D423CCC277B15FD00C8E4C1 /* TlsClient.c */,
+				3D423CCD277B15FD00C8E4C1 /* TcpClient.h */,
+			);
+			path = TcpClient;
+			sourceTree = "<group>";
+		};
+		3D423CD0277B15FD00C8E4C1 /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				3D423CD1277B15FD00C8E4C1 /* FileManager.h */,
+				3D423CD2277B15FD00C8E4C1 /* FileManager.c */,
 			);
 			path = FileManager;
 			sourceTree = "<group>";
@@ -503,7 +503,7 @@
 			);
 			name = CloudOnMobile;
 			productName = CloudOnMobile;
-			productReference = 3D1F1031258D4D7C007C4E38 /* CloudOnMobile.app */;
+			productReference = 3D1F1031258D4D7C007C4E38 /* CloudOnMobile Dev.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E740A7A8277AF86100A83025 /* CloudOnMobileTests */ = {
@@ -618,14 +618,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E75E2F752778685E00843855 /* NSObject+Extensions.swift in Sources */,
-				3DD4F59B2757F242004FE0C2 /* TlsClient.c in Sources */,
 				E747BEB72770FABE0046D036 /* MainViewController.swift in Sources */,
 				E75E2F7B2778761500843855 /* FileType.swift in Sources */,
-				3D327538274F0F0D007AF593 /* TcpParser.c in Sources */,
 				E747BED02771C5F00046D036 /* SheetPresentationController.swift in Sources */,
 				3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */,
 				E785FF02276A57440008A720 /* ColorStyle.swift in Sources */,
 				E75E2F78277875F700843855 /* File.swift in Sources */,
+				3D423CD4277B15FD00C8E4C1 /* buffer.c in Sources */,
 				E75E2F6F277865BD00843855 /* Fillable.swift in Sources */,
 				E75E2F732778684600843855 /* UITableView+Extensions.swift in Sources */,
 				E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */,
@@ -633,20 +632,22 @@
 				E747BECB277117C20046D036 /* UIStackView+Extensions.swift in Sources */,
 				3D1F1035258D4D7C007C4E38 /* AppDelegate.swift in Sources */,
 				E785FF01276A57440008A720 /* AppColor.swift in Sources */,
+				3D423CD8277B15FD00C8E4C1 /* TcpParser.c in Sources */,
 				E75E2F7D2778769D00843855 /* Size.swift in Sources */,
+				3D423CDD277B15FD00C8E4C1 /* FileManager.c in Sources */,
 				E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */,
-				3D327533274F033B007AF593 /* decode.c in Sources */,
 				E785FF09276A5DD70008A720 /* BaseView.swift in Sources */,
-				3D1F104F258D4F04007C4E38 /* TcpClient.c in Sources */,
 				E785FEF7276A56390008A720 /* UIView+AutoLayout.swift in Sources */,
 				E747BEC427710D0D0046D036 /* MainDependencyContainer.swift in Sources */,
+				3D423CDC277B15FD00C8E4C1 /* cJSON.c in Sources */,
 				E785FEF8276A56390008A720 /* AutoKeyboard.swift in Sources */,
 				E740A7C4277AF9A600A83025 /* AppSchemeProperties.swift in Sources */,
+				3D423CD5277B15FD00C8E4C1 /* decode.c in Sources */,
 				E785FF04276A57440008A720 /* AppFont.swift in Sources */,
 				E785FF05276A57440008A720 /* AppStyle.swift in Sources */,
 				3D24009A2769586A00DF8F87 /* CoreWrapperSwift.swift in Sources */,
-				3D327532274F033B007AF593 /* buffer.c in Sources */,
 				E785FEF4276A56390008A720 /* Functions.swift in Sources */,
+				3D423CDA277B15FD00C8E4C1 /* TlsClient.c in Sources */,
 				E75E2F682773093000843855 /* FilesPresenter.swift in Sources */,
 				E747BEC127710CC20046D036 /* MainFlowController.swift in Sources */,
 				E75E2F71277865E000843855 /* ReusableView.swift in Sources */,
@@ -655,18 +656,17 @@
 				E785FF03276A57440008A720 /* FontStyle.swift in Sources */,
 				E747BEBC27710C7E0046D036 /* FlowController.swift in Sources */,
 				3D1F1037258D4D7C007C4E38 /* SceneDelegate.swift in Sources */,
+				3D423CDE277B15FD00C8E4C1 /* cJSON_Utils.c in Sources */,
 				E747BEB92770FAC80046D036 /* MainPresenter.swift in Sources */,
 				E747BED42771C6E10046D036 /* SheetPresentationContainerView.swift in Sources */,
 				E75E2F6B2778654300843855 /* IconTitleSubtitleView.swift in Sources */,
 				E75E2F6D2778658900843855 /* BaseTableViewCell.swift in Sources */,
-				3D327529274EFE75007AF593 /* cJSON.c in Sources */,
 				E75E2F662773059000843855 /* FilesViewController.swift in Sources */,
 				E747BECD277117F70046D036 /* UILabel+Extensions.swift in Sources */,
+				3D423CD9277B15FD00C8E4C1 /* TcpClient.c in Sources */,
 				E747BEBE27710C9F0046D036 /* FlowControllerPresentation.swift in Sources */,
-				3D327528274EFE75007AF593 /* cJSON_Utils.c in Sources */,
-				3D327523274EF10F007AF593 /* FileManager.c in Sources */,
 				E75E2F7F2778785C00843855 /* FilesDownloader.swift in Sources */,
-				3D327534274F033B007AF593 /* encode.c in Sources */,
+				3D423CD6277B15FD00C8E4C1 /* encode.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,8 +842,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/CloudOnMobile/Shared\"/**",
 					"\"$(SRCROOT)/include\"",
+					"\"$(SRCROOT)/Core\"/**",
 				);
 				INFOPLIST_FILE = CloudOnMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -886,8 +886,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/CloudOnMobile/Shared\"/**",
 					"\"$(SRCROOT)/include\"",
+					"\"$(SRCROOT)/Core\"/**",
 				);
 				INFOPLIST_FILE = CloudOnMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -985,8 +985,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/CloudOnMobile/Shared\"/**",
 					"\"$(SRCROOT)/include\"",
+					"\"$(SRCROOT)/Core\"/**",
 				);
 				INFOPLIST_FILE = CloudOnMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
