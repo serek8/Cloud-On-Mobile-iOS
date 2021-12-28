@@ -83,7 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D1F1031258D4D7C007C4E38 /* CloudOnMobile Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CloudOnMobile Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D1F1031258D4D7C007C4E38 /* CloudOnMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudOnMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3D1F103D258D4D7D007C4E38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 		3D1F1032258D4D7C007C4E38 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3D1F1031258D4D7C007C4E38 /* CloudOnMobile Dev.app */,
+				3D1F1031258D4D7C007C4E38 /* CloudOnMobile.app */,
 				E740A7A9277AF86100A83025 /* CloudOnMobileTests.xctest */,
 				E740A7B7277AF87500A83025 /* CloudOnMobileUITests.xctest */,
 			);
@@ -503,7 +503,7 @@
 			);
 			name = CloudOnMobile;
 			productName = CloudOnMobile;
-			productReference = 3D1F1031258D4D7C007C4E38 /* CloudOnMobile Dev.app */;
+			productReference = 3D1F1031258D4D7C007C4E38 /* CloudOnMobile.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E740A7A8277AF86100A83025 /* CloudOnMobileTests */ = {
@@ -836,7 +836,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E740A7A0277AF77900A83025 /* Development.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -880,7 +879,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E740A7A1277AF7A100A83025 /* Staging.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -979,7 +977,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E740A7A2277AF7B900A83025 /* Production.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
