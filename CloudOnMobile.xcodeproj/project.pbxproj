@@ -837,8 +837,9 @@
 			baseConfigurationReference = E740A7A0277AF77900A83025 /* Development.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 795PZ6Q4ZU;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/include\"",
 					"\"$(SRCROOT)/Core\"/**",
@@ -867,6 +868,7 @@
 					"-lssl_$(CURRENT_ARCH)",
 					"-lcrypto_$(CURRENT_ARCH)",
 				);
+				PROVISIONING_PROFILE_SPECIFIER = CloudOnMobileWildProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -879,8 +881,9 @@
 			baseConfigurationReference = E740A7A1277AF7A100A83025 /* Staging.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 795PZ6Q4ZU;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/include\"",
 					"\"$(SRCROOT)/Core\"/**",
@@ -909,6 +912,7 @@
 					"-lssl_$(CURRENT_ARCH)",
 					"-lcrypto_$(CURRENT_ARCH)",
 				);
+				PROVISIONING_PROFILE_SPECIFIER = CloudOnMobileWildProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -976,8 +980,9 @@
 			baseConfigurationReference = E740A7A2277AF7B900A83025 /* Production.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 795PZ6Q4ZU;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/include\"",
 					"\"$(SRCROOT)/Core\"/**",
@@ -1006,6 +1011,7 @@
 					"-lssl_$(CURRENT_ARCH)",
 					"-lcrypto_$(CURRENT_ARCH)",
 				);
+				PROVISIONING_PROFILE_SPECIFIER = CloudOnMobileWildProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
