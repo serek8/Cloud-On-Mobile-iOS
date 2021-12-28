@@ -32,7 +32,7 @@ class BaseViewController: UIViewController, AutoKeyboard {
     ///   - presenter: Instance of presenter.
     init(
         presenter: PresenterProtocol,
-        backgroundColor: UIColor = .white
+        backgroundColor: UIColor = AppStyle.current.color(for: .white)
     ) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
