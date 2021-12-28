@@ -5,6 +5,7 @@
 //  Created by Karol P on 28/12/2021.
 //
 
-PRODUCT_NAME = CloudOnMobile STG
+#include "Common.xcconfig"
+
 SWIFT_ACTIVE_COMPILATION_CONDITIONS = STAGING
 PRODUCT_BUNDLE_IDENTIFIER = com.cloudonmobile.staging
