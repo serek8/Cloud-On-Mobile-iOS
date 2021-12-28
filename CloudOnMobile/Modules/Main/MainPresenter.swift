@@ -23,7 +23,7 @@ final class MainPresenter {
 
     /// Initialize Presenter
     /// - Parameters:
-    ///   - commandManager: responsible for communicatio with server.
+    ///   - commandManager: responsible for communication with server.
     init(commandManager: CommandManager) {
         self.commandManager = commandManager
     }
