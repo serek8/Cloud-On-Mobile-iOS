@@ -15,11 +15,12 @@ protocol MainDependencyContainer {
 
 final class DefaultMainDependencyContainer: MainDependencyContainer {
     lazy var commandManager: CommandManager = {
-        /// "192.168.50.10"
-        CommandManager(url: "cloudon.cc")
+        CommandManager(url: appSchemeProperties.host)
     }()
 
     // MARK: - Private
 
     private lazy var urlSession = URLSession(configuration: .ephemeral)
+
+    private lazy var appSchemeProperties: AppSchemeProperties = DefaultAppSchemeProperties()
 }
