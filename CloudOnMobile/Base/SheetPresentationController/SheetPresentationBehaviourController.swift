@@ -27,13 +27,13 @@ final class SheetPresentationBehaviourController {
         detents.min(by: { $0.height < $1.height })?.height ?? 0
     }
 
-    private weak var bottomScrollView: UIScrollView?
-
     private lazy var panGestureRecognizer = with(UIPanGestureRecognizer()) {
         $0.addTarget(self, action: #selector(handlePan))
     }
 
-    private var rootView: UIView?
+    private weak var bottomScrollView: UIScrollView?
+    private weak var rootView: UIView?
+
     private var detent: Detent
     private var topConstraint = NSLayoutConstraint()
 
@@ -57,11 +57,14 @@ final class SheetPresentationBehaviourController {
     /// - Parameters:
     ///   - rootView: view of BottomSheetContainer component.
     ///   - bottomSheetContent: view to be displayed inside of bottom sheet.
+    ///   - scrollView: scrollView needed for disabling scrolling in not max modes.
     func prepareForUsage(
         rootView: UIView?,
-        bottomSheetContent: UIView
+        bottomSheetContent: UIView,
+        scrollView: UIScrollView?
     ) {
         self.rootView = rootView
+        bottomScrollView = scrollView
         setupView(bottomSheetContent: bottomSheetContent)
     }
 }
