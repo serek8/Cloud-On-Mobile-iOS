@@ -64,7 +64,9 @@ final class CommandManager {
                 let value = Int(code.pointee)
                 continuation.resume(returning: value)
                 code.deallocate()
-                _ = self.endlessListen()
+                Thread.detachNewThread {
+                    _ = self.endlessListen()
+                }
             }
         }
     }
