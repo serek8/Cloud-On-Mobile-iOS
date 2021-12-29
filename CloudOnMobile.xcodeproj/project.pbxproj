@@ -122,6 +122,8 @@
 		E740A7C3277AF9A600A83025 /* AppSchemeProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSchemeProperties.swift; sourceTree = "<group>"; };
 		E740A7C5277B231D00A83025 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		E740A7CB277C568200A83025 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Base.strings; sourceTree = "<group>"; };
+		E740A7CD277C571B00A83025 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E740A7CE277C571B00A83025 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Base.strings; sourceTree = "<group>"; };
 		E747BEB62770FABE0046D036 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E747BEB82770FAC80046D036 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		E747BEBB27710C7E0046D036 /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
@@ -209,7 +211,7 @@
 		3D1F1033258D4D7C007C4E38 /* CloudOnMobile */ = {
 			isa = PBXGroup;
 			children = (
-				E740A7C6277C563700A83025 /* Supporting Files */,
+				E740A7C6277C563700A83025 /* SupportingFiles */,
 				E740A79F277AF76700A83025 /* Configuration */,
 				E747BEBA27710C6D0046D036 /* FlowControllers */,
 				E785FEEB276A56390008A720 /* Base */,
@@ -322,12 +324,12 @@
 			path = CloudOnMobileUITests;
 			sourceTree = "<group>";
 		};
-		E740A7C6277C563700A83025 /* Supporting Files */ = {
+		E740A7C6277C563700A83025 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
 				E740A7C7277C564100A83025 /* Translations */,
 			);
-			path = "Supporting Files";
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		E740A7C7277C564100A83025 /* Translations */ = {
@@ -591,6 +593,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = 3D1F1028258D4D7C007C4E38;
 			productRefGroup = 3D1F1032258D4D7C007C4E38 /* Products */;
@@ -727,6 +730,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3D1F1040258D4D7D007C4E38 /* Base */,
+				E740A7CD277C571B00A83025 /* pl */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -735,6 +739,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E740A7CB277C568200A83025 /* en */,
+				E740A7CE277C571B00A83025 /* pl */,
 			);
 			name = Base.strings;
 			sourceTree = "<group>";
@@ -747,6 +752,7 @@
 			baseConfigurationReference = E740A7A0277AF77900A83025 /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -809,6 +815,7 @@
 			baseConfigurationReference = E740A7A1277AF7A100A83025 /* Staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -952,6 +959,7 @@
 			baseConfigurationReference = E740A7A2277AF7B900A83025 /* Production.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
