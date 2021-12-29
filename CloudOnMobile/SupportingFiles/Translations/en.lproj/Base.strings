@@ -1,7 +1,2 @@
-/* 
-  Base.strings
-  CloudOnMobile
-
-  Created by Karol P on 29/12/2021.
-  
-*/
+"MainViewController.accessCode" = "Access code";
+"MainViewController.getAccessCode" = "Get access code";
