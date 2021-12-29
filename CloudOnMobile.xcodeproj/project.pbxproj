@@ -27,6 +27,7 @@
 		E740A7BA277AF87500A83025 /* CloudOnMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7B9277AF87500A83025 /* CloudOnMobileUITests.swift */; };
 		E740A7BC277AF87500A83025 /* CloudOnMobileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7BB277AF87500A83025 /* CloudOnMobileUITestsLaunchTests.swift */; };
 		E740A7C4277AF9A600A83025 /* AppSchemeProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7C3277AF9A600A83025 /* AppSchemeProperties.swift */; };
+		E740A7CA277C568200A83025 /* Base.strings in Resources */ = {isa = PBXBuildFile; fileRef = E740A7CC277C568200A83025 /* Base.strings */; };
 		E747BEB72770FABE0046D036 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEB62770FABE0046D036 /* MainViewController.swift */; };
 		E747BEB92770FAC80046D036 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEB82770FAC80046D036 /* MainPresenter.swift */; };
 		E747BEBC27710C7E0046D036 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747BEBB27710C7E0046D036 /* FlowController.swift */; };
@@ -120,6 +121,7 @@
 		E740A7BB277AF87500A83025 /* CloudOnMobileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudOnMobileUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E740A7C3277AF9A600A83025 /* AppSchemeProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSchemeProperties.swift; sourceTree = "<group>"; };
 		E740A7C5277B231D00A83025 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		E740A7CB277C568200A83025 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Base.strings; sourceTree = "<group>"; };
 		E747BEB62770FABE0046D036 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E747BEB82770FAC80046D036 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		E747BEBB27710C7E0046D036 /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		3D1F1033258D4D7C007C4E38 /* CloudOnMobile */ = {
 			isa = PBXGroup;
 			children = (
+				E740A7C6277C563700A83025 /* Supporting Files */,
 				E740A79F277AF76700A83025 /* Configuration */,
 				E747BEBA27710C6D0046D036 /* FlowControllers */,
 				E785FEEB276A56390008A720 /* Base */,
@@ -317,6 +320,22 @@
 				E740A7BB277AF87500A83025 /* CloudOnMobileUITestsLaunchTests.swift */,
 			);
 			path = CloudOnMobileUITests;
+			sourceTree = "<group>";
+		};
+		E740A7C6277C563700A83025 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E740A7C7277C564100A83025 /* Translations */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E740A7C7277C564100A83025 /* Translations */ = {
+			isa = PBXGroup;
+			children = (
+				E740A7CC277C568200A83025 /* Base.strings */,
+			);
+			path = Translations;
 			sourceTree = "<group>";
 		};
 		E747BEB42770FA110046D036 /* Modules */ = {
@@ -593,6 +612,7 @@
 				E747BEC8277111520046D036 /* Poppins-Regular.ttf in Resources */,
 				3D1F1041258D4D7D007C4E38 /* LaunchScreen.storyboard in Resources */,
 				3D1F103E258D4D7D007C4E38 /* Assets.xcassets in Resources */,
+				E740A7CA277C568200A83025 /* Base.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,6 +729,14 @@
 				3D1F1040258D4D7D007C4E38 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E740A7CC277C568200A83025 /* Base.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E740A7CB277C568200A83025 /* en */,
+			);
+			name = Base.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
