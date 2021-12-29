@@ -1,0 +1,9 @@
+input_dir: CloudOnMobile/Translations
+output_dir: CloudOnMobile/Translations/Generated
+
+strings:
+  inputs:
+   - Base.strings
+  outputs:
+    templateName: structured-swift5
+    output: Strings+Generated.swift
