@@ -19,3 +19,15 @@ It requires running two commands to work properly:
 `git config core.hooksPath .githooks`
 
 You can see all aplied rules inside `.swiftformat` file.
+
+## [SwiftGen](https://github.com/SwiftGen/SwiftGen)
+
+SwiftGen has been configured for this project to generate enums for translations or assets.
+
+It has been added as build phase and it will run with every build.
+
+It requires to install it using Homebrew commands:
+```bash
+$ brew update
+$ brew install swiftgen
+```
