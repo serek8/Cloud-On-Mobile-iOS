@@ -37,7 +37,7 @@ private extension FilesPresenter {
             IconTitleSubtitleView.ViewModel(
                 icon: $0.type.image,
                 title: $0.name,
-                subtitle: $0.size.translation
+                subtitle: $0.sizeTranslation
             )
         }
     }

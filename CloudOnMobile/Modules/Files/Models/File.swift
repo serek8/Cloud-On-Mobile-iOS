@@ -7,13 +7,31 @@
 
 import Foundation
 
-struct File {
+struct File: Codable {
     /// Name of the file.
     let name: String
 
-    /// Size of the file.
-    let size: Size
+    /// Size of the file in bytes
+    let size: Int
+
+    /// Prettified size of a file.
+    var sizeTranslation: String {
+        var sizeTmp = Double(size)
+        let units = ["B", "KB", "MB", "GB", "TB"]
+        var unitIndex = 0
+        while sizeTmp > 1024 {
+            unitIndex += 1
+            sizeTmp /= 1024
+        }
+        if unitIndex >= 0, unitIndex < units.count {
+            return "\(Int(sizeTmp.rounded())) \(units[unitIndex])"
+        } else {
+            return "\(size) B"
+        }
+    }
 
     /// Type of the file.
-    let type: FileType
+    var type: FileType {
+        FileType(filename: name)
+    }
 }
