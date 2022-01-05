@@ -19,7 +19,7 @@ final class MainViewController: BaseViewController {
     }
 
     private let accessCodeLabel = with(UILabel()) {
-        $0.text = "Access code"
+        $0.text = L10n.MainViewController.accessCode
         $0.textColor = AppStyle.current.color(for: .white)
         $0.font = AppStyle.current.font(for: .regular, size: 16)
         $0.textAlignment = .center
@@ -35,7 +35,7 @@ final class MainViewController: BaseViewController {
 
     private let getCodeButton = with(UIButton(type: .system)) {
         $0.titleLabel?.font = AppStyle.current.font(for: .regular, size: 16)
-        $0.setTitle("Get access code", for: .normal)
+        $0.setTitle(L10n.MainViewController.getAccessCode, for: .normal)
         $0.setTitleColor(AppStyle.current.color(for: .white), for: .normal)
         $0.backgroundColor = AppStyle.current.color(for: .blue)
         $0.layer.cornerRadius = 12
