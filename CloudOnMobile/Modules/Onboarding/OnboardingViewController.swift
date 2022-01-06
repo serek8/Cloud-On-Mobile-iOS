@@ -48,31 +48,12 @@ final class OnboardingViewController: BaseViewController {
         $0.addCharactersSpacing(value: 26)
     }
 
-    private let bottomButton = with(UIButton(type: .system)) {
-        $0.titleLabel?.font = AppStyle.current.font(for: .regular, size: 16)
-        $0.setTitleColor(AppStyle.current.color(for: .white), for: .normal)
-        $0.backgroundColor = AppStyle.current.color(for: .blue)
-        $0.layer.cornerRadius = 12
-        $0.contentEdgeInsets = UIEdgeInsets(
-            top: 16,
-            left: 24,
-            bottom: 16,
-            right: 24
-        )
+    private let bottomButton = with(ViewsFactory.blueButton) {
         $0.addTarget(self, action: #selector(bottomButtonTapped), for: .touchUpInside)
     }
 
-    private let skipButton = with(UIButton(type: .system)) {
+    private let skipButton = with(ViewsFactory.whiteButton) {
         $0.setTitle("Skip", for: .normal)
-        $0.titleLabel?.font = AppStyle.current.font(for: .regular, size: 16)
-        $0.setTitleColor(AppStyle.current.color(for: .blue), for: .normal)
-        $0.backgroundColor = AppStyle.current.color(for: .white)
-        $0.contentEdgeInsets = UIEdgeInsets(
-            top: 16,
-            left: 24,
-            bottom: 16,
-            right: 24
-        )
         $0.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
     }
 

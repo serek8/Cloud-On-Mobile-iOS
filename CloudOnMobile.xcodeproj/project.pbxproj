@@ -69,6 +69,7 @@
 		E7E20E53278783A000986653 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E52278783A000986653 /* OnboardingViewController.swift */; };
 		E7E20E55278783A800986653 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E54278783A800986653 /* OnboardingPresenter.swift */; };
 		E7E20E572787844100986653 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E562787844100986653 /* OnboardingPage.swift */; };
+		E7E20E592787932500986653 /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E582787932500986653 /* ViewsFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +171,7 @@
 		E7E20E52278783A000986653 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		E7E20E54278783A800986653 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 		E7E20E562787844100986653 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
+		E7E20E582787932500986653 /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,6 +445,7 @@
 			children = (
 				E75E2F762778695C00843855 /* Base */,
 				E75E2F6A2778654300843855 /* IconTitleSubtitleView.swift */,
+				E7E20E582787932500986653 /* ViewsFactory.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				3D1F1035258D4D7C007C4E38 /* AppDelegate.swift in Sources */,
 				E785FF01276A57440008A720 /* AppColor.swift in Sources */,
 				3D423CD8277B15FD00C8E4C1 /* TcpParser.c in Sources */,
+				E7E20E592787932500986653 /* ViewsFactory.swift in Sources */,
 				3D423CDD277B15FD00C8E4C1 /* FileManager.c in Sources */,
 				E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */,
 				E785FF09276A5DD70008A720 /* BaseView.swift in Sources */,
