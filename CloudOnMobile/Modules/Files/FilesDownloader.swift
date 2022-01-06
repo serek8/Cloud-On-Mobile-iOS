@@ -7,13 +7,18 @@
 
 import Foundation
 
-struct MockedFilesDownloader: FilesDownloader {
-    /// - TODO: Connect downloading files to FilesDownloader.
-
-    func getFilesList() async -> [File] {
-        guard let data = listFiles() else { return [] }
-        let decoder = JSONDecoder()
-        let files = try? decoder.decode([File].self, from: data)
-        return files ?? []
-    }
+struct DefaultFilesDownloader: FilesDownloader {
+  
+  let dataProvider : DataProvider
+  
+  init(dataProvided:DataProvider) {
+    self.dataProvider = dataProvided
+  }
+  
+  func getFilesList() async -> [File] {
+    guard let data = self.dataProvider.listFiles() else { return [] }
+      let decoder = JSONDecoder()
+      let files = try? decoder.decode([File].self, from: data)
+      return files ?? []
+  }
 }

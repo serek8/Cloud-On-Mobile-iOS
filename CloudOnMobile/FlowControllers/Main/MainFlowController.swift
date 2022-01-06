@@ -57,7 +57,7 @@ private extension MainFlowController {
         let mainViewController = MainViewController(presenter: mainPresenter)
         mainPresenter.viewController = mainViewController
 
-        let filesPresenter = FilesPresenter(filesDownloader: MockedFilesDownloader())
+      let filesPresenter = FilesPresenter(filesDownloader: DefaultFilesDownloader(dataProvided: dependencyContainer.commandManager))
         let filesViewController = FilesViewController(presenter: filesPresenter)
         filesPresenter.viewController = filesViewController
 
