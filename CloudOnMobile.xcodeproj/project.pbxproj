@@ -195,12 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				3D1F1033258D4D7C007C4E38 /* CloudOnMobile */,
-				3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */,
-				3D1F103D258D4D7D007C4E38 /* Assets.xcassets */,
-				3D1F104C258D4F04007C4E38 /* CloudOnMobile-Bridging-Header.h */,
-				3D1F1042258D4D7D007C4E38 /* Info.plist */,
-				3D1F103F258D4D7D007C4E38 /* LaunchScreen.storyboard */,
-				3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */,
 				E740A7AA277AF86100A83025 /* CloudOnMobileTests */,
 				E740A7B8277AF87500A83025 /* CloudOnMobileUITests */,
 				3D1F1032258D4D7C007C4E38 /* Products */,
@@ -231,6 +225,12 @@
 				E785FEF9276A57440008A720 /* Style */,
 				E740A7C6277C563700A83025 /* SupportingFiles */,
 				E75E2F69277864FD00843855 /* Views */,
+				3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */,
+				3D1F103D258D4D7D007C4E38 /* Assets.xcassets */,
+				3D1F104C258D4F04007C4E38 /* CloudOnMobile-Bridging-Header.h */,
+				3D1F1042258D4D7D007C4E38 /* Info.plist */,
+				3D1F103F258D4D7D007C4E38 /* LaunchScreen.storyboard */,
+				3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */,
 			);
 			path = CloudOnMobile;
 			sourceTree = "<group>";
