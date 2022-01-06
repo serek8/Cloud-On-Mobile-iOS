@@ -13,7 +13,7 @@ struct DefaultFilesDownloader: FilesDownloader {
 
     /// Initialize DefaultFilesDownloader.
     /// - Parameters:
-    ///   - <#statements#>: <#statements#>
+    ///   - dataProvided: Files data provider.
     init(dataProvided: FilesDataProvider) {
         dataProvider = dataProvided
     }
