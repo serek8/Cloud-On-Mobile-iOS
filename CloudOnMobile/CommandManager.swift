@@ -119,6 +119,7 @@ final class CommandManager : DataProvider {
         }
     }
   
+  ///  Download JSON data containing an array of all files stored locally
   func listFiles() -> Data? {
       let data_out_ptr = UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>.allocate(capacity: 1)
       let len = list_dir_locally(UnsafePointer<CChar>?.none, data_out_ptr)
