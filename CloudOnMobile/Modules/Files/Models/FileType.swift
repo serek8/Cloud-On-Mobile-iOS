@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum FileType {
+enum FileType : CaseIterable {
     case image
     case music
     case video
@@ -15,27 +15,15 @@ enum FileType {
 }
 
 extension FileType {
-    init(filename: String) {
-        let pathExtension = URL(fileURLWithPath: filename).pathExtension.lowercased()
-        switch pathExtension {
-        case "gif",
-             "jpeg",
-             "jpg",
-             "png":
-            self = .image
-        case "mp3",
-             "wav":
-            self = .music
-        case "mov",
-             "mp4":
-            self = .video
-        default:
-            self = .other
+    var pathExtension: [String] {
+        switch self {
+        case .image: return ["png", "jpg", "jpeg", "gif"]
+        case .music: return ["mp3", "wav3"]
+        case .video: return ["mp4", "mov"]
+        case .other: return []
         }
     }
-}
 
-extension FileType {
     var image: UIImage {
         switch self {
         case .image:
