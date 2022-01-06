@@ -27,7 +27,7 @@ extension OnboardingPresenter: OnboardingPresenterProtocol {
                 numberOfFilledDots: page.index,
                 title: page.title,
                 description: page.description,
-                nextButtonTitle: "Next"
+                bottomButtonTitle: "Next"
             )
         )
     }
