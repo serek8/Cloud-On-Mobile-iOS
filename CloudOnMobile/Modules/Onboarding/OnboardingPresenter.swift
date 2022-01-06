@@ -10,6 +10,9 @@ import Foundation
 protocol OnboardingPresenterProtocol: PresenterProtocol {
     /// Function called on bottom button tapped.
     func bottomButtonTapped()
+
+    /// Function called on skip button tapped.
+    func skipTapped()
 }
 
 final class OnboardingPresenter {
@@ -34,5 +37,9 @@ extension OnboardingPresenter: OnboardingPresenterProtocol {
 
     func bottomButtonTapped() {
         print("Next")
+    }
+
+    func skipTapped() {
+        print("Skip")
     }
 }

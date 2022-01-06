@@ -62,6 +62,20 @@ final class OnboardingViewController: BaseViewController {
         $0.addTarget(self, action: #selector(bottomButtonTapped), for: .touchUpInside)
     }
 
+    private let skipButton = with(UIButton(type: .system)) {
+        $0.setTitle("Skip", for: .normal)
+        $0.titleLabel?.font = AppStyle.current.font(for: .regular, size: 16)
+        $0.setTitleColor(AppStyle.current.color(for: .blue), for: .normal)
+        $0.backgroundColor = AppStyle.current.color(for: .white)
+        $0.contentEdgeInsets = UIEdgeInsets(
+            top: 16,
+            left: 24,
+            bottom: 16,
+            right: 24
+        )
+        $0.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
+    }
+
     private let presenter: OnboardingPresenterProtocol
 
     init(presenter: OnboardingPresenterProtocol) {
@@ -99,7 +113,8 @@ private extension OnboardingViewController {
             dotsView,
             titleLabel,
             descriptionLabel,
-            bottomButton
+            bottomButton,
+            skipButton
         ])
 
         imageView.addConstraints { [
@@ -131,10 +146,19 @@ private extension OnboardingViewController {
             $0.equal(.centerX),
             $0.equal(.bottom, constant: -66)
         ] }
+
+        skipButton.addConstraints { [
+            $0.equal(.safeAreaTop),
+            $0.equal(.trailing)
+        ] }
     }
 
     @objc func bottomButtonTapped() {
         presenter.bottomButtonTapped()
+    }
+
+    @objc func skipButtonTapped() {
+        presenter.skipTapped()
     }
 }
 
