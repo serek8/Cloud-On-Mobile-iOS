@@ -15,11 +15,13 @@ protocol CommandManagerDelegate: AnyObject {
     func serverOnFileDownlaoded(filepath: String)
 }
 
-protocol DataProvider {
+/// Protocol responsible for fetching files from backend.
+protocol FilesDataProvider {
+    ///  Downloads JSON data containing an array of all files stored locally.
     func listFiles() -> Data?
 }
 
-final class CommandManager: DataProvider {
+final class CommandManager {
     enum CommandManagerError: Error {
         case connectionFailure
     }
@@ -50,6 +52,8 @@ final class CommandManager: DataProvider {
         setup_environment(documentsDirectory.path)
         copyDemoFiles()
     }
+
+    /// - TODO: Add protocol for functions below.
 
     func connect() async throws -> Int {
         try await withUnsafeThrowingContinuation { continuation in
@@ -113,8 +117,11 @@ final class CommandManager: DataProvider {
             try? sampleImage?.pngData()?.write(to: sampleImagePath)
         }
     }
+}
 
-    ///  Download JSON data containing an array of all files stored locally
+// MARK: FilesDataProvider
+
+extension CommandManager: FilesDataProvider {
     func listFiles() -> Data? {
         let data_out_ptr = UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>.allocate(capacity: 1)
         let len = list_dir_locally(UnsafePointer<CChar>?.none, data_out_ptr)
