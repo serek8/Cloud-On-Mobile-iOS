@@ -65,6 +65,7 @@
 		E785FF05276A57440008A720 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FF00276A57440008A720 /* AppStyle.swift */; };
 		E785FF09276A5DD70008A720 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FF08276A5DD70008A720 /* BaseView.swift */; };
 		E7E20E4A2787335700986653 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E492787335700986653 /* Size.swift */; };
+		E7E20E4E2787426100986653 /* BackendFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E4D2787426100986653 /* BackendFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,7 @@
 		E785FF00276A57440008A720 /* AppStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		E785FF08276A5DD70008A720 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E7E20E492787335700986653 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		E7E20E4D2787426100986653 /* BackendFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -513,9 +515,18 @@
 		E7E20E4B2787407200986653 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E7E20E4C2787425900986653 /* BackendModels */,
 				3D93B67D274AAF9A007364E8 /* CommandManager.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		E7E20E4C2787425900986653 /* BackendModels */ = {
+			isa = PBXGroup;
+			children = (
+				E7E20E4D2787426100986653 /* BackendFile.swift */,
+			);
+			path = BackendModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -685,6 +696,7 @@
 				E75E2F6F277865BD00843855 /* Fillable.swift in Sources */,
 				E75E2F732778684600843855 /* UITableView+Extensions.swift in Sources */,
 				E785FEF5276A56390008A720 /* BaseViewController.swift in Sources */,
+				E7E20E4E2787426100986653 /* BackendFile.swift in Sources */,
 				E740A7D1277C585D00A83025 /* Strings+Generated.swift in Sources */,
 				E747BED22771C6650046D036 /* SheetPresentationBehaviourController.swift in Sources */,
 				E747BECB277117C20046D036 /* UIStackView+Extensions.swift in Sources */,

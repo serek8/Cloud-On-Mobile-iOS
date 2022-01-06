@@ -151,11 +151,3 @@ private extension CommandManager {
         }
     }
 }
-
-struct BackendFile: Codable {
-    /// Name of the file.
-    let name: String
-
-    /// Size of the file in bytes.
-    let size: Int64
-}
