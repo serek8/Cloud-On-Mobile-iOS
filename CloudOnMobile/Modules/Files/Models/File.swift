@@ -32,6 +32,10 @@ struct File: Codable {
 
     /// Type of the file.
     var type: FileType {
-        FileType(filename: name)
-    }
+        let fileExtension = URL(fileURLWithPath: name).pathExtension.lowercased()
+        return FileType.allCases.first(where: {
+          $0.pathExtension.first(where:
+              {$0 == fileExtension}
+          ) != nil }) ?? .other
+      }
 }
