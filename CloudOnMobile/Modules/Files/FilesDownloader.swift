@@ -18,19 +18,21 @@ struct DefaultFilesDownloader: FilesDownloader {
         dataProvider = dataProvided
     }
 
-    func getFilesList() async -> [File] {
-        let result = dataProvider.listFiles()
-        switch result {
-        case let .success(files):
-            return files.map {
-                File(
-                    name: $0.name,
-                    size: Size(numberOfBytes: $0.size),
-                    type: FileType(fileName: $0.name)
-                )
+    func getFilesList() async -> Result<[File], Error> {
+        return dataProvider
+            .listFiles()
+            .flatMap { backendModel in
+                let files = backendModel.map {
+                    File(
+                        name: $0.name,
+                        size: Size(numberOfBytes: $0.size),
+                        type: FileType(fileName: $0.name)
+                    )
+                }
+                return .success(files)
             }
-        case .failure:
-            return []
-        }
+            .flatMapError {
+                .failure($0)
+            }
     }
 }
