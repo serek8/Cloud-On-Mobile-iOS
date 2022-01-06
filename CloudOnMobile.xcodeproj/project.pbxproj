@@ -64,6 +64,7 @@
 		E785FF04276A57440008A720 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FEFF276A57440008A720 /* AppFont.swift */; };
 		E785FF05276A57440008A720 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FF00276A57440008A720 /* AppStyle.swift */; };
 		E785FF09276A5DD70008A720 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FF08276A5DD70008A720 /* BaseView.swift */; };
+		E7E20E4A2787335700986653 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E492787335700986653 /* Size.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		E785FEFF276A57440008A720 /* AppFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		E785FF00276A57440008A720 /* AppStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		E785FF08276A5DD70008A720 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		E7E20E492787335700986653 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -450,6 +452,7 @@
 			children = (
 				E75E2F77277875F700843855 /* File.swift */,
 				E75E2F7A2778761500843855 /* FileType.swift */,
+				E7E20E492787335700986653 /* Size.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -666,6 +669,7 @@
 				E747BEB72770FABE0046D036 /* MainViewController.swift in Sources */,
 				E75E2F7B2778761500843855 /* FileType.swift in Sources */,
 				E747BED02771C5F00046D036 /* SheetPresentationController.swift in Sources */,
+				E7E20E4A2787335700986653 /* Size.swift in Sources */,
 				3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */,
 				E785FF02276A57440008A720 /* ColorStyle.swift in Sources */,
 				E75E2F78277875F700843855 /* File.swift in Sources */,
