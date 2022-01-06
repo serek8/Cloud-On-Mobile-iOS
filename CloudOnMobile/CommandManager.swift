@@ -16,10 +16,10 @@ protocol CommandManagerDelegate: AnyObject {
 }
 
 protocol DataProvider {
-  func listFiles() -> Data?
+    func listFiles() -> Data?
 }
 
-final class CommandManager : DataProvider {
+final class CommandManager: DataProvider {
     enum CommandManagerError: Error {
         case connectionFailure
     }
@@ -118,17 +118,16 @@ final class CommandManager : DataProvider {
             try? sampleImage?.pngData()?.write(to: sampleImagePath)
         }
     }
-  
-  ///  Download JSON data containing an array of all files stored locally
-  func listFiles() -> Data? {
-      let data_out_ptr = UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>.allocate(capacity: 1)
-      let len = list_dir_locally(UnsafePointer<CChar>?.none, data_out_ptr)
-      if len <= 0 {
-          return nil
-      }
-      let data = Data(bytesNoCopy: data_out_ptr.pointee!, count: Int(len), deallocator: Data.Deallocator.free)
-      data_out_ptr.deallocate()
-      return data
-  }
 
+    ///  Download JSON data containing an array of all files stored locally
+    func listFiles() -> Data? {
+        let data_out_ptr = UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>.allocate(capacity: 1)
+        let len = list_dir_locally(UnsafePointer<CChar>?.none, data_out_ptr)
+        if len <= 0 {
+            return nil
+        }
+        let data = Data(bytesNoCopy: data_out_ptr.pointee!, count: Int(len), deallocator: Data.Deallocator.free)
+        data_out_ptr.deallocate()
+        return data
+    }
 }
