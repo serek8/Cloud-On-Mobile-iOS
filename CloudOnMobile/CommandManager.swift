@@ -15,7 +15,11 @@ protocol CommandManagerDelegate: AnyObject {
     func serverOnFileDownlaoded(filepath: String)
 }
 
-final class CommandManager {
+protocol DataProvider {
+  func listFiles() -> Data?
+}
+
+final class CommandManager : DataProvider {
     enum CommandManagerError: Error {
         case connectionFailure
     }
@@ -114,4 +118,16 @@ final class CommandManager {
             try? sampleImage?.pngData()?.write(to: sampleImagePath)
         }
     }
+  
+  func listFiles() -> Data? {
+      let data_out_ptr = UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>.allocate(capacity: 1)
+      let len = list_dir_locally(UnsafePointer<CChar>?.none, data_out_ptr)
+      if len <= 0 {
+          return nil
+      }
+      let data = Data(bytesNoCopy: data_out_ptr.pointee!, count: Int(len), deallocator: Data.Deallocator.free)
+      data_out_ptr.deallocate()
+      return data
+  }
+
 }
