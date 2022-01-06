@@ -213,6 +213,7 @@
 		3D1F1033258D4D7C007C4E38 /* CloudOnMobile */ = {
 			isa = PBXGroup;
 			children = (
+				E7E20E4B2787407200986653 /* Networking */,
 				E740A7C6277C563700A83025 /* SupportingFiles */,
 				E740A79F277AF76700A83025 /* Configuration */,
 				E747BEBA27710C6D0046D036 /* FlowControllers */,
@@ -225,7 +226,6 @@
 				3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */,
 				3D1F103D258D4D7D007C4E38 /* Assets.xcassets */,
 				3D1F104C258D4F04007C4E38 /* CloudOnMobile-Bridging-Header.h */,
-				3D93B67D274AAF9A007364E8 /* CommandManager.swift */,
 				3D1F1042258D4D7D007C4E38 /* Info.plist */,
 				3D1F103F258D4D7D007C4E38 /* LaunchScreen.storyboard */,
 				3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */,
@@ -508,6 +508,14 @@
 				E785FEFE276A57440008A720 /* FontStyle.swift */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		E7E20E4B2787407200986653 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3D93B67D274AAF9A007364E8 /* CommandManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
