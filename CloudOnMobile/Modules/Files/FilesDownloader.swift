@@ -16,12 +16,12 @@ struct DefaultFilesDownloader: FilesDownloader {
         let size: Int64
     }
 
-    private let dataProvider: DataProvider
+    private let dataProvider: FilesDataProvider
 
     /// Initialize DefaultFilesDownloader.
     /// - Parameters:
     ///   - <#statements#>: <#statements#>
-    init(dataProvided: DataProvider) {
+    init(dataProvided: FilesDataProvider) {
         dataProvider = dataProvided
     }
 
