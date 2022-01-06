@@ -21,7 +21,8 @@ final class OnboardingViewController: BaseViewController {
         /// Description of the view.
         let description: String
 
-        let nextButtonTitle: String
+        /// Title of the bottom button.
+        let bottomButtonTitle: String
     }
 
     private let imageView = with(UIImageView()) {
@@ -82,7 +83,7 @@ extension OnboardingViewController: Fillable {
             self.imageView.image = model.image
             self.titleLabel.text = model.title
             self.descriptionLabel.text = model.description
-            self.bottomButton.setTitle(model.nextButtonTitle, for: .normal)
+            self.bottomButton.setTitle(model.bottomButtonTitle, for: .normal)
         }
     }
 }
