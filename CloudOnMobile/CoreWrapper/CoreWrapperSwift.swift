@@ -15,4 +15,3 @@ import Foundation
 func initSharedCore() {
     set_shared_core_callbacks()
 }
-

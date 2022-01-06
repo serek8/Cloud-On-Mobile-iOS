@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum FileType : CaseIterable {
+enum FileType: CaseIterable {
     case image
     case music
     case video
