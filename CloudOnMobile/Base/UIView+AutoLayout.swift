@@ -26,7 +26,7 @@ public extension UIView {
 
     /// Describes edges that are equal to superview edges
     /// - Returns: created constraints
-    func equalEdges() -> [ConstraintConstructor] {
+    @discardableResult func equalEdges() -> [ConstraintConstructor] {
         [
             equal(.top),
             equal(.bottom),
