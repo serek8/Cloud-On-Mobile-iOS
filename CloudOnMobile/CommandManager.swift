@@ -24,11 +24,6 @@ final class CommandManager: DataProvider {
         case connectionFailure
     }
 
-    struct File: Codable {
-        /// Name of the file.
-        let fileName: String?
-    }
-
     struct Request<T: Codable>: Codable {
         var type: String?
         var command: String?
