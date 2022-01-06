@@ -113,8 +113,8 @@ final class CommandManager : DataProvider {
         let hasLaunched = defaults.bool(forKey: hasLaunchedKey)
         if !hasLaunched {
             defaults.set(true, forKey: hasLaunchedKey)
-            let sampleImage = UIImage(named: "sample_image.jpeg")
-            let sampleImagePath = documentsDirectory.appendingPathComponent("Sample Image.png")
+            let sampleImage = UIImage(named: "AppIcon-production.png")
+            let sampleImagePath = documentsDirectory.appendingPathComponent("AppIcon-production.png")
             try? sampleImage?.pngData()?.write(to: sampleImagePath)
         }
     }
