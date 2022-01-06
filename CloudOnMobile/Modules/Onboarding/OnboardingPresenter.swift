@@ -30,7 +30,8 @@ extension OnboardingPresenter: OnboardingPresenterProtocol {
                 numberOfFilledDots: page.index,
                 title: page.title,
                 description: page.description,
-                bottomButtonTitle: "Next"
+                bottomButtonTitle: "Next",
+                skipButtonTitle: "Skip"
             )
         )
     }

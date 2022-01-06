@@ -23,6 +23,9 @@ final class OnboardingViewController: BaseViewController {
 
         /// Title of the bottom button.
         let bottomButtonTitle: String
+
+        /// Title of the skip button.
+        let skipButtonTitle: String
     }
 
     private let imageView = with(UIImageView()) {
@@ -53,7 +56,6 @@ final class OnboardingViewController: BaseViewController {
     }
 
     private let skipButton = with(ViewsFactory.whiteButton) {
-        $0.setTitle("Skip", for: .normal)
         $0.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
     }
 
@@ -79,6 +81,7 @@ extension OnboardingViewController: Fillable {
             self.titleLabel.text = model.title
             self.descriptionLabel.text = model.description
             self.bottomButton.setTitle(model.bottomButtonTitle, for: .normal)
+            self.skipButton.setTitle(model.skipButtonTitle, for: .normal)
         }
     }
 }
