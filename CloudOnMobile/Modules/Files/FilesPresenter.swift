@@ -9,7 +9,7 @@ import UIKit
 
 protocol FilesDownloader {
     /// Downloads list files from server.
-    func getFilesList() async -> [File]
+    func getFilesList() async -> Result<[File], Error>
 }
 
 final class FilesPresenter: PresenterProtocol {
@@ -22,10 +22,16 @@ final class FilesPresenter: PresenterProtocol {
     }
 
     func refreshData() async {
-        let files = await filesDownloader.getFilesList()
-        viewController?.fill(
-            with: map(files: files)
-        )
+        let result = await filesDownloader.getFilesList()
+        switch result {
+        case let .success(files):
+            viewController?.fill(
+                with: map(files: files)
+            )
+        case .failure:
+            /// - TODO: handle error case
+            break
+        }
     }
 }
 
@@ -37,7 +43,7 @@ private extension FilesPresenter {
             IconTitleSubtitleView.ViewModel(
                 icon: $0.type.image,
                 title: $0.name,
-                subtitle: $0.sizeTranslation
+                subtitle: $0.size.translation
             )
         }
     }
