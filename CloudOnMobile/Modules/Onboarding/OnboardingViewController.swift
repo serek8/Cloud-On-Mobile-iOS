@@ -32,10 +32,6 @@ final class OnboardingViewController: BaseViewController {
         $0.contentMode = .scaleAspectFit
     }
 
-    private let dotsView = with(UIView()) {
-        $0.backgroundColor = .gray
-    }
-
     private let titleLabel = with(UILabel()) {
         $0.textColor = AppStyle.current.color(for: .black)
         $0.font = AppStyle.current.font(for: .regular, size: 32)
@@ -94,7 +90,6 @@ private extension OnboardingViewController {
 
         containerView.addSubviews([
             imageView,
-            dotsView,
             titleLabel,
             descriptionLabel,
             bottomButton,
@@ -106,12 +101,6 @@ private extension OnboardingViewController {
             $0.equalTo(imageView, .height, .width),
             $0.equal(.centerX),
             $0.equalTo(titleLabel, .bottom, .top, constant: -28)
-        ] }
-
-        dotsView.addConstraints { [
-            $0.equal(.centerX),
-            $0.equalTo(titleLabel, .bottom, .top, constant: -28),
-            $0.equalConstant(.height, 1)
         ] }
 
         titleLabel.addConstraints { [
