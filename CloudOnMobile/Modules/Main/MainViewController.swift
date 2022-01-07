@@ -92,6 +92,11 @@ private extension MainViewController {
         getCodeButton.addConstraints { [
             $0.equalConstant(.height, 56)
         ] }
+
+        codeValueLabel.addConstraints { [
+            $0.equal(.leading, constant: 16),
+            $0.equal(.trailing, constant: -16)
+        ] }
     }
 
     @objc func getCodeButtonTapped() {
@@ -100,8 +105,10 @@ private extension MainViewController {
             switch result {
             case let .success(code):
                 codeValueLabel.text = code
-            case let .failure(error):
-                codeValueLabel.text = error.localizedDescription
+                codeValueLabel.addCharactersSpacing(value: 26)
+            case .failure:
+                /// - TODO: Handle error
+                break
             }
         }
     }
