@@ -11,7 +11,7 @@ struct File {
     /// Name of the file.
     let name: String
 
-    /// Size of the file.
+    /// Size of the file in bytes
     let size: Size
 
     /// Type of the file.
