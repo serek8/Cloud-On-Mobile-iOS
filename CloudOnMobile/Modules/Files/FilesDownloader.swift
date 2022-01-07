@@ -7,31 +7,32 @@
 
 import Foundation
 
-struct MockedFilesDownloader: FilesDownloader {
-    /// - TODO: Connect downloading files to FilesDownloader.
+struct DefaultFilesDownloader: FilesDownloader {
 
-    func getFilesList() async -> [File] {
-        [
-            File(
-                name: "mexico.jpg",
-                size: Size(),
-                type: .image
-            ),
-            File(
-                name: "video.mp4",
-                size: Size(),
-                type: .video
-            ),
-            File(
-                name: "music.mp3",
-                size: Size(),
-                type: .music
-            ),
-            File(
-                name: "file.pdf",
-                size: Size(),
-                type: .other
-            )
-        ]
+    private let dataProvider: FilesDataProvider
+
+    /// Initialize DefaultFilesDownloader.
+    /// - Parameters:
+    ///   - dataProvided: Files data provider.
+    init(dataProvided: FilesDataProvider) {
+        dataProvider = dataProvided
+    }
+
+    func getFilesList() async -> Result<[File], Error> {
+        return dataProvider
+            .listFiles()
+            .flatMap { backendModel in
+                let files = backendModel.map {
+                    File(
+                        name: $0.name,
+                        size: Size(numberOfBytes: $0.size),
+                        type: FileType(fileName: $0.name)
+                    )
+                }
+                return .success(files)
+            }
+            .flatMapError {
+                .failure($0)
+            }
     }
 }
