@@ -26,10 +26,11 @@ extension OnboardingPresenter: OnboardingPresenterProtocol {
         let page = OnboardingPage.intro
         viewController?.fill(
             with: OnboardingViewController.ViewModel(
-                image: page.image,
-                numberOfFilledDots: page.index,
-                title: page.title,
-                description: page.description,
+                onboardingPageModel: OnboardingPageView.ViewModel(
+                    image: page.image,
+                    title: page.title,
+                    description: page.description
+                ),
                 bottomButtonTitle: "Next",
                 skipButtonTitle: "Skip"
             )

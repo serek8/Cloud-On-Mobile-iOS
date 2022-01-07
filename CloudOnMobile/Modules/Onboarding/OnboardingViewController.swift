@@ -9,17 +9,8 @@ import UIKit
 
 final class OnboardingViewController: BaseViewController {
     struct ViewModel {
-        /// Image presented on top of screen.
-        let image: UIImage
-
-        /// - TODO: Change to DotsViewModel
-        let numberOfFilledDots: Int
-
-        /// Title of the view.
-        let title: String
-
-        /// Description of the view.
-        let description: String
+        /// Model of the onboarding page.
+        let onboardingPageModel: OnboardingPageView.ViewModel
 
         /// Title of the bottom button.
         let bottomButtonTitle: String
@@ -28,24 +19,7 @@ final class OnboardingViewController: BaseViewController {
         let skipButtonTitle: String
     }
 
-    private let imageView = with(UIImageView()) {
-        $0.contentMode = .scaleAspectFit
-    }
-
-    private let titleLabel = with(UILabel()) {
-        $0.textColor = AppStyle.current.color(for: .black)
-        $0.font = AppStyle.current.font(for: .regular, size: 32)
-        $0.textAlignment = .center
-        $0.numberOfLines = 1
-    }
-
-    private let descriptionLabel = with(UILabel()) {
-        $0.textColor = AppStyle.current.color(for: .black)
-        $0.font = AppStyle.current.font(for: .regular, size: 16)
-        $0.textAlignment = .center
-        $0.numberOfLines = 0
-        $0.addCharactersSpacing(value: 26)
-    }
+    private let onboardingView = OnboardingPageView()
 
     private let bottomButton = with(ViewsFactory.blueButton) {
         $0.addTarget(self, action: #selector(bottomButtonTapped), for: .touchUpInside)
@@ -73,9 +47,7 @@ final class OnboardingViewController: BaseViewController {
 extension OnboardingViewController: Fillable {
     func fill(with model: ViewModel) {
         DispatchQueue.main.async {
-            self.imageView.image = model.image
-            self.titleLabel.text = model.title
-            self.descriptionLabel.text = model.description
+            self.onboardingView.fill(with: model.onboardingPageModel)
             self.bottomButton.setTitle(model.bottomButtonTitle, for: .normal)
             self.skipButton.setTitle(model.skipButtonTitle, for: .normal)
         }
@@ -89,27 +61,12 @@ private extension OnboardingViewController {
         containerView.backgroundColor = AppStyle.current.color(for: .white)
 
         containerView.addSubviews([
-            imageView,
-            titleLabel,
-            descriptionLabel,
+            onboardingView,
             bottomButton,
             skipButton
         ])
 
-        imageView.addConstraints { [
-            $0.equalConstant(.height, 216),
-            $0.equalTo(imageView, .height, .width),
-            $0.equal(.centerX),
-            $0.equalTo(titleLabel, .bottom, .top, constant: -28)
-        ] }
-
-        titleLabel.addConstraints { [
-            $0.equal(.leading, constant: 16),
-            $0.equal(.trailing, constant: -16),
-            $0.equalTo(descriptionLabel, .bottom, .top, constant: -28)
-        ] }
-
-        descriptionLabel.addConstraints { [
+        onboardingView.addConstraints { [
             $0.equal(.leading, constant: 16),
             $0.equal(.trailing, constant: -16),
             $0.equalTo(bottomButton, .bottom, .top, constant: -48)
