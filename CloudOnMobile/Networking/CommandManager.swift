@@ -15,14 +15,16 @@ protocol CommandManagerDelegate: AnyObject {
     func serverOnFileDownlaoded(filepath: String)
 }
 
+/// Protocol responsible for fetching files from backend.
+protocol FilesDataProvider {
+    ///  Downloads JSON data containing an array of all files stored locally.
+    func listFiles() -> Result<[BackendFile], CommandManager.CommandManagerError>
+}
+
 final class CommandManager {
     enum CommandManagerError: Error {
         case connectionFailure
-    }
-
-    struct File: Codable {
-        /// Name of the file.
-        let fileName: String?
+        case decodingError
     }
 
     struct Request<T: Codable>: Codable {
@@ -50,7 +52,10 @@ final class CommandManager {
         let fileMngr = FileManager.default
         documentsDirectory = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0]
         setup_environment(documentsDirectory.path)
+        copyDemoFiles()
     }
+
+    /// - TODO: Add protocol for functions below.
 
     func connect() async throws -> Int {
         try await withUnsafeThrowingContinuation { continuation in
@@ -104,66 +109,46 @@ final class CommandManager {
     }
 
     func copyDemoFiles() {
-        let sampleImage = UIImage(named: "sample-image.jpeg")
-        let mexicoImgPath = documentsDirectory.appendingPathComponent("Sample Image.png")
-        try? sampleImage?.pngData()?.write(to: mexicoImgPath)
-
-        let samplePdfData = NSDataAsset(name: "sample-pdf")!.data
-        let samplePdfPath = documentsDirectory.appendingPathComponent("Sample Document.pdf")
-        try? samplePdfData.write(to: samplePdfPath)
+        let hasLaunchedKey = "HasAddedDemoFiles"
+        let defaults = UserDefaults.standard
+        let hasLaunched = defaults.bool(forKey: hasLaunchedKey)
+        if !hasLaunched {
+            defaults.set(true, forKey: hasLaunchedKey)
+            let sampleImage = UIImage(named: "AppIcon-production.png")
+            let sampleImagePath = documentsDirectory.appendingPathComponent("AppIcon-production.png")
+            try? sampleImage?.pngData()?.write(to: sampleImagePath)
+        }
     }
+}
 
-    func listFiles() -> [File]? {
-//      let data_ptr = UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>.allocate(capacity: 1)
+// MARK: FilesDataProvider
+
+extension CommandManager: FilesDataProvider {
+    func listFiles() -> Result<[BackendFile], CommandManagerError> {
         let data_out_ptr = UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>.allocate(capacity: 1)
         let len = list_dir_locally(UnsafePointer<CChar>?.none, data_out_ptr)
-        if len <= 0 {
-            return nil
+
+        guard len > 0 else {
+            return .success([])
         }
-        let decoder = JSONDecoder()
+
         let data = Data(bytesNoCopy: data_out_ptr.pointee!, count: Int(len), deallocator: Data.Deallocator.free)
         data_out_ptr.deallocate()
-        let request = try! decoder.decode([File].self, from: data)
-        return request
-        ////    access("sd", F_OK)
-//    setup_environment(documentsPath)
-//    let mexico_path = documentsPath + "/mexico.png"
-//
-//    send_file(mexico_path)
 
-//    documentsDirectory.appendingPathComponent("sample-image.png").path.utf8CString.withUnsafeBufferPointer { s in
-//      send_file(s.baseAddress)
-//      list_dir(s.baseAddress);
-//    }
-
-//    let fileNames = try? fileMngr.contentsOfDirectory(atPath:documentsPath)
-//    var request = Request(type: "forward", command: "list-files", payload: fileNames);
-//
-//    let encoder = JSONEncoder()
-//    encoder.outputFormatting = .withoutEscapingSlashes
-//    let data = try! encoder.encode(request)
-//
-//    let response = try! encoder.encode(request)
-//    response.withUnsafeBytes {(bytes: UnsafePointer<CChar>)->Void in
-//      send_string_to_server(bytes)
-//    }
+        return decode(data: data, responseType: [BackendFile].self)
     }
+}
 
-    //  func sendFile(path: String){
-//    let fileMngr = FileManager.default;
-//    let docs = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0].path
-//    let fileNames = try? fileMngr.contentsOfDirectory(atPath:docs)
-//    let fileNames = try? fileMngr.
-//    var request = Request(type: "forward", command: "list-files", payload: fileNames);
-//
-//    let encoder = JSONEncoder()
-//    encoder.outputFormatting = .withoutEscapingSlashes
-//    let data = try! encoder.encode(request)
-//
-//    let response = try! encoder.encode(request)
-//    response.withUnsafeBytes {(bytes: UnsafePointer<CChar>)->Void in
-//      send_string_to_server(bytes)
-//    }
-    //  }
-//
+// MARK: - Private
+
+private extension CommandManager {
+    func decode<T>(data: Data, responseType: T.Type) -> Result<T, CommandManagerError> where T: Decodable {
+        let decoder = JSONDecoder()
+        do {
+            let files = try decoder.decode(responseType, from: data)
+            return .success(files)
+        } catch {
+            return .failure(.decodingError)
+        }
+    }
 }
