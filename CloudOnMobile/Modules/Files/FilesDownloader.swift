@@ -8,17 +8,31 @@
 import Foundation
 
 struct DefaultFilesDownloader: FilesDownloader {
-  
-  let dataProvider : DataProvider
-  
-  init(dataProvided:DataProvider) {
-    self.dataProvider = dataProvided
-  }
-  
-  func getFilesList() async -> [File] {
-    guard let data = self.dataProvider.listFiles() else { return [] }
-      let decoder = JSONDecoder()
-      let files = try? decoder.decode([File].self, from: data)
-      return files ?? []
-  }
+
+    private let dataProvider: FilesDataProvider
+
+    /// Initialize DefaultFilesDownloader.
+    /// - Parameters:
+    ///   - dataProvided: Files data provider.
+    init(dataProvided: FilesDataProvider) {
+        dataProvider = dataProvided
+    }
+
+    func getFilesList() async -> Result<[File], Error> {
+        return dataProvider
+            .listFiles()
+            .flatMap { backendModel in
+                let files = backendModel.map {
+                    File(
+                        name: $0.name,
+                        size: Size(numberOfBytes: $0.size),
+                        type: FileType(fileName: $0.name)
+                    )
+                }
+                return .success(files)
+            }
+            .flatMapError {
+                .failure($0)
+            }
+    }
 }
