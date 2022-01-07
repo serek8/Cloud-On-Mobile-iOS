@@ -70,6 +70,7 @@
 		E7E20E55278783A800986653 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E54278783A800986653 /* OnboardingPresenter.swift */; };
 		E7E20E572787844100986653 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E562787844100986653 /* OnboardingPage.swift */; };
 		E7E20E592787932500986653 /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E582787932500986653 /* ViewsFactory.swift */; };
+		E7E20E61278877EB00986653 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E60278877EB00986653 /* OnboardingPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +173,7 @@
 		E7E20E54278783A800986653 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 		E7E20E562787844100986653 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		E7E20E582787932500986653 /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
+		E7E20E60278877EB00986653 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -542,11 +544,20 @@
 		E7E20E512787838F00986653 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				E7E20E5F2788778200986653 /* Subviews */,
 				E7E20E52278783A000986653 /* OnboardingViewController.swift */,
 				E7E20E54278783A800986653 /* OnboardingPresenter.swift */,
 				E7E20E562787844100986653 /* OnboardingPage.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E7E20E5F2788778200986653 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				E7E20E60278877EB00986653 /* OnboardingPageView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -719,6 +730,7 @@
 				E7E20E4E2787426100986653 /* BackendFile.swift in Sources */,
 				E740A7D1277C585D00A83025 /* Strings+Generated.swift in Sources */,
 				E747BED22771C6650046D036 /* SheetPresentationBehaviourController.swift in Sources */,
+				E7E20E61278877EB00986653 /* OnboardingPageView.swift in Sources */,
 				E747BECB277117C20046D036 /* UIStackView+Extensions.swift in Sources */,
 				3D1F1035258D4D7C007C4E38 /* AppDelegate.swift in Sources */,
 				E785FF01276A57440008A720 /* AppColor.swift in Sources */,
