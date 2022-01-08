@@ -25,8 +25,8 @@ struct DefaultAppSchemeProperties: AppSchemeProperties {
     /// Initialize app properties based on scheme.
     init() {
         #if DEVELOPMENT
-            host = "cloudon.cc"
-            port = 9283
+            host = "192.168.50.10"
+            port = 9293
         #elseif STAGING
             host = "cloudon.cc"
             port = 9283
