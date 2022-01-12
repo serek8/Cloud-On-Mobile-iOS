@@ -922,8 +922,8 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 795PZ6Q4ZU;
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/include\"",
 					"\"$(SRCROOT)/Core\"/**",
+					"\"$(SRCROOT)/Core/include\"/**",
 				);
 				INFOPLIST_FILE = CloudOnMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -938,12 +938,12 @@
 				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/libs/iphoneos",
+					"$(PROJECT_DIR)/Core/libs/iphoneos",
 				);
 				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/libs/simulator",
+					"$(PROJECT_DIR)/Core/libs/simulator",
 				);
 				OTHER_LDFLAGS = (
 					"-lssl_$(CURRENT_ARCH)",
@@ -966,8 +966,8 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 795PZ6Q4ZU;
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/include\"",
 					"\"$(SRCROOT)/Core\"/**",
+					"\"$(SRCROOT)/Core/include\"/**",
 				);
 				INFOPLIST_FILE = CloudOnMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -982,12 +982,12 @@
 				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/libs/iphoneos",
+					"$(PROJECT_DIR)/Core/libs/iphoneos",
 				);
 				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/libs/simulator",
+					"$(PROJECT_DIR)/Core/libs/simulator",
 				);
 				OTHER_LDFLAGS = (
 					"-lssl_$(CURRENT_ARCH)",
@@ -1066,8 +1066,8 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 795PZ6Q4ZU;
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/include\"",
 					"\"$(SRCROOT)/Core\"/**",
+					"\"$(SRCROOT)/Core/include\"/**",
 				);
 				INFOPLIST_FILE = CloudOnMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1082,12 +1082,12 @@
 				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/libs/iphoneos",
+					"$(PROJECT_DIR)/Core/libs/iphoneos",
 				);
 				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/libs/simulator",
+					"$(PROJECT_DIR)/Core/libs/simulator",
 				);
 				OTHER_LDFLAGS = (
 					"-lssl_$(CURRENT_ARCH)",
