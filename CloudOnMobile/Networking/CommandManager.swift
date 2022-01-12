@@ -45,9 +45,9 @@ final class CommandManager {
 
     private let documentsDirectory: URL
 
-    init(url: String, port:Int) {
+    init(url: String, port: Int) {
         ip = url
-      self.port = port
+        self.port = port
         initSharedCore()
         let fileMngr = FileManager.default
         documentsDirectory = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0]

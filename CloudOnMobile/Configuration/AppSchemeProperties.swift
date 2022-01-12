@@ -10,6 +10,8 @@ import Foundation
 protocol AppSchemeProperties {
     /// Backend host for the app.
     var host: String { get }
+
+    /// Backend port for the app.
     var port: Int { get }
 }
 
