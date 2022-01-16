@@ -115,7 +115,7 @@ final class CommandManager {
         if !hasLaunched {
             defaults.set(true, forKey: hasLaunchedKey)
             let sampleImage = UIImage(named: "AppIcon-production.png")
-            let sampleImagePath = documentsDirectory.appendingPathComponent("AppIcon-production.png")
+            let sampleImagePath = documentsDirectory.appendingPathComponent("Sample image.png")
             try? sampleImage?.pngData()?.write(to: sampleImagePath)
         }
     }
