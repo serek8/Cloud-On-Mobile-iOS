@@ -68,4 +68,18 @@ private extension MainFlowController {
 
         navigationController.setViewControllers([sheetController], animated: false)
     }
+
+    func presentOnboarding() {
+        let mainPresenter = OnboardingPresenter(
+            eventHandler: { [weak self] event in
+                switch event {
+                case .onboardingDone:
+                    self?.presentMainScreen()
+                }
+            }
+        )
+        let mainViewController = OnboardingViewController(presenter: mainPresenter)
+        mainPresenter.viewController = mainViewController
+        navigationController.setViewControllers([mainViewController], animated: false)
+    }
 }
