@@ -30,10 +30,6 @@ final class OnboardingViewController: BaseViewController {
 
     private var controllers = [OnboardingPageViewController]()
 
-    private var selectedController: OnboardingPageViewController? {
-        pageController.viewControllers?.first as? OnboardingPageViewController
-    }
-
     private let bottomButton = with(ViewsFactory.blueButton) {
         $0.addTarget(self, action: #selector(bottomButtonTapped), for: .touchUpInside)
     }
@@ -52,6 +48,7 @@ final class OnboardingViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupPageControl()
     }
 }
 
@@ -105,10 +102,16 @@ private extension OnboardingViewController {
         ] }
     }
 
+    func setupPageControl() {
+        let appearance = UIPageControl.appearance()
+        appearance.pageIndicatorTintColor = AppStyle.current.color(for: .gray)
+        appearance.currentPageIndicatorTintColor = AppStyle.current.color(for: .black)
+    }
+
     @objc func bottomButtonTapped() {
         presenter.bottomButtonTapped()
         guard
-            let selectedController = selectedController,
+            let selectedController = pageController.selectedController,
             let currentIndex = controllers.firstIndex(of: selectedController)
         else {
             return
@@ -155,6 +158,20 @@ extension OnboardingViewController: UIPageViewControllerDataSource, UIPageViewCo
         }
         return controllers[index + 1]
     }
+
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        controllers.count
+    }
+
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        guard
+            let selectedController = pageViewController.selectedController,
+            controllers.count > 0
+        else {
+            return 0
+        }
+        return controllers.firstIndex(of: selectedController) ?? 0
+    }
 }
 
 
@@ -163,7 +180,7 @@ extension OnboardingViewController: UIPageViewControllerDataSource, UIPageViewCo
 private extension OnboardingViewController {
     func scroll(to page: OnboardingPageViewController) {
         guard
-            let presentedViewController = selectedController,
+            let presentedViewController = pageController.selectedController,
             let fromIndex = controllers.firstIndex(of: presentedViewController),
             let toIndex = controllers.firstIndex(of: page),
             fromIndex != toIndex
@@ -173,5 +190,11 @@ private extension OnboardingViewController {
 
         let direction: UIPageViewController.NavigationDirection = toIndex > fromIndex ? .forward : .reverse
         pageController.setViewControllers([page], direction: direction, animated: true, completion: nil)
+    }
+}
+
+private extension UIPageViewController {
+    var selectedController: OnboardingPageViewController? {
+        viewControllers?.first as? OnboardingPageViewController
     }
 }
