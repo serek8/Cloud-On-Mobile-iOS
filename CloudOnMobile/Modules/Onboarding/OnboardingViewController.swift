@@ -109,7 +109,6 @@ private extension OnboardingViewController {
     }
 
     @objc func bottomButtonTapped() {
-        presenter.bottomButtonTapped()
         guard
             let selectedController = pageViewController.selectedPage,
             let currentIndex = onboardingPages.firstIndex(of: selectedController)
@@ -119,9 +118,11 @@ private extension OnboardingViewController {
 
         let nextIndex = onboardingPages.index(after: currentIndex)
 
-        guard onboardingPages.count > nextIndex else { return }
-
-        scroll(to: onboardingPages[nextIndex])
+        if onboardingPages.count > nextIndex {
+            scroll(to: onboardingPages[nextIndex])
+        } else {
+            presenter.skipTapped()
+        }
     }
 
     @objc func skipButtonTapped() {
@@ -131,6 +132,21 @@ private extension OnboardingViewController {
 
 
 extension OnboardingViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+    func pageViewController(
+        _ pageViewController: UIPageViewController,
+        didFinishAnimating finished: Bool,
+        previousViewControllers: [UIViewController],
+        transitionCompleted completed: Bool
+    ) {
+        guard
+            let page = pageViewController.selectedPage,
+            let index = onboardingPages.firstIndex(of: page)
+        else {
+            return
+        }
+        presenter.indexChanged(to: index)
+    }
+
     func pageViewController(
         _ pageViewController: UIPageViewController,
         viewControllerBefore viewController: UIViewController
@@ -190,6 +206,7 @@ private extension OnboardingViewController {
 
         let direction: UIPageViewController.NavigationDirection = toIndex > fromIndex ? .forward : .reverse
         pageViewController.setViewControllers([page], direction: direction, animated: true, completion: nil)
+        presenter.indexChanged(to: toIndex)
     }
 }
 
