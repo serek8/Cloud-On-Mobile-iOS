@@ -17,8 +17,8 @@ protocol OnboardingPresenterProtocol: PresenterProtocol {
     ///   - newIndex: new selected index.
     func indexChanged(to newIndex: Int)
 
-    /// Function called on skip button tapped.
-    func skipTapped()
+    /// Function called on finish tapped.
+    func finishTapped()
 }
 
 final class OnboardingPresenter {
@@ -66,7 +66,7 @@ extension OnboardingPresenter: OnboardingPresenterProtocol {
         }
     }
 
-    func skipTapped() {
+    func finishTapped() {
         eventHandler(.onboardingDone)
     }
 }
