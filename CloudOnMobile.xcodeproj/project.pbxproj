@@ -91,7 +91,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D1F1031258D4D7C007C4E38 /* CloudOnMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudOnMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D1F1031258D4D7C007C4E38 /* Cloud On Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cloud On Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3D1F103D258D4D7D007C4E38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +101,7 @@
 		3D2400962769550F00DF8F87 /* CoreWrapperC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreWrapperC.h; sourceTree = "<group>"; };
 		3D2400972769550F00DF8F87 /* CoreWrapperC.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CoreWrapperC.c; sourceTree = "<group>"; };
 		3D2400992769586A00DF8F87 /* CoreWrapperSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreWrapperSwift.swift; sourceTree = "<group>"; };
+		3D35CBF727949D2800205053 /* CloudOnMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudOnMobile.entitlements; sourceTree = "<group>"; };
 		3D423CBF277B15FD00C8E4C1 /* cJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cJSON.h; sourceTree = "<group>"; };
 		3D423CC0277B15FD00C8E4C1 /* cJSON_Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cJSON_Utils.h; sourceTree = "<group>"; };
 		3D423CC2277B15FD00C8E4C1 /* buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = buffer.c; sourceTree = "<group>"; };
@@ -215,7 +216,7 @@
 		3D1F1032258D4D7C007C4E38 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3D1F1031258D4D7C007C4E38 /* CloudOnMobile.app */,
+				3D1F1031258D4D7C007C4E38 /* Cloud On Mobile.app */,
 				E740A7A9277AF86100A83025 /* CloudOnMobileTests.xctest */,
 				E740A7B7277AF87500A83025 /* CloudOnMobileUITests.xctest */,
 			);
@@ -225,6 +226,7 @@
 		3D1F1033258D4D7C007C4E38 /* CloudOnMobile */ = {
 			isa = PBXGroup;
 			children = (
+				3D35CBF727949D2800205053 /* CloudOnMobile.entitlements */,
 				E785FEEB276A56390008A720 /* Base */,
 				E740A79F277AF76700A83025 /* Configuration */,
 				3D423CBE277B15FD00C8E4C1 /* Core */,
@@ -578,7 +580,7 @@
 			);
 			name = CloudOnMobile;
 			productName = CloudOnMobile;
-			productReference = 3D1F1031258D4D7C007C4E38 /* CloudOnMobile.app */;
+			productReference = 3D1F1031258D4D7C007C4E38 /* Cloud On Mobile.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E740A7A8277AF86100A83025 /* CloudOnMobileTests */ = {
@@ -954,6 +956,7 @@
 			baseConfigurationReference = E740A7A0277AF77900A83025 /* Development.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CloudOnMobile/CloudOnMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 795PZ6Q4ZU;
@@ -989,7 +992,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Development;
 		};
@@ -998,6 +1001,7 @@
 			baseConfigurationReference = E740A7A1277AF7A100A83025 /* Staging.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CloudOnMobile/CloudOnMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 795PZ6Q4ZU;
@@ -1032,7 +1036,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = CloudOnMobileWildProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Staging;
 		};
@@ -1098,6 +1102,7 @@
 			baseConfigurationReference = E740A7A2277AF7B900A83025 /* Production.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = CloudOnMobile/CloudOnMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 795PZ6Q4ZU;
@@ -1132,7 +1137,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = CloudOnMobileWildProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Production;
 		};
