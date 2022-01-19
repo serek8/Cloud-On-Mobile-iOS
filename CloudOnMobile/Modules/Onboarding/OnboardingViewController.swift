@@ -7,13 +7,22 @@
 
 import UIKit
 
+protocol OnboardingViewControllerProtocol: NSObject {
+    /// Sets bottom button title.
+    /// - Parameters:
+    ///   - title: Title for the button.
+    func setBottomButtonTitle(title: String)
+
+    /// Fills view with model.
+    /// - Parameters:
+    ///   - model: Model for the view.
+    func fill(with model: OnboardingViewController.ViewModel)
+}
+
 final class OnboardingViewController: BaseViewController {
     struct ViewModel {
         /// Model of the onboarding page.
         let onboardingPageModels: [OnboardingPageView.ViewModel]
-
-        /// Title of the bottom button.
-        let bottomButtonTitle: String
 
         /// Title of the skip button.
         let skipButtonTitle: String
@@ -52,12 +61,11 @@ final class OnboardingViewController: BaseViewController {
     }
 }
 
-// MARK: - Fillable
+// MARK: - OnboardingViewControllerProtocol
 
-extension OnboardingViewController: Fillable {
+extension OnboardingViewController: OnboardingViewControllerProtocol {
     func fill(with model: ViewModel) {
         DispatchQueue.main.async {
-            self.bottomButton.setTitle(model.bottomButtonTitle, for: .normal)
             self.skipButton.setTitle(model.skipButtonTitle, for: .normal)
 
             self.onboardingPages = model.onboardingPageModels.map {
@@ -66,6 +74,12 @@ extension OnboardingViewController: Fillable {
                 return vc
             }
             self.pageViewController.setViewControllers([self.onboardingPages[0]], direction: .forward, animated: false)
+        }
+    }
+
+    func setBottomButtonTitle(title: String) {
+        DispatchQueue.main.async {
+            self.bottomButton.setTitle(title, for: .normal)
         }
     }
 }

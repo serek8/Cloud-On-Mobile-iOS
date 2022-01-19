@@ -23,6 +23,8 @@ internal enum L10n {
     internal static let next = L10n.tr("Base", "Onboarding.next")
     /// Skip
     internal static let skip = L10n.tr("Base", "Onboarding.skip")
+    /// Start
+    internal static let start = L10n.tr("Base", "Onboarding.start")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
