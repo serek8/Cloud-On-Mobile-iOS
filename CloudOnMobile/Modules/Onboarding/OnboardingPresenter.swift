@@ -12,6 +12,9 @@ enum OnboardingEvent {
 }
 
 protocol OnboardingPresenterProtocol: PresenterProtocol {
+    /// Function called when selected index of the page view has changed.
+    /// - Parameters:
+    ///   - newIndex: new selected index.
     func indexChanged(to newIndex: Int)
 
     /// Function called on skip button tapped.
@@ -19,7 +22,9 @@ protocol OnboardingPresenterProtocol: PresenterProtocol {
 }
 
 final class OnboardingPresenter {
-    weak var viewController: OnboardingViewController?
+    weak var viewController: OnboardingViewControllerProtocol?
+
+    private let onboardingPages: [OnboardingPage] = OnboardingPage.allCases
 
     private let eventHandler: (OnboardingEvent) -> Void
 
@@ -35,7 +40,7 @@ final class OnboardingPresenter {
 
 extension OnboardingPresenter: OnboardingPresenterProtocol {
     func refreshData() {
-        let onboardingPageModels = OnboardingPage.allCases.map { page in
+        let onboardingPageModels = onboardingPages.map { page in
             OnboardingPageView.ViewModel(
                 image: page.image,
                 title: page.title,
@@ -45,14 +50,20 @@ extension OnboardingPresenter: OnboardingPresenterProtocol {
         viewController?.fill(
             with: OnboardingViewController.ViewModel(
                 onboardingPageModels: onboardingPageModels,
-                bottomButtonTitle: L10n.Onboarding.next,
                 skipButtonTitle: L10n.Onboarding.skip
             )
         )
+        viewController?.setBottomButtonTitle(title: L10n.Onboarding.next)
     }
 
     func indexChanged(to newIndex: Int) {
-        print(newIndex)
+        let isLastPage = onboardingPages.count - 1 == newIndex
+
+        if isLastPage {
+            viewController?.setBottomButtonTitle(title: L10n.Onboarding.start)
+        } else {
+            viewController?.setBottomButtonTitle(title: L10n.Onboarding.next)
+        }
     }
 
     func skipTapped() {
