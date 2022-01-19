@@ -7,6 +7,8 @@
 
 import UIKit
 
+/// - TODO: Add correct onboarding screens
+
 enum OnboardingPage: CaseIterable {
     case intro
     case sendingDocuments
