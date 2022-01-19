@@ -210,12 +210,12 @@ private extension OnboardingViewController {
         if onboardingPages.count > nextIndex {
             scroll(to: onboardingPages[nextIndex])
         } else {
-            presenter.skipTapped()
+            presenter.finishTapped()
         }
     }
 
     @objc func skipButtonTapped() {
-        presenter.skipTapped()
+        presenter.finishTapped()
     }
 }
 
