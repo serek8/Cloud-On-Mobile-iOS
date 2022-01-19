@@ -23,14 +23,16 @@ final class OnboardingPresenter {
 
 extension OnboardingPresenter: OnboardingPresenterProtocol {
     func refreshData() {
-        let page = OnboardingPage.intro
+        let onboardingPageModels = OnboardingPage.allCases.map { page in
+            OnboardingPageView.ViewModel(
+                image: page.image,
+                title: page.title,
+                description: page.description
+            )
+        }
         viewController?.fill(
             with: OnboardingViewController.ViewModel(
-                onboardingPageModel: OnboardingPageView.ViewModel(
-                    image: page.image,
-                    title: page.title,
-                    description: page.description
-                ),
+                onboardingPageModels: onboardingPageModels,
                 bottomButtonTitle: "Next",
                 skipButtonTitle: "Skip"
             )

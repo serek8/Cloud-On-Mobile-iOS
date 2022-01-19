@@ -10,7 +10,7 @@ import UIKit
 final class OnboardingViewController: BaseViewController {
     struct ViewModel {
         /// Model of the onboarding page.
-        let onboardingPageModel: OnboardingPageView.ViewModel
+        let onboardingPageModels: [OnboardingPageView.ViewModel]
 
         /// Title of the bottom button.
         let bottomButtonTitle: String
@@ -19,7 +19,20 @@ final class OnboardingViewController: BaseViewController {
         let skipButtonTitle: String
     }
 
-    private let onboardingView = OnboardingPageView()
+    private lazy var pageController = with(UIPageViewController(
+        transitionStyle: .scroll,
+        navigationOrientation: .horizontal,
+        options: nil
+    )) {
+        $0.dataSource = self
+        $0.delegate = self
+    }
+
+    private var controllers = [OnboardingPageViewController]()
+
+    private var selectedController: OnboardingPageViewController? {
+        pageController.viewControllers?.first as? OnboardingPageViewController
+    }
 
     private let bottomButton = with(ViewsFactory.blueButton) {
         $0.addTarget(self, action: #selector(bottomButtonTapped), for: .touchUpInside)
@@ -47,9 +60,15 @@ final class OnboardingViewController: BaseViewController {
 extension OnboardingViewController: Fillable {
     func fill(with model: ViewModel) {
         DispatchQueue.main.async {
-            self.onboardingView.fill(with: model.onboardingPageModel)
             self.bottomButton.setTitle(model.bottomButtonTitle, for: .normal)
             self.skipButton.setTitle(model.skipButtonTitle, for: .normal)
+
+            self.controllers = model.onboardingPageModels.map {
+                let vc = OnboardingPageViewController()
+                vc.onboardingPageView.fill(with: $0)
+                return vc
+            }
+            self.pageController.setViewControllers([self.controllers[0]], direction: .forward, animated: false)
         }
     }
 }
@@ -60,16 +79,19 @@ private extension OnboardingViewController {
     func setupViews() {
         containerView.backgroundColor = AppStyle.current.color(for: .white)
 
+        addChild(pageController)
+
         containerView.addSubviews([
-            onboardingView,
+            pageController.view,
             bottomButton,
             skipButton
         ])
 
-        onboardingView.addConstraints { [
-            $0.equal(.leading, constant: 16),
-            $0.equal(.trailing, constant: -16),
-            $0.equalTo(bottomButton, .bottom, .top, constant: -48)
+        pageController.view.addConstraints { [
+            $0.equal(.leading),
+            $0.equal(.trailing),
+            $0.equalTo(bottomButton, .bottom, .top, constant: -48),
+            $0.equalTo(skipButton, .top, .bottom)
         ] }
 
         bottomButton.addConstraints { [
@@ -85,6 +107,18 @@ private extension OnboardingViewController {
 
     @objc func bottomButtonTapped() {
         presenter.bottomButtonTapped()
+        guard
+            let selectedController = selectedController,
+            let currentIndex = controllers.firstIndex(of: selectedController)
+        else {
+            return
+        }
+
+        let nextIndex = controllers.index(after: currentIndex)
+
+        guard controllers.count > nextIndex else { return }
+
+        scroll(to: controllers[nextIndex])
     }
 
     @objc func skipButtonTapped() {
@@ -92,3 +126,52 @@ private extension OnboardingViewController {
     }
 }
 
+
+extension OnboardingViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+    func pageViewController(
+        _ pageViewController: UIPageViewController,
+        viewControllerBefore viewController: UIViewController
+    ) -> UIViewController? {
+        guard
+            let pageViewController = viewController as? OnboardingPageViewController,
+            let index = controllers.firstIndex(of: pageViewController),
+            index > 0
+        else {
+            return nil
+        }
+        return controllers[index - 1]
+    }
+
+    func pageViewController(
+        _ pageViewController: UIPageViewController,
+        viewControllerAfter viewController: UIViewController
+    ) -> UIViewController? {
+        guard
+            let pageViewController = viewController as? OnboardingPageViewController,
+            let index = controllers.firstIndex(of: pageViewController),
+            index < controllers.count - 1
+        else {
+            return nil
+        }
+        return controllers[index + 1]
+    }
+}
+
+
+// MARK: Private
+
+private extension OnboardingViewController {
+    func scroll(to page: OnboardingPageViewController) {
+        guard
+            let presentedViewController = selectedController,
+            let fromIndex = controllers.firstIndex(of: presentedViewController),
+            let toIndex = controllers.firstIndex(of: page),
+            fromIndex != toIndex
+        else {
+            return
+        }
+
+        let direction: UIPageViewController.NavigationDirection = toIndex > fromIndex ? .forward : .reverse
+        pageController.setViewControllers([page], direction: direction, animated: true, completion: nil)
+    }
+}

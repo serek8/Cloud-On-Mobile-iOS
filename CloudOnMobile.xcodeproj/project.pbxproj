@@ -23,6 +23,7 @@
 		3D423CDD277B15FD00C8E4C1 /* FileManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CD2277B15FD00C8E4C1 /* FileManager.c */; };
 		3D423CDE277B15FD00C8E4C1 /* cJSON_Utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CD3277B15FD00C8E4C1 /* cJSON_Utils.c */; };
 		3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D93B67D274AAF9A007364E8 /* CommandManager.swift */; };
+		E71DF1A027989EE600E8F813 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71DF19F27989EE600E8F813 /* OnboardingPageViewController.swift */; };
 		E740A7AC277AF86100A83025 /* CloudOnMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7AB277AF86100A83025 /* CloudOnMobileTests.swift */; };
 		E740A7BA277AF87500A83025 /* CloudOnMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7B9277AF87500A83025 /* CloudOnMobileUITests.swift */; };
 		E740A7BC277AF87500A83025 /* CloudOnMobileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7BB277AF87500A83025 /* CloudOnMobileUITestsLaunchTests.swift */; };
@@ -119,6 +120,7 @@
 		3D423CD2277B15FD00C8E4C1 /* FileManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = FileManager.c; sourceTree = "<group>"; };
 		3D423CD3277B15FD00C8E4C1 /* cJSON_Utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cJSON_Utils.c; sourceTree = "<group>"; };
 		3D93B67D274AAF9A007364E8 /* CommandManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandManager.swift; sourceTree = "<group>"; };
+		E71DF19F27989EE600E8F813 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		E740A7A0277AF77900A83025 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		E740A7A1277AF7A100A83025 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		E740A7A2277AF7B900A83025 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
@@ -558,6 +560,7 @@
 			isa = PBXGroup;
 			children = (
 				E7E20E60278877EB00986653 /* OnboardingPageView.swift */,
+				E71DF19F27989EE600E8F813 /* OnboardingPageViewController.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 				E75E2F682773093000843855 /* FilesPresenter.swift in Sources */,
 				E747BEC127710CC20046D036 /* MainFlowController.swift in Sources */,
 				E75E2F71277865E000843855 /* ReusableView.swift in Sources */,
+				E71DF1A027989EE600E8F813 /* OnboardingPageViewController.swift in Sources */,
 				3D2400982769550F00DF8F87 /* CoreWrapperC.c in Sources */,
 				E785FEF6276A56390008A720 /* Presenter.swift in Sources */,
 				E785FF03276A57440008A720 /* FontStyle.swift in Sources */,
