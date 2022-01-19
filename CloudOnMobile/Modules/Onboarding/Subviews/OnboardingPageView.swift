@@ -70,23 +70,22 @@ private extension OnboardingPageView {
         ])
 
         imageView.addConstraints { [
-            $0.equal(.top),
+            $0.equal(.top, constant: 48),
             $0.equal(.centerX),
             $0.equalTo(titleLabel, .bottom, .top, constant: -28),
             $0.equalTo(imageView, .height, .width)
         ] }
 
         titleLabel.addConstraints { [
-            $0.equal(.leading),
-            $0.equal(.trailing),
+            $0.equal(.leading, constant: 16),
+            $0.equal(.trailing, constant: -16),
             $0.equalTo(descriptionLabel, .bottom, .top, constant: -28)
         ] }
 
         descriptionLabel.addConstraints { [
-            $0.equal(.leading),
-            $0.equal(.trailing),
-            $0.equal(.bottom)
+            $0.equal(.leading, constant: 16),
+            $0.equal(.trailing, constant: -16),
+            $0.lessThanOrEqual(.bottom)
         ] }
     }
 }
-
