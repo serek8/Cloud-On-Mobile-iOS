@@ -46,8 +46,8 @@ extension OnboardingPresenter: OnboardingPresenterProtocol {
         viewController?.fill(
             with: OnboardingViewController.ViewModel(
                 onboardingPageModels: onboardingPageModels,
-                bottomButtonTitle: "Next",
-                skipButtonTitle: "Skip"
+                bottomButtonTitle: L10n.Onboarding.next,
+                skipButtonTitle: L10n.Onboarding.skip
             )
         )
     }

@@ -1,2 +1,9 @@
+// MARK: - Main
+
 "MainViewController.accessCode" = "Kod dostępu";
 "MainViewController.getAccessCode" = "Pobierz kod dostępu";
+
+// MARK: - Onboarding
+
+"Onboarding.next" = "Dalej";
+"Onboarding.skip" = "Pomiń";
