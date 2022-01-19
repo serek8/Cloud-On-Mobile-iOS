@@ -70,67 +70,6 @@ extension OnboardingViewController: Fillable {
     }
 }
 
-// MARK: - Private
-
-private extension OnboardingViewController {
-    func setupViews() {
-        containerView.backgroundColor = AppStyle.current.color(for: .white)
-
-        addChild(pageViewController)
-
-        containerView.addSubviews([
-            pageViewController.view,
-            bottomButton,
-            skipButton
-        ])
-
-        pageViewController.view.addConstraints { [
-            $0.equal(.leading),
-            $0.equal(.trailing),
-            $0.equalTo(bottomButton, .bottom, .top, constant: -48),
-            $0.equalTo(skipButton, .top, .bottom)
-        ] }
-
-        bottomButton.addConstraints { [
-            $0.equal(.centerX),
-            $0.equal(.bottom, constant: -66)
-        ] }
-
-        skipButton.addConstraints { [
-            $0.equal(.safeAreaTop),
-            $0.equal(.trailing)
-        ] }
-    }
-
-    func setupPageControlUI() {
-        let appearance = UIPageControl.appearance()
-        appearance.pageIndicatorTintColor = AppStyle.current.color(for: .gray)
-        appearance.currentPageIndicatorTintColor = AppStyle.current.color(for: .black)
-    }
-
-    @objc func bottomButtonTapped() {
-        guard
-            let selectedController = pageViewController.selectedPage,
-            let currentIndex = onboardingPages.firstIndex(of: selectedController)
-        else {
-            return
-        }
-
-        let nextIndex = onboardingPages.index(after: currentIndex)
-
-        if onboardingPages.count > nextIndex {
-            scroll(to: onboardingPages[nextIndex])
-        } else {
-            presenter.skipTapped()
-        }
-    }
-
-    @objc func skipButtonTapped() {
-        presenter.skipTapped()
-    }
-}
-
-
 extension OnboardingViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     func pageViewController(
         _ pageViewController: UIPageViewController,
@@ -194,6 +133,41 @@ extension OnboardingViewController: UIPageViewControllerDataSource, UIPageViewCo
 // MARK: Private
 
 private extension OnboardingViewController {
+    func setupViews() {
+        containerView.backgroundColor = AppStyle.current.color(for: .white)
+
+        addChild(pageViewController)
+
+        containerView.addSubviews([
+            pageViewController.view,
+            bottomButton,
+            skipButton
+        ])
+
+        pageViewController.view.addConstraints { [
+            $0.equal(.leading),
+            $0.equal(.trailing),
+            $0.equalTo(bottomButton, .bottom, .top, constant: -48),
+            $0.equalTo(skipButton, .top, .bottom)
+        ] }
+
+        bottomButton.addConstraints { [
+            $0.equal(.centerX),
+            $0.equal(.bottom, constant: -66)
+        ] }
+
+        skipButton.addConstraints { [
+            $0.equal(.safeAreaTop),
+            $0.equal(.trailing)
+        ] }
+    }
+
+    func setupPageControlUI() {
+        let appearance = UIPageControl.appearance()
+        appearance.pageIndicatorTintColor = AppStyle.current.color(for: .gray)
+        appearance.currentPageIndicatorTintColor = AppStyle.current.color(for: .black)
+    }
+
     func scroll(to page: OnboardingPageViewController) {
         guard
             let presentedViewController = pageViewController.selectedPage,
@@ -207,6 +181,27 @@ private extension OnboardingViewController {
         let direction: UIPageViewController.NavigationDirection = toIndex > fromIndex ? .forward : .reverse
         pageViewController.setViewControllers([page], direction: direction, animated: true, completion: nil)
         presenter.indexChanged(to: toIndex)
+    }
+
+    @objc func bottomButtonTapped() {
+        guard
+            let selectedController = pageViewController.selectedPage,
+            let currentIndex = onboardingPages.firstIndex(of: selectedController)
+        else {
+            return
+        }
+
+        let nextIndex = onboardingPages.index(after: currentIndex)
+
+        if onboardingPages.count > nextIndex {
+            scroll(to: onboardingPages[nextIndex])
+        } else {
+            presenter.skipTapped()
+        }
+    }
+
+    @objc func skipButtonTapped() {
+        presenter.skipTapped()
     }
 }
 
