@@ -10,6 +10,7 @@ import UIKit
 enum OnboardingPage: CaseIterable {
     case intro
     case sendingDocuments
+    case tips
 }
 
 extension OnboardingPage {
@@ -23,6 +24,8 @@ extension OnboardingPage {
             return UIImage(imageLiteralResourceName: "onboardingMap")
         case .sendingDocuments:
             return UIImage(imageLiteralResourceName: "onboardingMap")
+        case .tips:
+            return UIImage(imageLiteralResourceName: "onboardingMap")
         }
     }
 
@@ -32,6 +35,8 @@ extension OnboardingPage {
             return "intro"
         case .sendingDocuments:
             return "sendingDocuments"
+        case .tips:
+            return "tips"
         }
     }
 
@@ -41,6 +46,8 @@ extension OnboardingPage {
             return "intro Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
         case .sendingDocuments:
             return "sendingDocuments Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+        case .tips:
+            return "tips Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
         }
     }
 }
