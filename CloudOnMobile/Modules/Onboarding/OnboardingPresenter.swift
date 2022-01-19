@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum OnboardingEvent {
+    case onboardingDone
+}
+
 protocol OnboardingPresenterProtocol: PresenterProtocol {
     /// Function called on bottom button tapped.
     func bottomButtonTapped()
@@ -17,6 +21,15 @@ protocol OnboardingPresenterProtocol: PresenterProtocol {
 
 final class OnboardingPresenter {
     weak var viewController: OnboardingViewController?
+
+    private let eventHandler: (OnboardingEvent) -> Void
+
+    /// Initialised OnboardingPresenter.
+    /// - Parameters:
+    ///   - eventHandler: handler called for requesting action outside of screen.
+    init(eventHandler: @escaping (OnboardingEvent) -> Void) {
+        self.eventHandler = eventHandler
+    }
 }
 
 // MARK: MainPresenterProtocol
@@ -44,6 +57,6 @@ extension OnboardingPresenter: OnboardingPresenterProtocol {
     }
 
     func skipTapped() {
-        print("Skip")
+        eventHandler(.onboardingDone)
     }
 }
