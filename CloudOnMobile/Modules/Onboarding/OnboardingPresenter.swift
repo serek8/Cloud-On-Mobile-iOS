@@ -12,8 +12,7 @@ enum OnboardingEvent {
 }
 
 protocol OnboardingPresenterProtocol: PresenterProtocol {
-    /// Function called on bottom button tapped.
-    func bottomButtonTapped()
+    func indexChanged(to newIndex: Int)
 
     /// Function called on skip button tapped.
     func skipTapped()
@@ -52,8 +51,8 @@ extension OnboardingPresenter: OnboardingPresenterProtocol {
         )
     }
 
-    func bottomButtonTapped() {
-        print("Next")
+    func indexChanged(to newIndex: Int) {
+        print(newIndex)
     }
 
     func skipTapped() {
