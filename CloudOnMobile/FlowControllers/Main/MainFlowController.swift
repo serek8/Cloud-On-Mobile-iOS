@@ -18,6 +18,17 @@ final class MainFlowController: FlowController {
 
     let presentation: FlowControllerPresentation
 
+    private var onboardingCompleted: Bool {
+        get {
+            true
+            /// - TODO: Uncomment code when onboarding will be ready
+    //        dependencyContainer.appDefaults.onboardingCompleted
+        }
+        set {
+            dependencyContainer.appDefaults.onboardingCompleted = newValue
+        }
+    }
+
     private let dependencyContainer: MainDependencyContainer
 
     private let window: UIWindow?
@@ -35,7 +46,12 @@ final class MainFlowController: FlowController {
         navigationController.navigationBar.isHidden = true
         presentation = .root
         self.window = window
-        presentMainScreen()
+
+        if onboardingCompleted {
+            presentMainScreen()
+        } else {
+            presentOnboarding()
+        }
     }
 
     /// Presents the window on the screen.
@@ -66,6 +82,21 @@ private extension MainFlowController {
             sheetContentViewController: filesViewController
         )
 
-        navigationController.setViewControllers([sheetController], animated: false)
+        navigationController.setViewControllers([sheetController], animated: true)
+    }
+
+    func presentOnboarding() {
+        let mainPresenter = OnboardingPresenter(
+            eventHandler: { [weak self] event in
+                switch event {
+                case .onboardingDone:
+                    self?.onboardingCompleted = true
+                    self?.presentMainScreen()
+                }
+            }
+        )
+        let mainViewController = OnboardingViewController(presenter: mainPresenter)
+        mainPresenter.viewController = mainViewController
+        navigationController.setViewControllers([mainViewController], animated: false)
     }
 }

@@ -23,6 +23,8 @@
 		3D423CDD277B15FD00C8E4C1 /* FileManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CD2277B15FD00C8E4C1 /* FileManager.c */; };
 		3D423CDE277B15FD00C8E4C1 /* cJSON_Utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CD3277B15FD00C8E4C1 /* cJSON_Utils.c */; };
 		3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D93B67D274AAF9A007364E8 /* CommandManager.swift */; };
+		E71DF1A027989EE600E8F813 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71DF19F27989EE600E8F813 /* OnboardingPageViewController.swift */; };
+		E735A3362799F58900A65C5F /* AppDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735A3352799F58900A65C5F /* AppDefaults.swift */; };
 		E740A7AC277AF86100A83025 /* CloudOnMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7AB277AF86100A83025 /* CloudOnMobileTests.swift */; };
 		E740A7BA277AF87500A83025 /* CloudOnMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7B9277AF87500A83025 /* CloudOnMobileUITests.swift */; };
 		E740A7BC277AF87500A83025 /* CloudOnMobileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E740A7BB277AF87500A83025 /* CloudOnMobileUITestsLaunchTests.swift */; };
@@ -66,6 +68,11 @@
 		E785FF09276A5DD70008A720 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785FF08276A5DD70008A720 /* BaseView.swift */; };
 		E7E20E4A2787335700986653 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E492787335700986653 /* Size.swift */; };
 		E7E20E4E2787426100986653 /* BackendFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E4D2787426100986653 /* BackendFile.swift */; };
+		E7E20E53278783A000986653 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E52278783A000986653 /* OnboardingViewController.swift */; };
+		E7E20E55278783A800986653 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E54278783A800986653 /* OnboardingPresenter.swift */; };
+		E7E20E572787844100986653 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E562787844100986653 /* OnboardingPage.swift */; };
+		E7E20E592787932500986653 /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E582787932500986653 /* ViewsFactory.swift */; };
+		E7E20E61278877EB00986653 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E60278877EB00986653 /* OnboardingPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +121,8 @@
 		3D423CD2277B15FD00C8E4C1 /* FileManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = FileManager.c; sourceTree = "<group>"; };
 		3D423CD3277B15FD00C8E4C1 /* cJSON_Utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cJSON_Utils.c; sourceTree = "<group>"; };
 		3D93B67D274AAF9A007364E8 /* CommandManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandManager.swift; sourceTree = "<group>"; };
+		E71DF19F27989EE600E8F813 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		E735A3352799F58900A65C5F /* AppDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaults.swift; sourceTree = "<group>"; };
 		E740A7A0277AF77900A83025 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		E740A7A1277AF7A100A83025 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
 		E740A7A2277AF7B900A83025 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
@@ -165,6 +174,11 @@
 		E785FF08276A5DD70008A720 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E7E20E492787335700986653 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		E7E20E4D2787426100986653 /* BackendFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendFile.swift; sourceTree = "<group>"; };
+		E7E20E52278783A000986653 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		E7E20E54278783A800986653 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
+		E7E20E562787844100986653 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
+		E7E20E582787932500986653 /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
+		E7E20E60278877EB00986653 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				E740A7C7277C564100A83025 /* Translations */,
+				E735A3352799F58900A65C5F /* AppDefaults.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -350,6 +365,7 @@
 		E747BEB42770FA110046D036 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E7E20E512787838F00986653 /* Onboarding */,
 				E75E2F642773057A00843855 /* Files */,
 				E747BEB52770FAAC0046D036 /* Main */,
 			);
@@ -438,6 +454,7 @@
 			children = (
 				E75E2F762778695C00843855 /* Base */,
 				E75E2F6A2778654300843855 /* IconTitleSubtitleView.swift */,
+				E7E20E582787932500986653 /* ViewsFactory.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -529,6 +546,26 @@
 				E7E20E4D2787426100986653 /* BackendFile.swift */,
 			);
 			path = BackendModels;
+			sourceTree = "<group>";
+		};
+		E7E20E512787838F00986653 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E7E20E5F2788778200986653 /* Subviews */,
+				E7E20E52278783A000986653 /* OnboardingViewController.swift */,
+				E7E20E54278783A800986653 /* OnboardingPresenter.swift */,
+				E7E20E562787844100986653 /* OnboardingPage.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E7E20E5F2788778200986653 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				E7E20E60278877EB00986653 /* OnboardingPageView.swift */,
+				E71DF19F27989EE600E8F813 /* OnboardingPageViewController.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -701,10 +738,12 @@
 				E7E20E4E2787426100986653 /* BackendFile.swift in Sources */,
 				E740A7D1277C585D00A83025 /* Strings+Generated.swift in Sources */,
 				E747BED22771C6650046D036 /* SheetPresentationBehaviourController.swift in Sources */,
+				E7E20E61278877EB00986653 /* OnboardingPageView.swift in Sources */,
 				E747BECB277117C20046D036 /* UIStackView+Extensions.swift in Sources */,
 				3D1F1035258D4D7C007C4E38 /* AppDelegate.swift in Sources */,
 				E785FF01276A57440008A720 /* AppColor.swift in Sources */,
 				3D423CD8277B15FD00C8E4C1 /* TcpParser.c in Sources */,
+				E7E20E592787932500986653 /* ViewsFactory.swift in Sources */,
 				3D423CDD277B15FD00C8E4C1 /* FileManager.c in Sources */,
 				E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */,
 				E785FF09276A5DD70008A720 /* BaseView.swift in Sources */,
@@ -722,17 +761,22 @@
 				E75E2F682773093000843855 /* FilesPresenter.swift in Sources */,
 				E747BEC127710CC20046D036 /* MainFlowController.swift in Sources */,
 				E75E2F71277865E000843855 /* ReusableView.swift in Sources */,
+				E71DF1A027989EE600E8F813 /* OnboardingPageViewController.swift in Sources */,
 				3D2400982769550F00DF8F87 /* CoreWrapperC.c in Sources */,
 				E785FEF6276A56390008A720 /* Presenter.swift in Sources */,
 				E785FF03276A57440008A720 /* FontStyle.swift in Sources */,
+				E7E20E55278783A800986653 /* OnboardingPresenter.swift in Sources */,
 				E747BEBC27710C7E0046D036 /* FlowController.swift in Sources */,
 				3D1F1037258D4D7C007C4E38 /* SceneDelegate.swift in Sources */,
+				E735A3362799F58900A65C5F /* AppDefaults.swift in Sources */,
 				3D423CDE277B15FD00C8E4C1 /* cJSON_Utils.c in Sources */,
 				E747BEB92770FAC80046D036 /* MainPresenter.swift in Sources */,
 				E747BED42771C6E10046D036 /* SheetPresentationContainerView.swift in Sources */,
 				E75E2F6B2778654300843855 /* IconTitleSubtitleView.swift in Sources */,
+				E7E20E53278783A000986653 /* OnboardingViewController.swift in Sources */,
 				E75E2F6D2778658900843855 /* BaseTableViewCell.swift in Sources */,
 				E75E2F662773059000843855 /* FilesViewController.swift in Sources */,
+				E7E20E572787844100986653 /* OnboardingPage.swift in Sources */,
 				E747BECD277117F70046D036 /* UILabel+Extensions.swift in Sources */,
 				3D423CD9277B15FD00C8E4C1 /* TcpClient.c in Sources */,
 				E747BEBE27710C9F0046D036 /* FlowControllerPresentation.swift in Sources */,
