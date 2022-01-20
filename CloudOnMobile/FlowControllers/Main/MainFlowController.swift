@@ -18,7 +18,16 @@ final class MainFlowController: FlowController {
 
     let presentation: FlowControllerPresentation
 
-    private var onboardingCompleted = true
+    private var onboardingCompleted: Bool {
+        get {
+            true
+            /// - TODO: Uncomment code when onboarding will be ready
+    //        dependencyContainer.appDefaults.onboardingCompleted
+        }
+        set {
+            dependencyContainer.appDefaults.onboardingCompleted = newValue
+        }
+    }
 
     private let dependencyContainer: MainDependencyContainer
 
@@ -81,6 +90,7 @@ private extension MainFlowController {
             eventHandler: { [weak self] event in
                 switch event {
                 case .onboardingDone:
+                    self?.onboardingCompleted = true
                     self?.presentMainScreen()
                 }
             }
