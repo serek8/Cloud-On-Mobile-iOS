@@ -82,7 +82,7 @@ private extension MainFlowController {
             sheetContentViewController: filesViewController
         )
 
-        navigationController.setViewControllers([sheetController], animated: false)
+        navigationController.setViewControllers([sheetController], animated: true)
     }
 
     func presentOnboarding() {
