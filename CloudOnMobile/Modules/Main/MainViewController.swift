@@ -21,14 +21,14 @@ final class MainViewController: BaseViewController {
     private let accessCodeLabel = with(UILabel()) {
         $0.text = L10n.MainViewController.accessCode
         $0.textColor = AppStyle.current.color(for: .white)
-        $0.font = AppStyle.current.font(for: .regular, size: 16)
+        $0.font = AppStyle.current.font(for: .body16Regular)
         $0.textAlignment = .center
     }
 
     private let codeValueLabel = with(UILabel()) {
         $0.text = "XXXXXX"
         $0.textColor = AppStyle.current.color(for: .white)
-        $0.font = AppStyle.current.font(for: .regular, size: 36)
+        $0.font = AppStyle.current.font(for: .headingTitleRegular)
         $0.textAlignment = .center
         $0.addCharactersSpacing(value: 26)
     }

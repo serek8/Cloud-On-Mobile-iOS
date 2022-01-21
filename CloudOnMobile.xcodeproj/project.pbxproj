@@ -73,7 +73,7 @@
 		E7E20E572787844100986653 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E562787844100986653 /* OnboardingPage.swift */; };
 		E7E20E592787932500986653 /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E582787932500986653 /* ViewsFactory.swift */; };
 		E7E20E61278877EB00986653 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E60278877EB00986653 /* OnboardingPageView.swift */; };
-		E7E2E7F1279B368A00229DDA /* AppTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7F0279B368A00229DDA /* AppTypography.swift */; };
+		E7E2E7F1279B368A00229DDA /* TypographyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7F0279B368A00229DDA /* TypographyStyle.swift */; };
 		E7E2E7F3279B373500229DDA /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E2E7F2279B372E00229DDA /* Poppins-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
@@ -181,7 +181,7 @@
 		E7E20E562787844100986653 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		E7E20E582787932500986653 /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
 		E7E20E60278877EB00986653 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
-		E7E2E7F0279B368A00229DDA /* AppTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTypography.swift; sourceTree = "<group>"; };
+		E7E2E7F0279B368A00229DDA /* TypographyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyStyle.swift; sourceTree = "<group>"; };
 		E7E2E7F2279B372E00229DDA /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -577,7 +577,7 @@
 		E7E2E7EF279B361D00229DDA /* Typography */ = {
 			isa = PBXGroup;
 			children = (
-				E7E2E7F0279B368A00229DDA /* AppTypography.swift */,
+				E7E2E7F0279B368A00229DDA /* TypographyStyle.swift */,
 			);
 			path = Typography;
 			sourceTree = "<group>";
@@ -796,7 +796,7 @@
 				3D423CD9277B15FD00C8E4C1 /* TcpClient.c in Sources */,
 				E747BEBE27710C9F0046D036 /* FlowControllerPresentation.swift in Sources */,
 				E75E2F7F2778785C00843855 /* FilesDownloader.swift in Sources */,
-				E7E2E7F1279B368A00229DDA /* AppTypography.swift in Sources */,
+				E7E2E7F1279B368A00229DDA /* TypographyStyle.swift in Sources */,
 				3D423CD6277B15FD00C8E4C1 /* encode.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

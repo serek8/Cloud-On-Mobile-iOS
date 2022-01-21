@@ -10,7 +10,7 @@ import UIKit
 enum ViewsFactory {
     static var blueButton: UIButton {
         let button = UIButton(type: .system)
-        button.titleLabel?.font = AppStyle.current.font(for: .regular, size: 16)
+        button.titleLabel?.font = AppStyle.current.font(for: .buttonLarge)
         button.setTitleColor(AppStyle.current.color(for: .white), for: .normal)
         button.backgroundColor = AppStyle.current.color(for: .blue)
         button.layer.cornerRadius = 12
@@ -25,7 +25,7 @@ enum ViewsFactory {
 
     static var whiteButton: UIButton {
         let button = UIButton(type: .system)
-        button.titleLabel?.font = AppStyle.current.font(for: .regular, size: 16)
+        button.titleLabel?.font = AppStyle.current.font(for: .buttonLarge)
         button.setTitleColor(AppStyle.current.color(for: .blue), for: .normal)
         button.backgroundColor = AppStyle.current.color(for: .white)
         button.contentEdgeInsets = buttonContentEdgeInsets
