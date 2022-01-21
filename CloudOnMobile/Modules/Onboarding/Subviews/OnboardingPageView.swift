@@ -25,14 +25,14 @@ final class OnboardingPageView: UIView {
 
     private let titleLabel = with(UILabel()) {
         $0.textColor = AppStyle.current.color(for: .black)
-        $0.font = AppStyle.current.font(for: .regular, size: 32)
+        $0.font = AppStyle.current.font(for: .heading1)
         $0.textAlignment = .center
         $0.numberOfLines = 1
     }
 
     private let descriptionLabel = with(UILabel()) {
         $0.textColor = AppStyle.current.color(for: .black)
-        $0.font = AppStyle.current.font(for: .regular, size: 16)
+        $0.font = AppStyle.current.font(for: .body16Regular)
         $0.textAlignment = .center
         $0.numberOfLines = 0
         $0.addCharactersSpacing(value: 26)
