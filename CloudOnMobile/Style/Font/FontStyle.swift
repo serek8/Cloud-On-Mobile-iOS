@@ -9,4 +9,5 @@ import Foundation
 
 enum FontStyle {
     case regular
+    case semiBold
 }

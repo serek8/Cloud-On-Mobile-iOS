@@ -74,6 +74,7 @@
 		E7E20E592787932500986653 /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E582787932500986653 /* ViewsFactory.swift */; };
 		E7E20E61278877EB00986653 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E60278877EB00986653 /* OnboardingPageView.swift */; };
 		E7E2E7F1279B368A00229DDA /* AppTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7F0279B368A00229DDA /* AppTypography.swift */; };
+		E7E2E7F3279B373500229DDA /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E2E7F2279B372E00229DDA /* Poppins-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,7 @@
 		E7E20E582787932500986653 /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
 		E7E20E60278877EB00986653 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		E7E2E7F0279B368A00229DDA /* AppTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTypography.swift; sourceTree = "<group>"; };
+		E7E2E7F2279B372E00229DDA /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -414,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				E747BEC6277110100046D036 /* Poppins-Regular.ttf */,
+				E7E2E7F2279B372E00229DDA /* Poppins-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -685,6 +688,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7E2E7F3279B373500229DDA /* Poppins-SemiBold.ttf in Resources */,
 				E747BEC8277111520046D036 /* Poppins-Regular.ttf in Resources */,
 				3D1F1041258D4D7D007C4E38 /* LaunchScreen.storyboard in Resources */,
 				3D1F103E258D4D7D007C4E38 /* Assets.xcassets in Resources */,
