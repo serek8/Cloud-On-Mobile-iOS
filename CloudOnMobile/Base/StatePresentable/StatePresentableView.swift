@@ -25,6 +25,8 @@ protocol StatePresentableView {
     func clearState()
 }
 
+// MARK: - BaseViewController
+
 extension StatePresentableView where Self: BaseViewController {
     func showEmptyState() {
         DispatchQueue.main.async {
@@ -45,5 +47,27 @@ extension StatePresentableView where Self: BaseViewController {
     func clearState() {
         self.emptyStateView.removeFromSuperview()
         self.errorStateView.removeFromSuperview()
+    }
+}
+
+// MARK: - BaseTableViewController
+
+extension StatePresentableView where Self: BaseTableViewController {
+    func showEmptyState() {
+        DispatchQueue.main.async {
+            self.clearState()
+            self.rootTableView.backgroundView = self.emptyStateView
+        }
+    }
+
+    func showErrorState() {
+        DispatchQueue.main.async {
+            self.clearState()
+            self.rootTableView.backgroundView = self.errorStateView
+        }
+    }
+
+    func clearState() {
+        self.rootTableView.backgroundView = nil
     }
 }
