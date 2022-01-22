@@ -65,7 +65,7 @@ private extension EmptyStateView {
             $0.greaterThanOrEqual(.leading),
             $0.lessThanOrEqual(.trailing),
             $0.equal(.centerX),
-            $0.equal(.centerY)
+            $0.equal(.centerY, constant: -40)
         ] }
 
         imageView.addConstraints { [
