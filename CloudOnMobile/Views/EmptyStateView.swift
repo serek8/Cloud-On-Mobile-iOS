@@ -21,10 +21,14 @@ final class EmptyStateView: UIView {
     }
 
     private let subtitleLabel = with(UILabel()) {
-        $0.textColor = AppStyle.current.color(for: .gray2)
-        $0.font = AppStyle.current.font(for: .regular, size: 16)
+        $0.textColor = AppStyle.current.color(for: .black)
+        $0.font = AppStyle.current.font(for: .regular, size: 24)
         $0.accessibilityIdentifier = "subtitleLabel"
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
     }
+
+    private let containerView = UIView()
 
     init() {
         super.init(frame: .zero)
@@ -50,15 +54,24 @@ extension EmptyStateView: Fillable {
 
 private extension EmptyStateView {
     func setupView() {
-        addSubviews([
+        addSubview(containerView)
+
+        containerView.addSubviews([
             imageView,
             subtitleLabel
         ])
 
+        containerView.addConstraints { [
+            $0.greaterThanOrEqual(.leading),
+            $0.lessThanOrEqual(.bottom),
+            $0.equal(.centerX),
+            $0.equal(.centerY)
+        ] }
+
         imageView.addConstraints { [
             $0.equal(.top),
-            $0.greaterThanOrEqual(.leading, constant: 16),
-            $0.lessThanOrEqual(.bottom, constant: -16),
+            $0.greaterThanOrEqual(.leading),
+            $0.lessThanOrEqual(.trailing),
             $0.equal(.centerX),
             $0.equalConstant(.height, 120),
             $0.equalConstant(.width, 120)
@@ -66,8 +79,8 @@ private extension EmptyStateView {
 
         subtitleLabel.addConstraints { [
             $0.equalTo(imageView, .top, .bottom, constant: 24),
-            $0.equal(.leading),
-            $0.equal(.trailing),
+            $0.equal(.leading, constant: 32),
+            $0.equal(.trailing, constant: -32),
             $0.equal(.bottom)
         ] }
     }
