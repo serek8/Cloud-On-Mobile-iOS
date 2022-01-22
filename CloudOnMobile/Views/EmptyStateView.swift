@@ -63,7 +63,7 @@ private extension EmptyStateView {
 
         containerView.addConstraints { [
             $0.greaterThanOrEqual(.leading),
-            $0.lessThanOrEqual(.bottom),
+            $0.lessThanOrEqual(.trailing),
             $0.equal(.centerX),
             $0.equal(.centerY)
         ] }

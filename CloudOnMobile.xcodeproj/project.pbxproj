@@ -73,9 +73,10 @@
 		E7E20E572787844100986653 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E562787844100986653 /* OnboardingPage.swift */; };
 		E7E20E592787932500986653 /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E582787932500986653 /* ViewsFactory.swift */; };
 		E7E20E61278877EB00986653 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E60278877EB00986653 /* OnboardingPageView.swift */; };
-		E7E2E7F9279BF3F400229DDA /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7F8279BF3F400229DDA /* EmptyStateView.swift */; };
 		E7E2E7F1279B368A00229DDA /* TypographyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7F0279B368A00229DDA /* TypographyStyle.swift */; };
 		E7E2E7F3279B373500229DDA /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E2E7F2279B372E00229DDA /* Poppins-SemiBold.ttf */; };
+		E7E2E7F9279BF3F400229DDA /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7F8279BF3F400229DDA /* EmptyStateView.swift */; };
+		E7E2E7FC279C28A600229DDA /* StatePresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7FB279C28A600229DDA /* StatePresentableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,9 +183,10 @@
 		E7E20E562787844100986653 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		E7E20E582787932500986653 /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
 		E7E20E60278877EB00986653 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
-		E7E2E7F8279BF3F400229DDA /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		E7E2E7F0279B368A00229DDA /* TypographyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyStyle.swift; sourceTree = "<group>"; };
 		E7E2E7F2279B372E00229DDA /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		E7E2E7F8279BF3F400229DDA /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		E7E2E7FB279C28A600229DDA /* StatePresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePresentableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -489,6 +491,7 @@
 		E785FEEB276A56390008A720 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				E7E2E7FA279C289C00229DDA /* StatePresentable */,
 				E747BECE2771C5B80046D036 /* SheetPresentationController */,
 				E747BEC9277117AB0046D036 /* Extensions */,
 				E785FEEE276A56390008A720 /* Module */,
@@ -583,6 +586,14 @@
 				E7E2E7F0279B368A00229DDA /* TypographyStyle.swift */,
 			);
 			path = Typography;
+			sourceTree = "<group>";
+		};
+		E7E2E7FA279C289C00229DDA /* StatePresentable */ = {
+			isa = PBXGroup;
+			children = (
+				E7E2E7FB279C28A600229DDA /* StatePresentableView.swift */,
+			);
+			path = StatePresentable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -769,6 +780,7 @@
 				E785FEF7276A56390008A720 /* UIView+AutoLayout.swift in Sources */,
 				E747BEC427710D0D0046D036 /* MainDependencyContainer.swift in Sources */,
 				3D423CDC277B15FD00C8E4C1 /* cJSON.c in Sources */,
+				E7E2E7FC279C28A600229DDA /* StatePresentableView.swift in Sources */,
 				E785FEF8276A56390008A720 /* AutoKeyboard.swift in Sources */,
 				E740A7C4277AF9A600A83025 /* AppSchemeProperties.swift in Sources */,
 				3D423CD5277B15FD00C8E4C1 /* decode.c in Sources */,

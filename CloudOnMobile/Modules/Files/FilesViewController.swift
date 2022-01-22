@@ -7,11 +7,25 @@
 
 import UIKit
 
-protocol FilesViewControllerProtocol: AnyObject {
+protocol FilesViewControllerProtocol: AnyObject, StatePresentableView {
+    /// Fills view with model.
+    /// - Parameters:
+    ///   - model: model containing data to properly display view.
     func fill(with model: [IconTitleSubtitleView.ViewModel])
 }
 
-final class FilesViewController: BaseViewController, FilesViewControllerProtocol {
+final class FilesViewController: BaseViewController {
+    private let emptyView = with(EmptyStateView()) {
+        $0.fill(
+            with: EmptyStateView.ViewModel(
+                icon: UIImage(imageLiteralResourceName: "files"),
+                subtitle: "There are no items here!"
+            )
+        )
+    }
+
+    private let errorView = UIView()
+
     private var files: [IconTitleSubtitleView.ViewModel] = []
 
     private let refreshControl = UIRefreshControl()
@@ -40,7 +54,13 @@ final class FilesViewController: BaseViewController, FilesViewControllerProtocol
     }
 }
 
-extension FilesViewController {
+// MARK: - FilesViewControllerProtocol
+
+extension FilesViewController: FilesViewControllerProtocol {
+    var emptyStateView: UIView { emptyView }
+
+    var errorStateView: UIView { errorView }
+
     func fill(with model: [IconTitleSubtitleView.ViewModel]) {
         files = model
         DispatchQueue.main.async {
