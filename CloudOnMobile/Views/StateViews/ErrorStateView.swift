@@ -1,5 +1,5 @@
 //
-//  EmptyStateView.swift
+//  ErrorStateView.swift
 //  CloudOnMobile
 //
 //  Created by Karol P on 22/01/2022.
@@ -7,13 +7,19 @@
 
 import UIKit
 
-final class EmptyStateView: UIView {
-    struct ViewModel: Hashable {
+final class ErrorStateView: UIView {
+    struct ViewModel {
         /// Icon on top of the view.
         let icon: UIImage
 
         /// Subtitle displayed below icon.
         let subtitle: String
+
+        /// Title of the bottom button.
+        let bottomButtonTitle: String
+
+        /// Handler called on bottom button tapped.
+        let bottomButtonHandler: () -> Void
     }
 
     private let imageView = with(UIImageView()) {
@@ -28,7 +34,13 @@ final class EmptyStateView: UIView {
         $0.textAlignment = .center
     }
 
+    private let bottomButton = with(ViewsFactory.blueButton) {
+        $0.addTarget(self, action: #selector(bottomButtonTapped), for: .touchUpInside)
+    }
+
     private let containerView = UIView()
+
+    private var bottomButtonHandler: (() -> Void)?
 
     init() {
         super.init(frame: .zero)
@@ -43,18 +55,23 @@ final class EmptyStateView: UIView {
 
 // MARK: Fillable
 
-extension EmptyStateView: Fillable {
+extension ErrorStateView: Fillable {
     func fill(with model: ViewModel) {
         imageView.image = model.icon
         subtitleLabel.text = model.subtitle
+        bottomButton.setTitle(model.bottomButtonTitle, for: .normal)
+        bottomButtonHandler = model.bottomButtonHandler
     }
 }
 
 // MARK: - Private
 
-private extension EmptyStateView {
+private extension ErrorStateView {
     func setupView() {
-        addSubview(containerView)
+        addSubviews([
+            containerView,
+            bottomButton
+        ])
 
         containerView.addSubviews([
             imageView,
@@ -79,9 +96,18 @@ private extension EmptyStateView {
 
         subtitleLabel.addConstraints { [
             $0.equalTo(imageView, .top, .bottom, constant: 24),
-            $0.equal(.leading, constant: 32),
-            $0.equal(.trailing, constant: -32),
+            $0.equal(.leading, constant: 16),
+            $0.equal(.trailing, constant: -16),
             $0.equal(.bottom)
         ] }
+
+        bottomButton.addConstraints { [
+            $0.equal(.centerX),
+            $0.equal(.bottom, constant: -32)
+        ] }
+    }
+
+    @objc func bottomButtonTapped() {
+        bottomButtonHandler?()
     }
 }

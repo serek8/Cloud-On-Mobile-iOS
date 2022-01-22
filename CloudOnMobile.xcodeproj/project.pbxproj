@@ -78,6 +78,7 @@
 		E7E2E7F9279BF3F400229DDA /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7F8279BF3F400229DDA /* EmptyStateView.swift */; };
 		E7E2E7FC279C28A600229DDA /* StatePresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7FB279C28A600229DDA /* StatePresentableView.swift */; };
 		E7E2E7FE279C375200229DDA /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7FD279C375200229DDA /* BaseTableViewController.swift */; };
+		E7E2E800279C66AE00229DDA /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7FF279C66AE00229DDA /* ErrorStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,7 @@
 		E7E2E7F8279BF3F400229DDA /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		E7E2E7FB279C28A600229DDA /* StatePresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePresentableView.swift; sourceTree = "<group>"; };
 		E7E2E7FD279C375200229DDA /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		E7E2E7FF279C66AE00229DDA /* ErrorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -463,9 +465,9 @@
 		E75E2F69277864FD00843855 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E7E2E801279C66B400229DDA /* StateViews */,
 				E75E2F762778695C00843855 /* Base */,
 				E75E2F6A2778654300843855 /* IconTitleSubtitleView.swift */,
-				E7E2E7F8279BF3F400229DDA /* EmptyStateView.swift */,
 				E7E20E582787932500986653 /* ViewsFactory.swift */,
 			);
 			path = Views;
@@ -597,6 +599,15 @@
 				E7E2E7FB279C28A600229DDA /* StatePresentableView.swift */,
 			);
 			path = StatePresentable;
+			sourceTree = "<group>";
+		};
+		E7E2E801279C66B400229DDA /* StateViews */ = {
+			isa = PBXGroup;
+			children = (
+				E7E2E7F8279BF3F400229DDA /* EmptyStateView.swift */,
+				E7E2E7FF279C66AE00229DDA /* ErrorStateView.swift */,
+			);
+			path = StateViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -776,6 +787,7 @@
 				E747BECB277117C20046D036 /* UIStackView+Extensions.swift in Sources */,
 				3D1F1035258D4D7C007C4E38 /* AppDelegate.swift in Sources */,
 				E785FF01276A57440008A720 /* AppColor.swift in Sources */,
+				E7E2E800279C66AE00229DDA /* ErrorStateView.swift in Sources */,
 				3D423CD8277B15FD00C8E4C1 /* TcpParser.c in Sources */,
 				E7E20E592787932500986653 /* ViewsFactory.swift in Sources */,
 				3D423CDD277B15FD00C8E4C1 /* FileManager.c in Sources */,

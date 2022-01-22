@@ -15,16 +15,9 @@ protocol FilesViewControllerProtocol: AnyObject, StatePresentableView {
 }
 
 final class FilesViewController: BaseTableViewController {
-    private let emptyView = with(EmptyStateView()) {
-        $0.fill(
-            with: EmptyStateView.ViewModel(
-                icon: UIImage(imageLiteralResourceName: "files"),
-                subtitle: "There are no items here!"
-            )
-        )
-    }
+    private let emptyView = EmptyStateView()
 
-    private let errorView = UIView()
+    private let errorView = ErrorStateView()
 
     private var files: [IconTitleSubtitleView.ViewModel] = []
 
@@ -38,6 +31,7 @@ final class FilesViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        setupStateViews()
         Task {
             await presenter.refreshData()
         }
@@ -94,5 +88,27 @@ extension FilesViewController: ScrollableViewController {
 private extension FilesViewController {
     func setupViews() {
         rootTableView.dataSource = self
+    }
+
+    func setupStateViews() {
+        emptyView.fill(
+            with: EmptyStateView.ViewModel(
+                icon: UIImage(imageLiteralResourceName: "files"),
+                subtitle: "There are no items here!"
+            )
+        )
+
+        errorView.fill(
+            with: ErrorStateView.ViewModel(
+                icon: UIImage(imageLiteralResourceName: "errorState"),
+                subtitle: "Something went wrong :(",
+                bottomButtonTitle: "Retry",
+                bottomButtonHandler: {
+                    Task { [weak self] in
+                        await self?.refreshData()
+                    }
+                }
+            )
+        )
     }
 }
