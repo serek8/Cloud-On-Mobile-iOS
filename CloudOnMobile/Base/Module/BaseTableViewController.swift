@@ -39,9 +39,11 @@ class BaseTableViewController: BaseViewController {
 
     // MARK: - Private objc
 
-    @objc private func refreshControlHandler() async {
-        await refreshData()
-        refreshControl.endRefreshing()
+    @objc private func refreshControlHandler() {
+        Task { [weak self] in
+            await self?.refreshData()
+            self?.refreshControl.endRefreshing()
+        }
     }
 }
 
