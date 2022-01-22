@@ -19,6 +19,8 @@ struct DefaultAppFont: AppFont {
         switch type {
         case .regular:
             return UIFont(name: "Poppins-Regular", size: size)!
+        case .semiBold:
+            return UIFont(name: "Poppins-SemiBold", size: size)!
         }
     }
 }

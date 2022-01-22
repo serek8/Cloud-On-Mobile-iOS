@@ -27,13 +27,13 @@ final class IconTitleSubtitleView: UIView {
 
     private let titleLabel = with(UILabel()) {
         $0.textColor = AppStyle.current.color(for: .black)
-        $0.font = AppStyle.current.font(for: .regular, size: 16)
+        $0.font = AppStyle.current.font(for: .body16Regular)
         $0.accessibilityIdentifier = "titleLabel"
     }
 
     private let subtitleLabel = with(UILabel()) {
         $0.textColor = AppStyle.current.color(for: .gray2)
-        $0.font = AppStyle.current.font(for: .regular, size: 16)
+        $0.font = AppStyle.current.font(for: .body16Regular)
         $0.accessibilityIdentifier = "subtitleLabel"
     }
 
