@@ -73,6 +73,7 @@
 		E7E20E572787844100986653 /* OnboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E562787844100986653 /* OnboardingPage.swift */; };
 		E7E20E592787932500986653 /* ViewsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E582787932500986653 /* ViewsFactory.swift */; };
 		E7E20E61278877EB00986653 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E60278877EB00986653 /* OnboardingPageView.swift */; };
+		E7E2E7F9279BF3F400229DDA /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7F8279BF3F400229DDA /* EmptyStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +180,7 @@
 		E7E20E562787844100986653 /* OnboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage.swift; sourceTree = "<group>"; };
 		E7E20E582787932500986653 /* ViewsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsFactory.swift; sourceTree = "<group>"; };
 		E7E20E60278877EB00986653 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
+		E7E2E7F8279BF3F400229DDA /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,6 +456,7 @@
 			children = (
 				E75E2F762778695C00843855 /* Base */,
 				E75E2F6A2778654300843855 /* IconTitleSubtitleView.swift */,
+				E7E2E7F8279BF3F400229DDA /* EmptyStateView.swift */,
 				E7E20E582787932500986653 /* ViewsFactory.swift */,
 			);
 			path = Views;
@@ -724,6 +727,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E75E2F752778685E00843855 /* NSObject+Extensions.swift in Sources */,
+				E7E2E7F9279BF3F400229DDA /* EmptyStateView.swift in Sources */,
 				E747BEB72770FABE0046D036 /* MainViewController.swift in Sources */,
 				E75E2F7B2778761500843855 /* FileType.swift in Sources */,
 				E747BED02771C5F00046D036 /* SheetPresentationController.swift in Sources */,
