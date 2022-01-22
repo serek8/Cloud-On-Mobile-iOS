@@ -22,7 +22,7 @@ final class EmptyStateView: UIView {
 
     private let subtitleLabel = with(UILabel()) {
         $0.textColor = AppStyle.current.color(for: .black)
-        $0.font = AppStyle.current.font(for: .regular, size: 24)
+        $0.font = AppStyle.current.font(for: .heading1)
         $0.accessibilityIdentifier = "subtitleLabel"
         $0.numberOfLines = 0
         $0.textAlignment = .center

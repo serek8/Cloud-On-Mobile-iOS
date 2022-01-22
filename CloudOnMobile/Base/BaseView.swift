@@ -29,6 +29,6 @@ class BaseView: UIView {
     /// Setups style for view.
     /// Function called on init.
     func setupStyle() {
-        backgroundColor = style.appColor.color(for: .background)
+        backgroundColor = style.color(for: .background)
     }
 }
