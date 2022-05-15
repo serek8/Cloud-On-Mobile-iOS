@@ -37,6 +37,8 @@ final class AppStyle {
         switch typography {
         case .heading1:
             return font(for: .semiBold, size: 32)
+        case .heading2:
+            return font(for: .semiBold, size: 24)
         case .headingTitleRegular:
             return font(for: .regular, size: 36)
         case .body16Regular,

@@ -9,6 +9,7 @@
 /// AppStyle returns UIFont based on TypographyStyle.
 enum TypographyStyle {
     case heading1
+    case heading2
     case headingTitleRegular
     case body14Regular
     case body16Regular

@@ -7,22 +7,26 @@
 
 import UIKit
 
-protocol FilesViewControllerProtocol: AnyObject {
+protocol FilesViewControllerProtocol: AnyObject, StatePresentableView {
+    /// Fills view with model.
+    /// - Parameters:
+    ///   - model: model containing data to properly display view.
     func fill(with model: [IconTitleSubtitleView.ViewModel])
 }
 
-final class FilesViewController: BaseViewController, FilesViewControllerProtocol {
-    private var files: [IconTitleSubtitleView.ViewModel] = []
-
-    private let refreshControl = UIRefreshControl()
-
-    private let tableView = with(UITableView()) {
-        $0.rowHeight = UITableView.automaticDimension
-        $0.allowsSelection = true
-        $0.backgroundColor = AppStyle.current.color(for: .white)
-        $0.backgroundView?.backgroundColor = AppStyle.current.color(for: .white)
-        $0.separatorStyle = .none
+final class FilesViewController: BaseTableViewController {
+    private let emptyView = with(EmptyStateView()) {
+        $0.fill(
+            with: EmptyStateView.ViewModel(
+                icon: UIImage(imageLiteralResourceName: "files"),
+                subtitle: "There are no items here!"
+            )
+        )
     }
+
+    private let errorView = UIView()
+
+    private var files: [IconTitleSubtitleView.ViewModel] = []
 
     private let presenter: FilesPresenter
 
@@ -40,11 +44,24 @@ final class FilesViewController: BaseViewController, FilesViewControllerProtocol
     }
 }
 
-extension FilesViewController {
+// MARK: - FilesViewControllerProtocol
+
+extension FilesViewController: FilesViewControllerProtocol {
+    var emptyStateView: UIView { emptyView }
+
+    var errorStateView: UIView { errorView }
+
     func fill(with model: [IconTitleSubtitleView.ViewModel]) {
         files = model
         DispatchQueue.main.async {
-            self.tableView.reloadData()
+            self.rootTableView.reloadData()
+        }
+    }
+
+    func showEmptyState() {
+        DispatchQueue.main.async {
+            self.clearState()
+            self.rootTableView.backgroundView = self.emptyStateView
         }
     }
 }
@@ -68,7 +85,7 @@ extension FilesViewController: UITableViewDataSource {
 
 extension FilesViewController: ScrollableViewController {
     var scrollView: UIScrollView? {
-        tableView
+        rootTableView
     }
 }
 
@@ -76,22 +93,6 @@ extension FilesViewController: ScrollableViewController {
 
 private extension FilesViewController {
     func setupViews() {
-        containerView.backgroundColor = AppStyle.current.color(for: .white)
-        containerView.addSubview(tableView)
-
-        tableView.addConstraints { $0.equalEdges() }
-        tableView.dataSource = self
-
-        tableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-    }
-
-    // MARK: - Private objc
-
-    @objc func refreshData() {
-        Task { [weak self] in
-            await self?.presenter.refreshData()
-            self?.refreshControl.endRefreshing()
-        }
+        rootTableView.dataSource = self
     }
 }

@@ -30,6 +30,7 @@ class BaseViewController: UIViewController, AutoKeyboard {
     /// Initialize BaseViewController.
     /// - Parameters:
     ///   - presenter: Instance of presenter.
+    ///   - backgroundColor: Background color of the ViewController.
     init(
         presenter: PresenterProtocol,
         backgroundColor: UIColor = AppStyle.current.color(for: .white)
@@ -75,6 +76,10 @@ class BaseViewController: UIViewController, AutoKeyboard {
         } else {
             dismiss(animated: true)
         }
+    }
+
+    func refreshData() async {
+        await presenter.refreshData()
     }
 
     /// - SeeAlso: Swift.deinit

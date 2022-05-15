@@ -25,12 +25,15 @@ final class FilesPresenter: PresenterProtocol {
         let result = await filesDownloader.getFilesList()
         switch result {
         case let .success(files):
-            viewController?.fill(
-                with: map(files: files)
-            )
+            if files.isEmpty {
+                viewController?.showEmptyState()
+            } else {
+                viewController?.fill(
+                    with: map(files: files)
+                )
+            }
         case .failure:
-            /// - TODO: handle error case
-            break
+            viewController?.showErrorState()
         }
     }
 }

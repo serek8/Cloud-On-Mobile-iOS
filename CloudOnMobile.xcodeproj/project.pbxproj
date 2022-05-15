@@ -75,6 +75,9 @@
 		E7E20E61278877EB00986653 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E20E60278877EB00986653 /* OnboardingPageView.swift */; };
 		E7E2E7F1279B368A00229DDA /* TypographyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7F0279B368A00229DDA /* TypographyStyle.swift */; };
 		E7E2E7F3279B373500229DDA /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7E2E7F2279B372E00229DDA /* Poppins-SemiBold.ttf */; };
+		E7E2E7F9279BF3F400229DDA /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7F8279BF3F400229DDA /* EmptyStateView.swift */; };
+		E7E2E7FC279C28A600229DDA /* StatePresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7FB279C28A600229DDA /* StatePresentableView.swift */; };
+		E7E2E7FE279C375200229DDA /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2E7FD279C375200229DDA /* BaseTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +186,9 @@
 		E7E20E60278877EB00986653 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		E7E2E7F0279B368A00229DDA /* TypographyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyStyle.swift; sourceTree = "<group>"; };
 		E7E2E7F2279B372E00229DDA /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		E7E2E7F8279BF3F400229DDA /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		E7E2E7FB279C28A600229DDA /* StatePresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePresentableView.swift; sourceTree = "<group>"; };
+		E7E2E7FD279C375200229DDA /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -459,6 +465,7 @@
 			children = (
 				E75E2F762778695C00843855 /* Base */,
 				E75E2F6A2778654300843855 /* IconTitleSubtitleView.swift */,
+				E7E2E7F8279BF3F400229DDA /* EmptyStateView.swift */,
 				E7E20E582787932500986653 /* ViewsFactory.swift */,
 			);
 			path = Views;
@@ -486,6 +493,7 @@
 		E785FEEB276A56390008A720 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				E7E2E7FA279C289C00229DDA /* StatePresentable */,
 				E747BECE2771C5B80046D036 /* SheetPresentationController */,
 				E747BEC9277117AB0046D036 /* Extensions */,
 				E785FEEE276A56390008A720 /* Module */,
@@ -502,6 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				E785FEEF276A56390008A720 /* BaseViewController.swift */,
+				E7E2E7FD279C375200229DDA /* BaseTableViewController.swift */,
 				E785FEF0276A56390008A720 /* Presenter.swift */,
 			);
 			path = Module;
@@ -580,6 +589,14 @@
 				E7E2E7F0279B368A00229DDA /* TypographyStyle.swift */,
 			);
 			path = Typography;
+			sourceTree = "<group>";
+		};
+		E7E2E7FA279C289C00229DDA /* StatePresentable */ = {
+			isa = PBXGroup;
+			children = (
+				E7E2E7FB279C28A600229DDA /* StatePresentableView.swift */,
+			);
+			path = StatePresentable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -739,6 +756,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E75E2F752778685E00843855 /* NSObject+Extensions.swift in Sources */,
+				E7E2E7F9279BF3F400229DDA /* EmptyStateView.swift in Sources */,
 				E747BEB72770FABE0046D036 /* MainViewController.swift in Sources */,
 				E75E2F7B2778761500843855 /* FileType.swift in Sources */,
 				E747BED02771C5F00046D036 /* SheetPresentationController.swift in Sources */,
@@ -753,6 +771,7 @@
 				E7E20E4E2787426100986653 /* BackendFile.swift in Sources */,
 				E740A7D1277C585D00A83025 /* Strings+Generated.swift in Sources */,
 				E747BED22771C6650046D036 /* SheetPresentationBehaviourController.swift in Sources */,
+				E7E2E7FE279C375200229DDA /* BaseTableViewController.swift in Sources */,
 				E7E20E61278877EB00986653 /* OnboardingPageView.swift in Sources */,
 				E747BECB277117C20046D036 /* UIStackView+Extensions.swift in Sources */,
 				3D1F1035258D4D7C007C4E38 /* AppDelegate.swift in Sources */,
@@ -765,6 +784,7 @@
 				E785FEF7276A56390008A720 /* UIView+AutoLayout.swift in Sources */,
 				E747BEC427710D0D0046D036 /* MainDependencyContainer.swift in Sources */,
 				3D423CDC277B15FD00C8E4C1 /* cJSON.c in Sources */,
+				E7E2E7FC279C28A600229DDA /* StatePresentableView.swift in Sources */,
 				E785FEF8276A56390008A720 /* AutoKeyboard.swift in Sources */,
 				E740A7C4277AF9A600A83025 /* AppSchemeProperties.swift in Sources */,
 				3D423CD5277B15FD00C8E4C1 /* decode.c in Sources */,
