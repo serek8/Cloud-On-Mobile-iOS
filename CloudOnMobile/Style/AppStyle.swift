@@ -40,10 +40,10 @@ final class AppStyle {
         case .headingTitleRegular:
             return font(for: .regular, size: 36)
         case .body16Regular,
-            .buttonLarge:
+             .buttonLarge:
             return font(for: .regular, size: 16)
         case .body14Regular,
-            .link:
+             .link:
             return font(for: .regular, size: 14)
         }
     }

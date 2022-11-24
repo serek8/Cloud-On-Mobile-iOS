@@ -125,22 +125,22 @@ final class CommandManager {
 
 extension CommandManager: FilesDataProvider {
     func copyFilesFromExtension() {
-      if let sharedDirectory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.cc.cloudon"){
-        let sharedDocDir = sharedDirectory.appendingPathComponent("Documents")
-        if FileManager.default.fileExists(atPath: sharedDocDir.path) == false {
-          try? FileManager.default.createDirectory(atPath: sharedDocDir.path, withIntermediateDirectories: true, attributes: nil)
+        if let sharedDirectory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.cc.cloudon") {
+            let sharedDocDir = sharedDirectory.appendingPathComponent("Documents")
+            if FileManager.default.fileExists(atPath: sharedDocDir.path) == false {
+                try? FileManager.default.createDirectory(atPath: sharedDocDir.path, withIntermediateDirectories: true, attributes: nil)
+            }
+
+            let urls = try? FileManager.default.contentsOfDirectory(at: sharedDocDir, includingPropertiesForKeys: nil)
+            if let urls = urls {
+                let localDocDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                for url in urls {
+                    try? FileManager.default.moveItem(at: url, to: localDocDir.appendingPathComponent(url.lastPathComponent))
+                }
+            }
         }
-        
-        let urls = try? FileManager.default.contentsOfDirectory(at: sharedDocDir, includingPropertiesForKeys: nil)
-        if let urls = urls{
-          let localDocDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-          for url in urls {
-            try? FileManager.default.moveItem(at: url, to: localDocDir.appendingPathComponent(url.lastPathComponent))
-           }
-        }
-      }
     }
-  
+
     func listFiles() -> Result<[BackendFile], CommandManagerError> {
         copyFilesFromExtension()
         let data_out_ptr = UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>.allocate(capacity: 1)

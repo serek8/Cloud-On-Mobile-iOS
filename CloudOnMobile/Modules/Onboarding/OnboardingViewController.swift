@@ -61,7 +61,7 @@ final class OnboardingViewController: BaseViewController {
     }
 }
 
-// MARK: - OnboardingViewControllerProtocol
+// MARK: OnboardingViewControllerProtocol
 
 extension OnboardingViewController: OnboardingViewControllerProtocol {
     func fill(with model: ViewModel) {
@@ -83,6 +83,8 @@ extension OnboardingViewController: OnboardingViewControllerProtocol {
         }
     }
 }
+
+// MARK: UIPageViewControllerDataSource, UIPageViewControllerDelegate
 
 extension OnboardingViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     func pageViewController(
@@ -142,7 +144,6 @@ extension OnboardingViewController: UIPageViewControllerDataSource, UIPageViewCo
         return onboardingPages.firstIndex(of: selectedController) ?? 0
     }
 }
-
 
 // MARK: Private
 

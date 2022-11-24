@@ -26,18 +26,16 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         mainFlowController?.onSceneDidBecomeActive()
     }
-  
-  
-  
-  func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-    if let file = URLContexts.first{
-      if let data = try? Data.init(contentsOf: file.url){
-        let fileMngr = FileManager.default
-        let documentsDirectory = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let urlImprotedFile = documentsDirectory.appendingPathComponent(file.url.lastPathComponent)
-        try? data.write(to: urlImprotedFile)
-      }
+
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let file = URLContexts.first {
+            if let data = try? Data(contentsOf: file.url) {
+                let fileMngr = FileManager.default
+                let documentsDirectory = fileMngr.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                let urlImprotedFile = documentsDirectory.appendingPathComponent(file.url.lastPathComponent)
+                try? data.write(to: urlImprotedFile)
+            }
+        }
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "imported-new-file"), object: nil)
     }
-    NotificationCenter.default.post(name: NSNotification.Name.init(rawValue:"imported-new-file"), object: nil)
-  }
 }

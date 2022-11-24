@@ -36,7 +36,7 @@ final class OnboardingPresenter {
     }
 }
 
-// MARK: MainPresenterProtocol
+// MARK: OnboardingPresenterProtocol
 
 extension OnboardingPresenter: OnboardingPresenterProtocol {
     func refreshData() {

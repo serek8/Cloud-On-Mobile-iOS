@@ -29,13 +29,13 @@ final class FilesViewController: BaseViewController, FilesViewControllerProtocol
     init(presenter: FilesPresenter) {
         self.presenter = presenter
         super.init(presenter: presenter)
-      NotificationCenter.default.addObserver(self, selector: #selector(didImportNewFile), name: NSNotification.Name.init(rawValue: "imported-new-file"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didImportNewFile), name: NSNotification.Name(rawValue: "imported-new-file"), object: nil)
     }
-  
-    @objc func didImportNewFile(){
-      Task {
-          await presenter.refreshData()
-      }
+
+    @objc func didImportNewFile() {
+        Task {
+            await presenter.refreshData()
+        }
     }
 
     override func viewDidLoad() {

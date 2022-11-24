@@ -22,7 +22,7 @@ final class MainFlowController: FlowController {
         get {
             true
             /// - TODO: Uncomment code when onboarding will be ready
-    //        dependencyContainer.appDefaults.onboardingCompleted
+            //        dependencyContainer.appDefaults.onboardingCompleted
         }
         set {
             dependencyContainer.appDefaults.onboardingCompleted = newValue
