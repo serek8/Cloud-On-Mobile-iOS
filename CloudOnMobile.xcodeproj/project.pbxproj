@@ -246,6 +246,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33B4DE49292FFE0C00AB0FCD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				33B4DE4A292FFE3200AB0FCD /* Base */,
+				E747BEC9277117AB0046D036 /* Extensions */,
+				E747BECE2771C5B80046D036 /* SheetPresentationController */,
+				E75E2F69277864FD00843855 /* Views */,
+				E785FEF9276A57440008A720 /* Style */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		33B4DE4A292FFE3200AB0FCD /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E785FEF2276A56390008A720 /* AutoKeyboard.swift */,
+				E785FF08276A5DD70008A720 /* BaseView.swift */,
+				E785FEF1276A56390008A720 /* UIView+AutoLayout.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		3D0F5A932918356700770B7D /* CloudOnCloudImport */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,9 +313,8 @@
 				E747BEBA27710C6D0046D036 /* FlowControllers */,
 				E747BEB42770FA110046D036 /* Modules */,
 				E7E20E4B2787407200986653 /* Networking */,
-				E785FEF9276A57440008A720 /* Style */,
+				33B4DE49292FFE0C00AB0FCD /* UI */,
 				E740A7C6277C563700A83025 /* SupportingFiles */,
-				E75E2F69277864FD00843855 /* Views */,
 				3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */,
 				3D1F103D258D4D7D007C4E38 /* Assets.xcassets */,
 				3D1F104C258D4F04007C4E38 /* CloudOnMobile-Bridging-Header.h */,
@@ -535,13 +556,8 @@
 		E785FEEB276A56390008A720 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				E747BECE2771C5B80046D036 /* SheetPresentationController */,
-				E747BEC9277117AB0046D036 /* Extensions */,
 				E785FEEE276A56390008A720 /* Module */,
-				E785FEF2276A56390008A720 /* AutoKeyboard.swift */,
-				E785FF08276A5DD70008A720 /* BaseView.swift */,
 				E785FEED276A56390008A720 /* Functions.swift */,
-				E785FEF1276A56390008A720 /* UIView+AutoLayout.swift */,
 				E75E2F6E277865BD00843855 /* Fillable.swift */,
 			);
 			path = Base;
