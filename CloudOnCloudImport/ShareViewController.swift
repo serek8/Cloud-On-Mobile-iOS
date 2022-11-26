@@ -103,13 +103,6 @@ private extension ShareViewController {
         }
     }
 
-    func finishImport() {
-        extensionContext?.completeRequest(returningItems: nil, completionHandler: { [weak self] _ in
-            guard let url = URL(string: "cloudon://import") else { return }
-            _ = self?.openURL(url)
-        })
-    }
-
     func saveData(_ data: Data, type: UTType) {
         let date = Date()
         let dateFormatter = DateFormatter()
@@ -137,6 +130,13 @@ private extension ShareViewController {
         }
         let urlImprotedFile = docDir.appendingPathComponent(filename)
         try? data.write(to: urlImprotedFile)
+    }
+
+    func finishImport() {
+        extensionContext?.completeRequest(returningItems: nil, completionHandler: { [weak self] _ in
+            guard let url = URL(string: "cloudon://import") else { return }
+            _ = self?.openURL(url)
+        })
     }
 
     @objc func openURL(_ url: URL) -> Bool {
