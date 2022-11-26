@@ -25,6 +25,8 @@
 		3D423CDC277B15FD00C8E4C1 /* cJSON.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CCF277B15FD00C8E4C1 /* cJSON.c */; };
 		3D423CDD277B15FD00C8E4C1 /* FileManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CD2277B15FD00C8E4C1 /* FileManager.c */; };
 		3D423CDE277B15FD00C8E4C1 /* cJSON_Utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CD3277B15FD00C8E4C1 /* cJSON_Utils.c */; };
+		3D4A6C33293265CE007C55C0 /* UnfairLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4A6C32293265CE007C55C0 /* UnfairLock.swift */; };
+		3D4A6C3429326666007C55C0 /* UnfairLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4A6C32293265CE007C55C0 /* UnfairLock.swift */; };
 		3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D93B67D274AAF9A007364E8 /* CommandManager.swift */; };
 		E71DF1A027989EE600E8F813 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71DF19F27989EE600E8F813 /* OnboardingPageViewController.swift */; };
 		E735A3362799F58900A65C5F /* AppDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735A3352799F58900A65C5F /* AppDefaults.swift */; };
@@ -150,6 +152,7 @@
 		3D423CD1277B15FD00C8E4C1 /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
 		3D423CD2277B15FD00C8E4C1 /* FileManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = FileManager.c; sourceTree = "<group>"; };
 		3D423CD3277B15FD00C8E4C1 /* cJSON_Utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cJSON_Utils.c; sourceTree = "<group>"; };
+		3D4A6C32293265CE007C55C0 /* UnfairLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfairLock.swift; sourceTree = "<group>"; };
 		3D6C7EEC292A8B29009C028C /* CloudOnCloudImport.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudOnCloudImport.entitlements; sourceTree = "<group>"; };
 		3D93B67D274AAF9A007364E8 /* CommandManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandManager.swift; sourceTree = "<group>"; };
 		E71DF19F27989EE600E8F813 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
@@ -423,6 +426,7 @@
 			children = (
 				E740A7C7277C564100A83025 /* Translations */,
 				E735A3352799F58900A65C5F /* AppDefaults.swift */,
+				3D4A6C32293265CE007C55C0 /* UnfairLock.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -835,6 +839,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D0F5A952918356700770B7D /* ShareViewController.swift in Sources */,
+				3D4A6C3429326666007C55C0 /* UnfairLock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -867,6 +872,7 @@
 				E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */,
 				E785FF09276A5DD70008A720 /* BaseView.swift in Sources */,
 				E785FEF7276A56390008A720 /* UIView+AutoLayout.swift in Sources */,
+				3D4A6C33293265CE007C55C0 /* UnfairLock.swift in Sources */,
 				E747BEC427710D0D0046D036 /* MainDependencyContainer.swift in Sources */,
 				3D423CDC277B15FD00C8E4C1 /* cJSON.c in Sources */,
 				E785FEF8276A56390008A720 /* AutoKeyboard.swift in Sources */,

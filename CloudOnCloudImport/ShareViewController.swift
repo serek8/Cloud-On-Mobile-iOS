@@ -12,7 +12,8 @@ import UniformTypeIdentifiers
 
 final class ShareViewController: UIViewController {
     private lazy var activityIndicatorView = UIActivityIndicatorView(style: .medium)
-
+    var remainingAttachementsCount = 0
+    let lock = UnfairLock()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -45,11 +46,12 @@ private extension ShareViewController {
         guard let extensionItems = extensionContext?.inputItems as? [NSExtensionItem] else {
             return
         }
-
+        remainingAttachementsCount = 0
         extensionItems.forEach { extensionItem in
             guard let itemProviders = extensionItem.attachments else {
                 return
             }
+            remainingAttachementsCount += extensionItems.count
             itemProviders.forEach { itemProvider in
                 save(itemProvider: itemProvider)
             }
@@ -68,62 +70,76 @@ private extension ShareViewController {
         } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.data.identifier) {
             saveData(itemProvider: itemProvider)
         } else {
-            finishImport()
+            openMainAppIfFinished()
         }
     }
 
     func saveData(itemProvider: NSItemProvider) {
         itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.data.identifier) { [weak self] url, error in
             guard error == nil else {
-                self?.finishImport()
+                self?.openMainAppIfFinished()
                 return
             }
-            if let url, let data = try? Data(contentsOf: url) {
-                self?.saveData(data, type: .data)
+
+            if let url {
+                self?.saveFile(url: url)
             }
-            self?.finishImport()
+            self?.openMainAppIfFinished()
         }
     }
 
     func saveUrl(itemProvider: NSItemProvider) {
         itemProvider.loadItem(forTypeIdentifier: UTType.url.identifier) { [weak self] item, error in
             guard error == nil else {
-                self?.finishImport()
+                self?.openMainAppIfFinished()
                 return
             }
             if let url = item as? URL, let data = url.absoluteString.data(using: .utf8) {
                 self?.saveData(data, type: UTType.url)
             }
-            self?.finishImport()
+            self?.openMainAppIfFinished()
         }
     }
 
     func saveText(itemProvider: NSItemProvider) {
         itemProvider.loadItem(forTypeIdentifier: UTType.text.identifier) { [weak self] item, error in
             guard error == nil else {
-                self?.finishImport()
+                self?.openMainAppIfFinished()
                 return
             }
             if let item = item as? String, let data = item.data(using: .utf8) {
                 self?.saveData(data, type: UTType.text)
             }
-            self?.finishImport()
+            self?.openMainAppIfFinished()
         }
     }
 
     func saveImage(itemProvider: NSItemProvider) {
         itemProvider.loadItem(forTypeIdentifier: UTType.image.identifier) { [weak self] item, error in
             guard error == nil else {
-                self?.finishImport()
+                self?.openMainAppIfFinished()
                 return
             }
-            if let item = item as? UIImage, let pngData = item.pngData() {
-                self?.saveData(pngData, type: UTType.image)
-            } else if let url = item as? URL, let data = try? Data(contentsOf: url) {
-                self?.saveData(data, type: .image)
+            if let itemUrl = item as? URL {
+                self?.saveFile(url: itemUrl)
+            } else {
+                if let item = item as? UIImage, let pngData = item.pngData() {
+                    self?.saveData(pngData, type: UTType.image)
+                } else if let url = item as? URL, let data = try? Data(contentsOf: url) {
+                    self?.saveData(data, type: .image)
+                }
             }
-            self?.finishImport()
+            self?.openMainAppIfFinished()
         }
+    }
+
+    func saveFile(url: URL) {
+        guard let sharedDirectory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.cc.cloudon") else {
+            return
+        }
+        let docDir = sharedDirectory.appendingPathComponent("Documents")
+        createDocumentsDirectoryIfNeeded(docDir)
+        try? FileManager.default.copyItem(at: url, to: docDir.appendingPathComponent(url.lastPathComponent))
     }
 
     func saveData(_ data: Data, type: UTType) {
@@ -148,18 +164,39 @@ private extension ShareViewController {
         }
 
         let docDir = sharedDirectory.appendingPathComponent("Documents")
-        if FileManager.default.fileExists(atPath: docDir.path) == false {
-            try? FileManager.default.createDirectory(atPath: docDir.path, withIntermediateDirectories: true, attributes: nil)
-        }
-        let urlImprotedFile = docDir.appendingPathComponent(filename)
+        createDocumentsDirectoryIfNeeded(docDir)
+        var urlImprotedFile = docDir.appendingPathComponent(filename)
+        urlImprotedFile = renameFileIfDuplicated(urlImprotedFile)
         try? data.write(to: urlImprotedFile)
     }
 
-    func finishImport() {
-        extensionContext?.completeRequest(returningItems: nil, completionHandler: { [weak self] _ in
-            guard let url = URL(string: "cloudon://import") else { return }
-            _ = self?.openURL(url)
-        })
+    func renameFileIfDuplicated(_ urlImprotedFile: URL) -> URL {
+        if FileManager.default.fileExists(atPath: urlImprotedFile.absoluteString) {
+            let date = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "SSSS"
+            return renameFileIfDuplicated(urlImprotedFile.appendingPathExtension("_\(dateFormatter.string(from: date))"))
+        }
+        return urlImprotedFile
+    }
+
+    func createDocumentsDirectoryIfNeeded(_ docDir: URL) {
+        if FileManager.default.fileExists(atPath: docDir.path) == false {
+            try? FileManager.default.createDirectory(atPath: docDir.path, withIntermediateDirectories: true, attributes: nil)
+        }
+    }
+
+    func openMainAppIfFinished() {
+        lock.locked {
+            self.remainingAttachementsCount -= 1
+            if remainingAttachementsCount != 0 {
+                return
+            }
+            extensionContext?.completeRequest(returningItems: nil, completionHandler: { [weak self] _ in
+                guard let url = URL(string: "cloudon://import") else { return }
+                _ = self?.openURL(url)
+            })
+        }
     }
 
     @objc func openURL(_ url: URL) -> Bool {
