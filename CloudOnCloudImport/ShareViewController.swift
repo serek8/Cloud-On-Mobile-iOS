@@ -57,8 +57,8 @@ private extension ShareViewController {
                 self?.finishImport()
                 return
             }
-            if let url {
-                self?.saveFile(url)
+            if let url, let data = try? Data(contentsOf: url) {
+                self?.saveData(data, type: .data)
             }
             self?.finishImport()
         }
@@ -98,8 +98,6 @@ private extension ShareViewController {
             }
             if let item = item as? UIImage, let pngData = item.pngData() {
                 self?.saveData(pngData, type: UTType.image)
-            } else if let url = item as? URL {
-                self?.saveFile(url)
             }
             self?.finishImport()
         }
@@ -110,13 +108,6 @@ private extension ShareViewController {
             guard let url = URL(string: "cloudon://import") else { return }
             _ = self?.openURL(url)
         })
-    }
-
-    func saveFile(_ url: URL) {
-        guard let data = try? Data(contentsOf: url) else {
-            return
-        }
-        saveData(data, type: .data)
     }
 
     func saveData(_ data: Data, type: UTType) {
