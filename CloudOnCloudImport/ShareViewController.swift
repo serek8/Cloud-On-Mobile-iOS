@@ -71,13 +71,7 @@ private extension ShareViewController {
     func saveDataType(itemProvider: NSItemProvider) {
         itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.data.identifier) { url, error in
             guard error == nil else {
-                // Load data representation
-                itemProvider.loadDataRepresentation(forTypeIdentifier: UTType.data.identifier) { data, _ in
-                    if let data = data {
-                        self.saveData(data, type: UTType.data)
-                        self.finishImport()
-                    }
-                }
+                self.handleSavingError(itemProvider: itemProvider)
                 return
             }
             guard let url else {
@@ -85,6 +79,19 @@ private extension ShareViewController {
                 return
             }
             self.saveFile(url)
+            self.finishImport()
+        }
+    }
+
+    func handleSavingError(itemProvider: NSItemProvider) {
+        itemProvider.loadDataRepresentation(forTypeIdentifier: UTType.data.identifier) { data, error in
+            guard error == nil else {
+                return
+            }
+            guard let data else {
+                return
+            }
+            self.saveData(data, type: UTType.data)
             self.finishImport()
         }
     }
