@@ -39,13 +39,17 @@ final class OnboardingViewController: BaseViewController {
 
     private var onboardingPages = [OnboardingPageViewController]()
 
-    private let bottomButton = with(ViewsFactory.blueButton) {
-        $0.addTarget(self, action: #selector(bottomButtonTapped), for: .touchUpInside)
-    }
+    private lazy var bottomButton = {
+        let button = ViewsFactory.blueButton
+        button.addTarget(self, action: #selector(bottomButtonTapped), for: .touchUpInside)
+        return button
+    }()
 
-    private let skipButton = with(ViewsFactory.whiteButton) {
-        $0.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
-    }
+    private lazy var skipButton = {
+        let button = ViewsFactory.whiteButton
+        button.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
+        return button
+    }()
 
     private let presenter: OnboardingPresenterProtocol
 
