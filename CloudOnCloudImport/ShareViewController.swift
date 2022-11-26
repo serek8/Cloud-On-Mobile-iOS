@@ -113,18 +113,10 @@ private extension ShareViewController {
     }
 
     func saveFile(_ url: URL) {
-        guard
-            let data = try? Data(contentsOf: url),
-            let sharedDirectory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.cc.cloudon")
-        else {
+        guard let data = try? Data(contentsOf: url) else {
             return
         }
-        let docDir = sharedDirectory.appendingPathComponent("Documents")
-        if FileManager.default.fileExists(atPath: docDir.path) == false {
-            try? FileManager.default.createDirectory(atPath: docDir.path, withIntermediateDirectories: true, attributes: nil)
-        }
-        let urlImprotedFile = docDir.appendingPathComponent(url.lastPathComponent)
-        try? data.write(to: urlImprotedFile)
+        saveData(data, type: .data)
     }
 
     func saveData(_ data: Data, type: UTType) {
