@@ -25,73 +25,74 @@ private extension ShareViewController {
             return
         }
 
-        for extensionItem in extensionItems {
-            if let itemProviders = extensionItem.attachments {
-                for itemProvider in itemProviders {
-                    if itemProvider.hasItemConformingToTypeIdentifier(UTType.fileURL.identifier) {
-                        itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.data.identifier) { url, error in
-                            if let url = url {
-                                self.saveFile(url)
-                            } else {
-                                if error != nil {
-                                    itemProvider.loadDataRepresentation(forTypeIdentifier: UTType.data.identifier) { data, _ in
-                                        if let data = data {
-                                            self.saveData(data, type: UTType.data)
-                                        }
+        extensionItems.forEach { extensionItem in
+            guard let itemProviders = extensionItem.attachments else {
+                return
+            }
+            for itemProvider in itemProviders {
+                if itemProvider.hasItemConformingToTypeIdentifier(UTType.fileURL.identifier) {
+                    itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.data.identifier) { url, error in
+                        if let url = url {
+                            self.saveFile(url)
+                        } else {
+                            if error != nil {
+                                itemProvider.loadDataRepresentation(forTypeIdentifier: UTType.data.identifier) { data, _ in
+                                    if let data = data {
+                                        self.saveData(data, type: UTType.data)
                                     }
                                 }
                             }
-                            self.finishImport()
                         }
-                    } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.url.identifier) {
-                        itemProvider.loadItem(forTypeIdentifier: UTType.url.identifier, options: nil) { item, _ in
-                            if let url = item as? URL {
-                                if let data = url.absoluteString.data(using: .utf8) {
-                                    self.saveData(data, type: UTType.url)
-                                }
-                            }
-                            self.finishImport()
-                        }
-                    } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.text.identifier) {
-                        itemProvider.loadItem(forTypeIdentifier: UTType.text.identifier) { item, _ in
-                            if let item = item as? String {
-                                if let data = item.data(using: .utf8) {
-                                    self.saveData(data, type: UTType.text)
-                                }
-                            }
-                            self.finishImport()
-                        }
-                    } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.image.identifier) {
-                        itemProvider.loadItem(forTypeIdentifier: UTType.image.identifier) { item, _ in
-                            if let item = item as? UIImage {
-                                if let pngData = item.pngData() {
-                                    self.saveData(pngData, type: UTType.image)
-                                }
-                            } else {
-                                if let url = item as? URL {
-                                    self.saveFile(url)
-                                }
-                            }
-                            self.finishImport()
-                        }
-                    } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.data.identifier) {
-                        itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.data.identifier) { url, error in
-                            if let url = url {
-                                self.saveFile(url)
-                            } else {
-                                if error != nil {
-                                    itemProvider.loadDataRepresentation(forTypeIdentifier: UTType.data.identifier) { data, _ in
-                                        if let data = data {
-                                            self.saveData(data, type: UTType.data)
-                                        }
-                                    }
-                                }
-                            }
-                            self.finishImport()
-                        }
-                    } else {
-                        finishImport()
+                        self.finishImport()
                     }
+                } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.url.identifier) {
+                    itemProvider.loadItem(forTypeIdentifier: UTType.url.identifier, options: nil) { item, _ in
+                        if let url = item as? URL {
+                            if let data = url.absoluteString.data(using: .utf8) {
+                                self.saveData(data, type: UTType.url)
+                            }
+                        }
+                        self.finishImport()
+                    }
+                } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.text.identifier) {
+                    itemProvider.loadItem(forTypeIdentifier: UTType.text.identifier) { item, _ in
+                        if let item = item as? String {
+                            if let data = item.data(using: .utf8) {
+                                self.saveData(data, type: UTType.text)
+                            }
+                        }
+                        self.finishImport()
+                    }
+                } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.image.identifier) {
+                    itemProvider.loadItem(forTypeIdentifier: UTType.image.identifier) { item, _ in
+                        if let item = item as? UIImage {
+                            if let pngData = item.pngData() {
+                                self.saveData(pngData, type: UTType.image)
+                            }
+                        } else {
+                            if let url = item as? URL {
+                                self.saveFile(url)
+                            }
+                        }
+                        self.finishImport()
+                    }
+                } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.data.identifier) {
+                    itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.data.identifier) { url, error in
+                        if let url = url {
+                            self.saveFile(url)
+                        } else {
+                            if error != nil {
+                                itemProvider.loadDataRepresentation(forTypeIdentifier: UTType.data.identifier) { data, _ in
+                                    if let data = data {
+                                        self.saveData(data, type: UTType.data)
+                                    }
+                                }
+                            }
+                        }
+                        self.finishImport()
+                    }
+                } else {
+                    finishImport()
                 }
             }
         }
