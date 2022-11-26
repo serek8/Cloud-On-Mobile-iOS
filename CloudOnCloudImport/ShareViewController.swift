@@ -40,12 +40,10 @@ private extension ShareViewController {
             itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.data.identifier) { url, error in
                 if let url = url {
                     self.saveFile(url)
-                } else {
-                    if error != nil {
-                        itemProvider.loadDataRepresentation(forTypeIdentifier: UTType.data.identifier) { data, _ in
-                            if let data = data {
-                                self.saveData(data, type: UTType.data)
-                            }
+                } else if error != nil {
+                    itemProvider.loadDataRepresentation(forTypeIdentifier: UTType.data.identifier) { data, _ in
+                        if let data = data {
+                            self.saveData(data, type: UTType.data)
                         }
                     }
                 }
@@ -53,32 +51,24 @@ private extension ShareViewController {
             }
         } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.url.identifier) {
             itemProvider.loadItem(forTypeIdentifier: UTType.url.identifier, options: nil) { item, _ in
-                if let url = item as? URL {
-                    if let data = url.absoluteString.data(using: .utf8) {
-                        self.saveData(data, type: UTType.url)
-                    }
+                if let url = item as? URL, let data = url.absoluteString.data(using: .utf8) {
+                    self.saveData(data, type: UTType.url)
                 }
                 self.finishImport()
             }
         } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.text.identifier) {
             itemProvider.loadItem(forTypeIdentifier: UTType.text.identifier) { item, _ in
-                if let item = item as? String {
-                    if let data = item.data(using: .utf8) {
-                        self.saveData(data, type: UTType.text)
-                    }
+                if let item = item as? String, let data = item.data(using: .utf8) {
+                    self.saveData(data, type: UTType.text)
                 }
                 self.finishImport()
             }
         } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.image.identifier) {
             itemProvider.loadItem(forTypeIdentifier: UTType.image.identifier) { item, _ in
-                if let item = item as? UIImage {
-                    if let pngData = item.pngData() {
-                        self.saveData(pngData, type: UTType.image)
-                    }
-                } else {
-                    if let url = item as? URL {
-                        self.saveFile(url)
-                    }
+                if let item = item as? UIImage, let pngData = item.pngData() {
+                    self.saveData(pngData, type: UTType.image)
+                } else if let url = item as? URL {
+                    self.saveFile(url)
                 }
                 self.finishImport()
             }
@@ -86,12 +76,10 @@ private extension ShareViewController {
             itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.data.identifier) { url, error in
                 if let url = url {
                     self.saveFile(url)
-                } else {
-                    if error != nil {
-                        itemProvider.loadDataRepresentation(forTypeIdentifier: UTType.data.identifier) { data, _ in
-                            if let data = data {
-                                self.saveData(data, type: UTType.data)
-                            }
+                } else if error != nil {
+                    itemProvider.loadDataRepresentation(forTypeIdentifier: UTType.data.identifier) { data, _ in
+                        if let data = data {
+                            self.saveData(data, type: UTType.data)
                         }
                     }
                 }
