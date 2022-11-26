@@ -39,12 +39,7 @@ private extension ShareViewController {
         if itemProvider.hasItemConformingToTypeIdentifier(UTType.fileURL.identifier) {
             saveDataType(itemProvider: itemProvider)
         } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.url.identifier) {
-            itemProvider.loadItem(forTypeIdentifier: UTType.url.identifier) { item, _ in
-                if let url = item as? URL, let data = url.absoluteString.data(using: .utf8) {
-                    self.saveData(data, type: UTType.url)
-                }
-                self.finishImport()
-            }
+            saveUrlType(itemProvider: itemProvider)
         } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.text.identifier) {
             itemProvider.loadItem(forTypeIdentifier: UTType.text.identifier) { item, _ in
                 if let item = item as? String, let data = item.data(using: .utf8) {
@@ -79,6 +74,24 @@ private extension ShareViewController {
                 return
             }
             self?.saveFile(url)
+            self?.finishImport()
+        }
+    }
+
+    func saveUrlType(itemProvider: NSItemProvider) {
+        itemProvider.loadItem(forTypeIdentifier: UTType.url.identifier) { [weak self] item, error in
+            guard error == nil else {
+                self?.finishImport()
+                return
+            }
+            guard
+            let url = item as? URL,
+                let data = url.absoluteString.data(using: .utf8)
+            else {
+                self?.finishImport()
+                return
+            }
+            self?.saveData(data, type: UTType.url)
             self?.finishImport()
         }
     }
