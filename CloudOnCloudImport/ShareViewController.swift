@@ -110,34 +110,33 @@ private extension ShareViewController {
         }
     }
 
-    func saveData(_ data: Data, type: UTType?) {
+    func saveData(_ data: Data, type: UTType) {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd-HH-mm-ss"
         var filename = "\(dateFormatter.string(from: date))"
-        if let type = type {
-            switch type {
-            case .image:
-                filename = "image-" + filename + ".png"
-            case .text:
-                filename = "image-" + filename + ".txt"
-            case .url:
-                filename = "url-" + filename + ".txt"
-            default:
-                filename = "file-" + filename
-            }
-        } else {
+
+        switch type {
+        case .image:
+            filename = "image-" + filename + ".png"
+        case .text:
+            filename = "image-" + filename + ".txt"
+        case .url:
+            filename = "url-" + filename + ".txt"
+        default:
             filename = "file-" + filename
         }
 
-        if let sharedDirectory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.cc.cloudon") {
-            let docDir = sharedDirectory.appendingPathComponent("Documents")
-            if FileManager.default.fileExists(atPath: docDir.path) == false {
-                try? FileManager.default.createDirectory(atPath: docDir.path, withIntermediateDirectories: true, attributes: nil)
-            }
-            let urlImprotedFile = docDir.appendingPathComponent(filename)
-            try? data.write(to: urlImprotedFile)
+        guard let sharedDirectory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.cc.cloudon") else {
+            return
         }
+
+        let docDir = sharedDirectory.appendingPathComponent("Documents")
+        if FileManager.default.fileExists(atPath: docDir.path) == false {
+            try? FileManager.default.createDirectory(atPath: docDir.path, withIntermediateDirectories: true, attributes: nil)
+        }
+        let urlImprotedFile = docDir.appendingPathComponent(filename)
+        try? data.write(to: urlImprotedFile)
     }
 
     @objc func openURL(_ url: URL) -> Bool {
