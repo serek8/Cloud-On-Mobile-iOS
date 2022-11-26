@@ -106,9 +106,9 @@ private extension ShareViewController {
     }
 
     func finishImport() {
-        extensionContext?.completeRequest(returningItems: nil, completionHandler: { _ in
+        extensionContext?.completeRequest(returningItems: nil, completionHandler: { [weak self] _ in
             guard let url = URL(string: "cloudon://import") else { return }
-            _ = self.openURL(url)
+            _ = self?.openURL(url)
         })
     }
 
