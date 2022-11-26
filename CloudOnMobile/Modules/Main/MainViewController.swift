@@ -33,10 +33,12 @@ final class MainViewController: BaseViewController {
         $0.addCharactersSpacing(value: 26)
     }
 
-    private let getCodeButton = with(ViewsFactory.blueButton) {
-        $0.setTitle(L10n.MainViewController.getAccessCode, for: .normal)
-        $0.addTarget(self, action: #selector(getCodeButtonTapped), for: .touchUpInside)
-    }
+    private lazy var getCodeButton = {
+        let button = ViewsFactory.blueButton
+        button.setTitle(L10n.MainViewController.getAccessCode, for: .normal)
+        button.addTarget(self, action: #selector(getCodeButtonTapped), for: .touchUpInside)
+        return button
+    }()
 
     private let presenter: MainPresenterProtocol
 

@@ -39,13 +39,17 @@ final class OnboardingViewController: BaseViewController {
 
     private var onboardingPages = [OnboardingPageViewController]()
 
-    private let bottomButton = with(ViewsFactory.blueButton) {
-        $0.addTarget(self, action: #selector(bottomButtonTapped), for: .touchUpInside)
-    }
+    private lazy var bottomButton = {
+        let button = ViewsFactory.blueButton
+        button.addTarget(self, action: #selector(bottomButtonTapped), for: .touchUpInside)
+        return button
+    }()
 
-    private let skipButton = with(ViewsFactory.whiteButton) {
-        $0.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
-    }
+    private lazy var skipButton = {
+        let button = ViewsFactory.whiteButton
+        button.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
+        return button
+    }()
 
     private let presenter: OnboardingPresenterProtocol
 
@@ -61,7 +65,7 @@ final class OnboardingViewController: BaseViewController {
     }
 }
 
-// MARK: - OnboardingViewControllerProtocol
+// MARK: OnboardingViewControllerProtocol
 
 extension OnboardingViewController: OnboardingViewControllerProtocol {
     func fill(with model: ViewModel) {
@@ -83,6 +87,8 @@ extension OnboardingViewController: OnboardingViewControllerProtocol {
         }
     }
 }
+
+// MARK: UIPageViewControllerDataSource, UIPageViewControllerDelegate
 
 extension OnboardingViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     func pageViewController(
@@ -142,7 +148,6 @@ extension OnboardingViewController: UIPageViewControllerDataSource, UIPageViewCo
         return onboardingPages.firstIndex(of: selectedController) ?? 0
     }
 }
-
 
 // MARK: Private
 

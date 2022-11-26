@@ -28,7 +28,7 @@ final class DefaultAppDefaults {
     }
 }
 
-// MARK: - AppDefaults
+// MARK: AppDefaults
 
 extension DefaultAppDefaults: AppDefaults {
     var onboardingCompleted: Bool {

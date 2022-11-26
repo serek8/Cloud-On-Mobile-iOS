@@ -8,7 +8,6 @@
 import Foundation
 
 struct DefaultFilesDownloader: FilesDownloader {
-
     private let dataProvider: FilesDataProvider
 
     /// Initialize DefaultFilesDownloader.
@@ -19,7 +18,7 @@ struct DefaultFilesDownloader: FilesDownloader {
     }
 
     func getFilesList() async -> Result<[File], Error> {
-        return dataProvider
+        dataProvider
             .listFiles()
             .flatMap { backendModel in
                 let files = backendModel.map {

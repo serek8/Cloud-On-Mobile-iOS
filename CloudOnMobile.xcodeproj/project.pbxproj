@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0F5A952918356700770B7D /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0F5A942918356700770B7D /* ShareViewController.swift */; };
+		3D0F5A982918356700770B7D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D0F5A962918356700770B7D /* MainInterface.storyboard */; };
+		3D0F5A9C2918356700770B7D /* CloudOnCloudImport.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3D0F5A922918356700770B7D /* CloudOnCloudImport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3D1F1035258D4D7C007C4E38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */; };
 		3D1F1037258D4D7C007C4E38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */; };
 		3D1F103E258D4D7D007C4E38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F103D258D4D7D007C4E38 /* Assets.xcassets */; };
@@ -22,6 +25,8 @@
 		3D423CDC277B15FD00C8E4C1 /* cJSON.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CCF277B15FD00C8E4C1 /* cJSON.c */; };
 		3D423CDD277B15FD00C8E4C1 /* FileManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CD2277B15FD00C8E4C1 /* FileManager.c */; };
 		3D423CDE277B15FD00C8E4C1 /* cJSON_Utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D423CD3277B15FD00C8E4C1 /* cJSON_Utils.c */; };
+		3D4A6C33293265CE007C55C0 /* UnfairLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4A6C32293265CE007C55C0 /* UnfairLock.swift */; };
+		3D4A6C3429326666007C55C0 /* UnfairLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4A6C32293265CE007C55C0 /* UnfairLock.swift */; };
 		3D93B67E274AAF9A007364E8 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D93B67D274AAF9A007364E8 /* CommandManager.swift */; };
 		E71DF1A027989EE600E8F813 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71DF19F27989EE600E8F813 /* OnboardingPageViewController.swift */; };
 		E735A3362799F58900A65C5F /* AppDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735A3352799F58900A65C5F /* AppDefaults.swift */; };
@@ -78,6 +83,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3D0F5A9A2918356700770B7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D1F1029258D4D7C007C4E38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D0F5A912918356700770B7D;
+			remoteInfo = CloudOnCloudImport;
+		};
 		E740A7AD277AF86100A83025 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3D1F1029258D4D7C007C4E38 /* Project object */;
@@ -94,7 +106,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3D0F5A9D2918356700770B7D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3D0F5A9C2918356700770B7D /* CloudOnCloudImport.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3D0F5A922918356700770B7D /* CloudOnCloudImport.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CloudOnCloudImport.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D0F5A942918356700770B7D /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		3D0F5A972918356700770B7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		3D0F5A992918356700770B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D1F1031258D4D7C007C4E38 /* Cloud On Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cloud On Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D1F1036258D4D7C007C4E38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +152,8 @@
 		3D423CD1277B15FD00C8E4C1 /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
 		3D423CD2277B15FD00C8E4C1 /* FileManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = FileManager.c; sourceTree = "<group>"; };
 		3D423CD3277B15FD00C8E4C1 /* cJSON_Utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cJSON_Utils.c; sourceTree = "<group>"; };
+		3D4A6C32293265CE007C55C0 /* UnfairLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfairLock.swift; sourceTree = "<group>"; };
+		3D6C7EEC292A8B29009C028C /* CloudOnCloudImport.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudOnCloudImport.entitlements; sourceTree = "<group>"; };
 		3D93B67D274AAF9A007364E8 /* CommandManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandManager.swift; sourceTree = "<group>"; };
 		E71DF19F27989EE600E8F813 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		E735A3352799F58900A65C5F /* AppDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaults.swift; sourceTree = "<group>"; };
@@ -186,6 +218,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3D0F5A8F2918356700770B7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3D1F102E258D4D7C007C4E38 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,12 +249,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33B4DE49292FFE0C00AB0FCD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				33B4DE4A292FFE3200AB0FCD /* Base */,
+				E747BEC9277117AB0046D036 /* Extensions */,
+				E747BECE2771C5B80046D036 /* SheetPresentationController */,
+				E75E2F69277864FD00843855 /* Views */,
+				E785FEF9276A57440008A720 /* Style */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		33B4DE4A292FFE3200AB0FCD /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E785FEF2276A56390008A720 /* AutoKeyboard.swift */,
+				E785FF08276A5DD70008A720 /* BaseView.swift */,
+				E785FEF1276A56390008A720 /* UIView+AutoLayout.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		3D0F5A932918356700770B7D /* CloudOnCloudImport */ = {
+			isa = PBXGroup;
+			children = (
+				3D6C7EEC292A8B29009C028C /* CloudOnCloudImport.entitlements */,
+				3D0F5A942918356700770B7D /* ShareViewController.swift */,
+				3D0F5A962918356700770B7D /* MainInterface.storyboard */,
+				3D0F5A992918356700770B7D /* Info.plist */,
+			);
+			path = CloudOnCloudImport;
+			sourceTree = "<group>";
+		};
 		3D1F1028258D4D7C007C4E38 = {
 			isa = PBXGroup;
 			children = (
 				3D1F1033258D4D7C007C4E38 /* CloudOnMobile */,
 				E740A7AA277AF86100A83025 /* CloudOnMobileTests */,
 				E740A7B8277AF87500A83025 /* CloudOnMobileUITests */,
+				3D0F5A932918356700770B7D /* CloudOnCloudImport */,
 				3D1F1032258D4D7C007C4E38 /* Products */,
 				3DD4F5922757EDFC004FE0C2 /* Frameworks */,
 			);
@@ -227,6 +300,7 @@
 				3D1F1031258D4D7C007C4E38 /* Cloud On Mobile.app */,
 				E740A7A9277AF86100A83025 /* CloudOnMobileTests.xctest */,
 				E740A7B7277AF87500A83025 /* CloudOnMobileUITests.xctest */,
+				3D0F5A922918356700770B7D /* CloudOnCloudImport.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,9 +316,8 @@
 				E747BEBA27710C6D0046D036 /* FlowControllers */,
 				E747BEB42770FA110046D036 /* Modules */,
 				E7E20E4B2787407200986653 /* Networking */,
-				E785FEF9276A57440008A720 /* Style */,
+				33B4DE49292FFE0C00AB0FCD /* UI */,
 				E740A7C6277C563700A83025 /* SupportingFiles */,
-				E75E2F69277864FD00843855 /* Views */,
 				3D1F1034258D4D7C007C4E38 /* AppDelegate.swift */,
 				3D1F103D258D4D7D007C4E38 /* Assets.xcassets */,
 				3D1F104C258D4F04007C4E38 /* CloudOnMobile-Bridging-Header.h */,
@@ -353,6 +426,7 @@
 			children = (
 				E740A7C7277C564100A83025 /* Translations */,
 				E735A3352799F58900A65C5F /* AppDefaults.swift */,
+				3D4A6C32293265CE007C55C0 /* UnfairLock.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -486,13 +560,8 @@
 		E785FEEB276A56390008A720 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				E747BECE2771C5B80046D036 /* SheetPresentationController */,
-				E747BEC9277117AB0046D036 /* Extensions */,
 				E785FEEE276A56390008A720 /* Module */,
-				E785FEF2276A56390008A720 /* AutoKeyboard.swift */,
-				E785FF08276A5DD70008A720 /* BaseView.swift */,
 				E785FEED276A56390008A720 /* Functions.swift */,
-				E785FEF1276A56390008A720 /* UIView+AutoLayout.swift */,
 				E75E2F6E277865BD00843855 /* Fillable.swift */,
 			);
 			path = Base;
@@ -585,6 +654,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3D0F5A912918356700770B7D /* CloudOnCloudImport */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D0F5AA12918356700770B7D /* Build configuration list for PBXNativeTarget "CloudOnCloudImport" */;
+			buildPhases = (
+				3D0F5A8E2918356700770B7D /* Sources */,
+				3D0F5A8F2918356700770B7D /* Frameworks */,
+				3D0F5A902918356700770B7D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CloudOnCloudImport;
+			productName = CloudOnCloudImport;
+			productReference = 3D0F5A922918356700770B7D /* CloudOnCloudImport.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		3D1F1030258D4D7C007C4E38 /* CloudOnMobile */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D1F1045258D4D7D007C4E38 /* Build configuration list for PBXNativeTarget "CloudOnMobile" */;
@@ -593,10 +679,12 @@
 				3D1F102E258D4D7C007C4E38 /* Frameworks */,
 				E740A7CF277C57D900A83025 /* Run SwiftGen */,
 				3D1F102F258D4D7C007C4E38 /* Resources */,
+				3D0F5A9D2918356700770B7D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3D0F5A9B2918356700770B7D /* PBXTargetDependency */,
 			);
 			name = CloudOnMobile;
 			productName = CloudOnMobile;
@@ -645,9 +733,12 @@
 		3D1F1029258D4D7C007C4E38 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
+					3D0F5A912918356700770B7D = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					3D1F1030258D4D7C007C4E38 = {
 						CreatedOnToolsVersion = 12.2;
 						LastSwiftMigration = 1220;
@@ -679,11 +770,20 @@
 				3D1F1030258D4D7C007C4E38 /* CloudOnMobile */,
 				E740A7A8277AF86100A83025 /* CloudOnMobileTests */,
 				E740A7B6277AF87500A83025 /* CloudOnMobileUITests */,
+				3D0F5A912918356700770B7D /* CloudOnCloudImport */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3D0F5A902918356700770B7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D0F5A982918356700770B7D /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3D1F102F258D4D7C007C4E38 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -734,6 +834,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3D0F5A8E2918356700770B7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D0F5A952918356700770B7D /* ShareViewController.swift in Sources */,
+				3D4A6C3429326666007C55C0 /* UnfairLock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3D1F102D258D4D7C007C4E38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -763,6 +872,7 @@
 				E785FEF3276A56390008A720 /* UIView+Extensions.swift in Sources */,
 				E785FF09276A5DD70008A720 /* BaseView.swift in Sources */,
 				E785FEF7276A56390008A720 /* UIView+AutoLayout.swift in Sources */,
+				3D4A6C33293265CE007C55C0 /* UnfairLock.swift in Sources */,
 				E747BEC427710D0D0046D036 /* MainDependencyContainer.swift in Sources */,
 				3D423CDC277B15FD00C8E4C1 /* cJSON.c in Sources */,
 				E785FEF8276A56390008A720 /* AutoKeyboard.swift in Sources */,
@@ -821,6 +931,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3D0F5A9B2918356700770B7D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D0F5A912918356700770B7D /* CloudOnCloudImport */;
+			targetProxy = 3D0F5A9A2918356700770B7D /* PBXContainerItemProxy */;
+		};
 		E740A7AE277AF86100A83025 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3D1F1030258D4D7C007C4E38 /* CloudOnMobile */;
@@ -834,6 +949,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3D0F5A962918356700770B7D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D0F5A972918356700770B7D /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		3D1F103F258D4D7D007C4E38 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -855,6 +978,239 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3D0F5A9E2918356700770B7D /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = CloudOnCloudImport/CloudOnCloudImport.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 795PZ6Q4ZU;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CloudOnCloudImport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CloudOnCloudImport;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.cloudon.ios.dev.CloudOnCloudImport;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Development;
+		};
+		3D0F5A9F2918356700770B7D /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = CloudOnCloudImport/CloudOnCloudImport.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 795PZ6Q4ZU;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CloudOnCloudImport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CloudOnCloudImport;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.cloudon.ios.staging.CloudOnCloudImport;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Staging;
+		};
+		3D0F5AA02918356700770B7D /* Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = CloudOnCloudImport/CloudOnCloudImport.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 795PZ6Q4ZU;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CloudOnCloudImport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CloudOnCloudImport;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.cloudon.ios.CloudOnCloudImport;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Production;
+		};
 		3D1F1043258D4D7D007C4E38 /* Development */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E740A7A0277AF77900A83025 /* Development.xcconfig */;
@@ -908,10 +1264,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.cloudon.ios.dev;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -965,7 +1322,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -979,6 +1336,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E740A7A0277AF77900A83025 /* Development.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = CloudOnMobile/CloudOnMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1008,12 +1366,14 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Core/libs/simulator",
 				);
+				MARKETING_VERSION = 1.0.2;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-lssl_$(CURRENT_ARCH)",
 					"-lcrypto_$(CURRENT_ARCH)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cc.cloudon.ios.dev;
-				PROVISIONING_PROFILE_SPECIFIER = CloudOnMobileDev;
+				PROVISIONING_PROFILE_SPECIFIER = CloudonDev12Nov2022;
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1025,6 +1385,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E740A7A1277AF7A100A83025 /* Staging.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = CloudOnMobile/CloudOnMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1054,11 +1415,12 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Core/libs/simulator",
 				);
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"-lssl_$(CURRENT_ARCH)",
 					"-lcrypto_$(CURRENT_ARCH)",
 				);
-				PROVISIONING_PROFILE_SPECIFIER = CloudOnMobileStaging;
+				PROVISIONING_PROFILE_SPECIFIER = CloudonStaging12Nov2022;
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1112,7 +1474,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1126,6 +1488,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E740A7A2277AF7B900A83025 /* Production.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = CloudOnMobile/CloudOnMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1155,11 +1518,13 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Core/libs/simulator",
 				);
+				MARKETING_VERSION = 1.0.2;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lssl_$(CURRENT_ARCH)",
 					"-lcrypto_$(CURRENT_ARCH)",
 				);
-				PROVISIONING_PROFILE_SPECIFIER = CloudOnMobileProd;
+				PROVISIONING_PROFILE_SPECIFIER = CloudonProd12Nov2022;
 				SWIFT_OBJC_BRIDGING_HEADER = "CloudOnMobile/CloudOnMobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1574,6 +1939,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3D0F5AA12918356700770B7D /* Build configuration list for PBXNativeTarget "CloudOnCloudImport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D0F5A9E2918356700770B7D /* Development */,
+				3D0F5A9F2918356700770B7D /* Staging */,
+				3D0F5AA02918356700770B7D /* Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Staging;
+		};
 		3D1F102C258D4D7C007C4E38 /* Build configuration list for PBXProject "CloudOnMobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

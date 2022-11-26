@@ -17,13 +17,9 @@ protocol MainDependencyContainer {
 }
 
 final class DefaultMainDependencyContainer: MainDependencyContainer {
-    lazy var commandManager: CommandManager = {
-      CommandManager(url: appSchemeProperties.host, port: appSchemeProperties.port)
-    }()
+    lazy var commandManager: CommandManager = .init(url: appSchemeProperties.host, port: appSchemeProperties.port)
 
-    lazy var appDefaults: AppDefaults = {
-        DefaultAppDefaults(userDefaults: .standard)
-    }()
+    lazy var appDefaults: AppDefaults = DefaultAppDefaults(userDefaults: .standard)
 
     // MARK: - Private
 
