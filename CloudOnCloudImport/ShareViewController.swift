@@ -98,6 +98,8 @@ private extension ShareViewController {
             }
             if let item = item as? UIImage, let pngData = item.pngData() {
                 self?.saveData(pngData, type: UTType.image)
+            } else if let url = item as? URL, let data = try? Data(contentsOf: url) {
+                self?.saveData(data, type: .image)
             }
             self?.finishImport()
         }
