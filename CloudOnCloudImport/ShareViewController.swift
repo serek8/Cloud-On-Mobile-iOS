@@ -43,14 +43,7 @@ private extension ShareViewController {
         } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.text.identifier) {
             saveText(itemProvider: itemProvider)
         } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.image.identifier) {
-            itemProvider.loadItem(forTypeIdentifier: UTType.image.identifier) { item, _ in
-                if let item = item as? UIImage, let pngData = item.pngData() {
-                    self.saveData(pngData, type: UTType.image)
-                } else if let url = item as? URL {
-                    self.saveFile(url)
-                }
-                self.finishImport()
-            }
+            saveImage(itemProvider: itemProvider)
         } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.data.identifier) {
             saveData(itemProvider: itemProvider)
         } else {
@@ -105,6 +98,21 @@ private extension ShareViewController {
                 return
             }
             self?.saveData(data, type: UTType.text)
+            self?.finishImport()
+        }
+    }
+
+    func saveImage(itemProvider: NSItemProvider) {
+        itemProvider.loadItem(forTypeIdentifier: UTType.image.identifier) { [weak self] item, error in
+            guard error == nil else {
+                self?.finishImport()
+                return
+            }
+            if let item = item as? UIImage, let pngData = item.pngData() {
+                self?.saveData(pngData, type: UTType.image)
+            } else if let url = item as? URL {
+                self?.saveFile(url)
+            }
             self?.finishImport()
         }
     }
