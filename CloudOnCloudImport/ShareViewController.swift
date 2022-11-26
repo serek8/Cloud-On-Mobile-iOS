@@ -37,20 +37,9 @@ private extension ShareViewController {
 
     func save(itemProvider: NSItemProvider) {
         if itemProvider.hasItemConformingToTypeIdentifier(UTType.fileURL.identifier) {
-            itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.data.identifier) { url, error in
-                if let url = url {
-                    self.saveFile(url)
-                } else if error != nil {
-                    itemProvider.loadDataRepresentation(forTypeIdentifier: UTType.data.identifier) { data, _ in
-                        if let data = data {
-                            self.saveData(data, type: UTType.data)
-                        }
-                    }
-                }
-                self.finishImport()
-            }
+            saveDataType(itemProvider: itemProvider)
         } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.url.identifier) {
-            itemProvider.loadItem(forTypeIdentifier: UTType.url.identifier, options: nil) { item, _ in
+            itemProvider.loadItem(forTypeIdentifier: UTType.url.identifier) { item, _ in
                 if let url = item as? URL, let data = url.absoluteString.data(using: .utf8) {
                     self.saveData(data, type: UTType.url)
                 }
@@ -73,20 +62,30 @@ private extension ShareViewController {
                 self.finishImport()
             }
         } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.data.identifier) {
-            itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.data.identifier) { url, error in
-                if let url = url {
-                    self.saveFile(url)
-                } else if error != nil {
-                    itemProvider.loadDataRepresentation(forTypeIdentifier: UTType.data.identifier) { data, _ in
-                        if let data = data {
-                            self.saveData(data, type: UTType.data)
-                        }
-                    }
-                }
-                self.finishImport()
-            }
+            saveDataType(itemProvider: itemProvider)
         } else {
             finishImport()
+        }
+    }
+
+    func saveDataType(itemProvider: NSItemProvider) {
+        itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.data.identifier) { url, error in
+            guard error == nil else {
+                // Load data representation
+                itemProvider.loadDataRepresentation(forTypeIdentifier: UTType.data.identifier) { data, _ in
+                    if let data = data {
+                        self.saveData(data, type: UTType.data)
+                        self.finishImport()
+                    }
+                }
+                return
+            }
+            guard let url else {
+                self.finishImport()
+                return
+            }
+            self.saveFile(url)
+            self.finishImport()
         }
     }
 
