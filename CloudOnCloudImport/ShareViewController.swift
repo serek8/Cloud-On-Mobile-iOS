@@ -13,9 +13,13 @@ import UniformTypeIdentifiers
 final class ShareViewController: UIViewController {
     private lazy var activityIndicatorView = UIActivityIndicatorView(style: .medium)
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupViews()
         DispatchQueue.global().async {
             self.saveExtensionItems()
         }
