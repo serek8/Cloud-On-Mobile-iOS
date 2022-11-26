@@ -37,16 +37,11 @@ private extension ShareViewController {
 
     func save(itemProvider: NSItemProvider) {
         if itemProvider.hasItemConformingToTypeIdentifier(UTType.fileURL.identifier) {
-            saveDataType(itemProvider: itemProvider)
+            saveData(itemProvider: itemProvider)
         } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.url.identifier) {
-            saveUrlType(itemProvider: itemProvider)
+            saveUrl(itemProvider: itemProvider)
         } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.text.identifier) {
-            itemProvider.loadItem(forTypeIdentifier: UTType.text.identifier) { item, _ in
-                if let item = item as? String, let data = item.data(using: .utf8) {
-                    self.saveData(data, type: UTType.text)
-                }
-                self.finishImport()
-            }
+            saveText(itemProvider: itemProvider)
         } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.image.identifier) {
             itemProvider.loadItem(forTypeIdentifier: UTType.image.identifier) { item, _ in
                 if let item = item as? UIImage, let pngData = item.pngData() {
@@ -57,13 +52,13 @@ private extension ShareViewController {
                 self.finishImport()
             }
         } else if itemProvider.hasItemConformingToTypeIdentifier(UTType.data.identifier) {
-            saveDataType(itemProvider: itemProvider)
+            saveData(itemProvider: itemProvider)
         } else {
             finishImport()
         }
     }
 
-    func saveDataType(itemProvider: NSItemProvider) {
+    func saveData(itemProvider: NSItemProvider) {
         itemProvider.loadFileRepresentation(forTypeIdentifier: UTType.data.identifier) { [weak self] url, error in
             guard error == nil else {
                 self?.finishImport()
@@ -78,7 +73,7 @@ private extension ShareViewController {
         }
     }
 
-    func saveUrlType(itemProvider: NSItemProvider) {
+    func saveUrl(itemProvider: NSItemProvider) {
         itemProvider.loadItem(forTypeIdentifier: UTType.url.identifier) { [weak self] item, error in
             guard error == nil else {
                 self?.finishImport()
@@ -92,6 +87,24 @@ private extension ShareViewController {
                 return
             }
             self?.saveData(data, type: UTType.url)
+            self?.finishImport()
+        }
+    }
+
+    func saveText(itemProvider: NSItemProvider) {
+        itemProvider.loadItem(forTypeIdentifier: UTType.text.identifier) { [weak self] item, error in
+            guard error == nil else {
+                self?.finishImport()
+                return
+            }
+            guard
+                let item = item as? String,
+                let data = item.data(using: .utf8)
+            else {
+                self?.finishImport()
+                return
+            }
+            self?.saveData(data, type: UTType.text)
             self?.finishImport()
         }
     }
