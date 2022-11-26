@@ -11,15 +11,30 @@ import UIKit
 import UniformTypeIdentifiers
 
 final class ShareViewController: UIViewController {
+    private lazy var activityIndicatorView = UIActivityIndicatorView(style: .medium)
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        DispatchQueue.global().async {
+        setupViews()
+        DispatchQueue.global().asyncAfter(deadline: .now() + 3) {
             self.saveExtensionItems()
         }
     }
 }
 
-// MARK: - Private
+// MARK: - Private views
+
+private extension ShareViewController {
+    func setupViews() {
+        view.backgroundColor = .white
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        activityIndicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        activityIndicatorView.startAnimating()
+    }
+}
+
+// MARK: - Private saving data
 
 private extension ShareViewController {
     func saveExtensionItems() {
