@@ -13,14 +13,14 @@ import UniformTypeIdentifiers
 final class ShareViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchAndSetContentFromContext() // Change name -> and should not be in function name
+        saveExtensionItems()
     }
 }
 
 // MARK: - Private
 
 private extension ShareViewController {
-    func fetchAndSetContentFromContext() {
+    func saveExtensionItems() {
         guard let extensionItems = extensionContext?.inputItems as? [NSExtensionItem] else {
             return
         }
