@@ -10,35 +10,17 @@ import Social
 import UIKit
 import UniformTypeIdentifiers
 
-class ShareViewController: UIViewController {
+final class ShareViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchAndSetContentFromContext()
     }
+}
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
+// MARK: - Private
 
-    func finishImport() {
-        extensionContext?.completeRequest(returningItems: nil, completionHandler: { _ in
-            guard let url = URL(string: "cloudon://import") else { return }
-            _ = self.openURL(url)
-        })
-    }
-
-    @objc func openURL(_ url: URL) -> Bool {
-        var responder: UIResponder? = self
-        while responder != nil {
-            if let application = responder as? UIApplication {
-                return application.perform(#selector(openURL(_:)), with: url) != nil
-            }
-            responder = responder?.next
-        }
-        return false
-    }
-
-    private func fetchAndSetContentFromContext() {
+private extension ShareViewController {
+    func fetchAndSetContentFromContext() {
         guard let extensionItems = extensionContext?.inputItems as? [NSExtensionItem] else {
             return
         }
@@ -115,6 +97,26 @@ class ShareViewController: UIViewController {
         }
     }
 
+    func finishImport() {
+        extensionContext?.completeRequest(returningItems: nil, completionHandler: { _ in
+            guard let url = URL(string: "cloudon://import") else { return }
+            _ = self.openURL(url)
+        })
+    }
+
+    func saveFile(_ url: URL) {
+        if let data = try? Data(contentsOf: url) {
+            if let sharedDirectory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.cc.cloudon") {
+                let docDir = sharedDirectory.appendingPathComponent("Documents")
+                if FileManager.default.fileExists(atPath: docDir.path) == false {
+                    try? FileManager.default.createDirectory(atPath: docDir.path, withIntermediateDirectories: true, attributes: nil)
+                }
+                let urlImprotedFile = docDir.appendingPathComponent(url.lastPathComponent)
+                try? data.write(to: urlImprotedFile)
+            }
+        }
+    }
+
     func saveData(_ data: Data, type: UTType?) {
         let date = Date()
         let dateFormatter = DateFormatter()
@@ -145,16 +147,14 @@ class ShareViewController: UIViewController {
         }
     }
 
-    func saveFile(_ url: URL) {
-        if let data = try? Data(contentsOf: url) {
-            if let sharedDirectory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.cc.cloudon") {
-                let docDir = sharedDirectory.appendingPathComponent("Documents")
-                if FileManager.default.fileExists(atPath: docDir.path) == false {
-                    try? FileManager.default.createDirectory(atPath: docDir.path, withIntermediateDirectories: true, attributes: nil)
-                }
-                let urlImprotedFile = docDir.appendingPathComponent(url.lastPathComponent)
-                try? data.write(to: urlImprotedFile)
+    @objc func openURL(_ url: URL) -> Bool {
+        var responder: UIResponder? = self
+        while responder != nil {
+            if let application = responder as? UIApplication {
+                return application.perform(#selector(openURL(_:)), with: url) != nil
             }
+            responder = responder?.next
         }
+        return false
     }
 }
