@@ -57,11 +57,9 @@ private extension ShareViewController {
                 self?.finishImport()
                 return
             }
-            guard let url else {
-                self?.finishImport()
-                return
+            if let url {
+                self?.saveFile(url)
             }
-            self?.saveFile(url)
             self?.finishImport()
         }
     }
@@ -72,14 +70,9 @@ private extension ShareViewController {
                 self?.finishImport()
                 return
             }
-            guard
-            let url = item as? URL,
-                let data = url.absoluteString.data(using: .utf8)
-            else {
-                self?.finishImport()
-                return
+            if let url = item as? URL, let data = url.absoluteString.data(using: .utf8) {
+                self?.saveData(data, type: UTType.url)
             }
-            self?.saveData(data, type: UTType.url)
             self?.finishImport()
         }
     }
@@ -90,14 +83,9 @@ private extension ShareViewController {
                 self?.finishImport()
                 return
             }
-            guard
-                let item = item as? String,
-                let data = item.data(using: .utf8)
-            else {
-                self?.finishImport()
-                return
+            if let item = item as? String, let data = item.data(using: .utf8) {
+                self?.saveData(data, type: UTType.text)
             }
-            self?.saveData(data, type: UTType.text)
             self?.finishImport()
         }
     }
